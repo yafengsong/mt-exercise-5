@@ -21,9 +21,7 @@ Create a new virtualenv that uses Python 3.10. Please make sure to run this comm
 
 **Important**: Then activate the env by executing the `source` command that is output by the shell script above.
 
-Download and install required software:
-
-    ./scripts/download_install_packages.sh
+Download and install required software as described in the exercise pdf.
 
 Download data:
 
