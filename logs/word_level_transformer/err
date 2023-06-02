@@ -1,0 +1,637 @@
+2023-06-02 21:43:35,346 - INFO - root - Hello! This is Joey-NMT (version 2.2.0).
+2023-06-02 21:43:35,346 - INFO - joeynmt.helpers -                           cfg.name : word_level_transformer
+2023-06-02 21:43:35,346 - INFO - joeynmt.helpers -                cfg.joeynmt_version : 2.0.0
+2023-06-02 21:43:35,346 - INFO - joeynmt.helpers -                     cfg.data.train : data/train
+2023-06-02 21:43:35,347 - INFO - joeynmt.helpers -                       cfg.data.dev : data/dev
+2023-06-02 21:43:35,347 - INFO - joeynmt.helpers -                      cfg.data.test : data/test
+2023-06-02 21:43:35,347 - INFO - joeynmt.helpers -              cfg.data.dataset_type : plain
+2023-06-02 21:43:35,347 - INFO - joeynmt.helpers -                  cfg.data.src.lang : it
+2023-06-02 21:43:35,347 - INFO - joeynmt.helpers -             cfg.data.src.lowercase : False
+2023-06-02 21:43:35,347 - INFO - joeynmt.helpers -                 cfg.data.src.level : word
+2023-06-02 21:43:35,347 - INFO - joeynmt.helpers -             cfg.data.src.voc_limit : 2000
+2023-06-02 21:43:35,347 - INFO - joeynmt.helpers -          cfg.data.src.voc_min_freq : 1
+2023-06-02 21:43:35,347 - INFO - joeynmt.helpers -            cfg.data.src.max_length : 100
+2023-06-02 21:43:35,347 - INFO - joeynmt.helpers -                  cfg.data.trg.lang : en
+2023-06-02 21:43:35,347 - INFO - joeynmt.helpers -             cfg.data.trg.lowercase : False
+2023-06-02 21:43:35,347 - INFO - joeynmt.helpers -                 cfg.data.trg.level : word
+2023-06-02 21:43:35,347 - INFO - joeynmt.helpers -             cfg.data.trg.voc_limit : 2000
+2023-06-02 21:43:35,347 - INFO - joeynmt.helpers -          cfg.data.trg.voc_min_freq : 1
+2023-06-02 21:43:35,347 - INFO - joeynmt.helpers -            cfg.data.trg.max_length : 100
+2023-06-02 21:43:35,347 - INFO - joeynmt.helpers -              cfg.testing.beam_size : 5
+2023-06-02 21:43:35,347 - INFO - joeynmt.helpers -             cfg.testing.beam_alpha : 1.0
+2023-06-02 21:43:35,347 - INFO - joeynmt.helpers -           cfg.training.random_seed : 42
+2023-06-02 21:43:35,347 - INFO - joeynmt.helpers -             cfg.training.optimizer : adam
+2023-06-02 21:43:35,347 - INFO - joeynmt.helpers -         cfg.training.normalization : tokens
+2023-06-02 21:43:35,347 - INFO - joeynmt.helpers -         cfg.training.learning_rate : 0.0003
+2023-06-02 21:43:35,348 - INFO - joeynmt.helpers -            cfg.training.batch_size : 2048
+2023-06-02 21:43:35,348 - INFO - joeynmt.helpers -            cfg.training.batch_type : token
+2023-06-02 21:43:35,348 - INFO - joeynmt.helpers -       cfg.training.eval_batch_size : 1024
+2023-06-02 21:43:35,348 - INFO - joeynmt.helpers -       cfg.training.eval_batch_type : token
+2023-06-02 21:43:35,348 - INFO - joeynmt.helpers -            cfg.training.scheduling : plateau
+2023-06-02 21:43:35,348 - INFO - joeynmt.helpers -              cfg.training.patience : 8
+2023-06-02 21:43:35,348 - INFO - joeynmt.helpers -          cfg.training.weight_decay : 0.0
+2023-06-02 21:43:35,348 - INFO - joeynmt.helpers -       cfg.training.decrease_factor : 0.7
+2023-06-02 21:43:35,348 - INFO - joeynmt.helpers - cfg.training.early_stopping_metric : ppl
+2023-06-02 21:43:35,348 - INFO - joeynmt.helpers -                cfg.training.epochs : 10
+2023-06-02 21:43:35,348 - INFO - joeynmt.helpers -       cfg.training.validation_freq : 500
+2023-06-02 21:43:35,348 - INFO - joeynmt.helpers -          cfg.training.logging_freq : 100
+2023-06-02 21:43:35,348 - INFO - joeynmt.helpers -           cfg.training.eval_metric : ['bleu']
+2023-06-02 21:43:35,348 - INFO - joeynmt.helpers -             cfg.training.model_dir : word_level_transformer
+2023-06-02 21:43:35,348 - INFO - joeynmt.helpers -             cfg.training.overwrite : False
+2023-06-02 21:43:35,348 - INFO - joeynmt.helpers -               cfg.training.shuffle : True
+2023-06-02 21:43:35,348 - INFO - joeynmt.helpers -              cfg.training.use_cuda : False
+2023-06-02 21:43:35,348 - INFO - joeynmt.helpers -     cfg.training.max_output_length : 100
+2023-06-02 21:43:35,348 - INFO - joeynmt.helpers -     cfg.training.print_valid_sents : [0, 1, 2, 3, 4]
+2023-06-02 21:43:35,348 - INFO - joeynmt.helpers -       cfg.training.label_smoothing : 0.3
+2023-06-02 21:43:35,348 - INFO - joeynmt.helpers -              cfg.model.initializer : xavier_uniform
+2023-06-02 21:43:35,349 - INFO - joeynmt.helpers -         cfg.model.bias_initializer : zeros
+2023-06-02 21:43:35,349 - INFO - joeynmt.helpers -                cfg.model.init_gain : 1.0
+2023-06-02 21:43:35,349 - INFO - joeynmt.helpers -        cfg.model.embed_initializer : xavier_uniform
+2023-06-02 21:43:35,349 - INFO - joeynmt.helpers -          cfg.model.embed_init_gain : 1.0
+2023-06-02 21:43:35,349 - INFO - joeynmt.helpers -          cfg.model.tied_embeddings : False
+2023-06-02 21:43:35,349 - INFO - joeynmt.helpers -             cfg.model.tied_softmax : True
+2023-06-02 21:43:35,349 - INFO - joeynmt.helpers -             cfg.model.encoder.type : transformer
+2023-06-02 21:43:35,349 - INFO - joeynmt.helpers -       cfg.model.encoder.num_layers : 4
+2023-06-02 21:43:35,349 - INFO - joeynmt.helpers -        cfg.model.encoder.num_heads : 2
+2023-06-02 21:43:35,349 - INFO - joeynmt.helpers - cfg.model.encoder.embeddings.embedding_dim : 256
+2023-06-02 21:43:35,349 - INFO - joeynmt.helpers - cfg.model.encoder.embeddings.scale : True
+2023-06-02 21:43:35,349 - INFO - joeynmt.helpers - cfg.model.encoder.embeddings.dropout : 0
+2023-06-02 21:43:35,349 - INFO - joeynmt.helpers -      cfg.model.encoder.hidden_size : 256
+2023-06-02 21:43:35,349 - INFO - joeynmt.helpers -          cfg.model.encoder.ff_size : 512
+2023-06-02 21:43:35,349 - INFO - joeynmt.helpers -          cfg.model.encoder.dropout : 0
+2023-06-02 21:43:35,349 - INFO - joeynmt.helpers -             cfg.model.decoder.type : transformer
+2023-06-02 21:43:35,349 - INFO - joeynmt.helpers -       cfg.model.decoder.num_layers : 1
+2023-06-02 21:43:35,349 - INFO - joeynmt.helpers -        cfg.model.decoder.num_heads : 2
+2023-06-02 21:43:35,349 - INFO - joeynmt.helpers - cfg.model.decoder.embeddings.embedding_dim : 256
+2023-06-02 21:43:35,349 - INFO - joeynmt.helpers - cfg.model.decoder.embeddings.scale : True
+2023-06-02 21:43:35,349 - INFO - joeynmt.helpers - cfg.model.decoder.embeddings.dropout : 0
+2023-06-02 21:43:35,349 - INFO - joeynmt.helpers -      cfg.model.decoder.hidden_size : 256
+2023-06-02 21:43:35,349 - INFO - joeynmt.helpers -          cfg.model.decoder.ff_size : 512
+2023-06-02 21:43:35,350 - INFO - joeynmt.helpers -          cfg.model.decoder.dropout : 0
+2023-06-02 21:43:35,351 - INFO - joeynmt.data - Building tokenizer...
+2023-06-02 21:43:35,351 - INFO - joeynmt.tokenizers - it tokenizer: BasicTokenizer(level=word, lowercase=False, normalize=False, filter_by_length=(-1, 100), pretokenizer=none)
+2023-06-02 21:43:35,351 - INFO - joeynmt.tokenizers - en tokenizer: BasicTokenizer(level=word, lowercase=False, normalize=False, filter_by_length=(-1, 100), pretokenizer=none)
+2023-06-02 21:43:35,351 - INFO - joeynmt.data - Loading train set...
+2023-06-02 21:43:35,505 - INFO - joeynmt.data - Building vocabulary...
+2023-06-02 21:43:37,074 - INFO - joeynmt.data - Loading dev set...
+2023-06-02 21:43:37,078 - INFO - joeynmt.data - Loading test set...
+2023-06-02 21:43:37,081 - INFO - joeynmt.data - Data loaded.
+2023-06-02 21:43:37,081 - INFO - joeynmt.data - Train dataset: PlaintextDataset(split=train, len=100000, src_lang=it, trg_lang=en, has_trg=True, random_subset=-1)
+2023-06-02 21:43:37,081 - INFO - joeynmt.data - Valid dataset: PlaintextDataset(split=dev, len=929, src_lang=it, trg_lang=en, has_trg=True, random_subset=-1)
+2023-06-02 21:43:37,082 - INFO - joeynmt.data -  Test dataset: PlaintextDataset(split=test, len=1566, src_lang=it, trg_lang=en, has_trg=True, random_subset=-1)
+2023-06-02 21:43:37,082 - INFO - joeynmt.data - First training example:
+	[SRC] Al Gore: arrestiamo il riscaldamento globale
+	[TRG] Al Gore: Averting the climate crisis
+2023-06-02 21:43:37,082 - INFO - joeynmt.data - First 10 Src tokens: (0) <unk> (1) <pad> (2) <s> (3) </s> (4) di (5) che (6) e (7) la (8) un (9) è
+2023-06-02 21:43:37,082 - INFO - joeynmt.data - First 10 Trg tokens: (0) <unk> (1) <pad> (2) <s> (3) </s> (4) the (5) to (6) of (7) a (8) and (9) that
+2023-06-02 21:43:37,082 - INFO - joeynmt.data - Number of unique Src tokens (vocab_size): 2004
+2023-06-02 21:43:37,082 - INFO - joeynmt.data - Number of unique Trg tokens (vocab_size): 2004
+2023-06-02 21:43:37,084 - INFO - joeynmt.model - Building an encoder-decoder model...
+2023-06-02 21:43:37,142 - INFO - joeynmt.model - Enc-dec model built.
+2023-06-02 21:43:37,144 - INFO - joeynmt.model - Total params: 3925248
+2023-06-02 21:43:37,145 - INFO - joeynmt.training - Model(
+	encoder=TransformerEncoder(num_layers=4, num_heads=2, alpha=1.0, layer_norm="pre", activation=ReLU()),
+	decoder=TransformerDecoder(num_layers=1, num_heads=2, alpha=1.0, layer_norm="post", activation=ReLU()),
+	src_embed=Embeddings(embedding_dim=256, vocab_size=2004),
+	trg_embed=Embeddings(embedding_dim=256, vocab_size=2004),
+	loss_function=XentLoss(criterion=KLDivLoss(), smoothing=0.3))
+2023-06-02 21:43:37,145 - INFO - joeynmt.builders - Adam(lr=0.0003, weight_decay=0.0, betas=(0.9, 0.999))
+2023-06-02 21:43:37,145 - INFO - joeynmt.builders - ReduceLROnPlateau(mode=min, verbose=False, threshold_mode=abs, eps=0.0, factor=0.7, patience=8)
+2023-06-02 21:43:37,146 - INFO - joeynmt.training - Train stats:
+	device: cpu
+	n_gpu: 0
+	16-bits training: False
+	gradient accumulation: 1
+	batch size per device: 2048
+	effective batch size (w. parallel & accumulation): 2048
+2023-06-02 21:43:37,146 - INFO - joeynmt.training - EPOCH 1
+2023-06-02 21:44:05,080 - INFO - joeynmt.training - Epoch   1, Step:      100, Batch Loss:     3.126760, Batch Acc: 0.209129, Tokens per Sec:     2397, Lr: 0.000300
+2023-06-02 21:44:32,793 - INFO - joeynmt.training - Epoch   1, Step:      200, Batch Loss:     2.980583, Batch Acc: 0.233038, Tokens per Sec:     2347, Lr: 0.000300
+2023-06-02 21:45:02,099 - INFO - joeynmt.training - Epoch   1, Step:      300, Batch Loss:     2.777190, Batch Acc: 0.247986, Tokens per Sec:     2211, Lr: 0.000300
+2023-06-02 21:45:30,155 - INFO - joeynmt.training - Epoch   1, Step:      400, Batch Loss:     2.768672, Batch Acc: 0.262852, Tokens per Sec:     2436, Lr: 0.000300
+2023-06-02 21:45:59,861 - INFO - joeynmt.training - Epoch   1, Step:      500, Batch Loss:     2.720722, Batch Acc: 0.278235, Tokens per Sec:     2194, Lr: 0.000300
+2023-06-02 21:45:59,861 - INFO - joeynmt.prediction - Predicting 929 example(s)... (Greedy decoding with min_output_length=1, max_output_length=-1, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+Predicting...:   0%|          | 0/929 [00:00<?, ?it/s]Predicting...:   6%|▌         | 52/929 [00:01<00:27, 32.14it/s]Predicting...:  12%|█▏        | 116/929 [00:02<00:20, 40.45it/s]Predicting...:  15%|█▌        | 142/929 [00:03<00:22, 35.05it/s]Predicting...:  21%|██        | 196/929 [00:04<00:15, 46.82it/s]Predicting...:  26%|██▌       | 241/929 [00:06<00:18, 36.89it/s]Predicting...:  29%|██▊       | 266/929 [00:07<00:17, 37.11it/s]Predicting...:  32%|███▏      | 297/929 [00:09<00:24, 25.45it/s]Predicting...:  36%|███▌      | 333/929 [00:10<00:20, 29.40it/s]Predicting...:  39%|███▉      | 364/929 [00:13<00:29, 19.25it/s]Predicting...:  44%|████▍     | 412/929 [00:14<00:22, 22.48it/s]Predicting...:  50%|████▉     | 462/929 [00:15<00:15, 29.31it/s]Predicting...:  54%|█████▎    | 498/929 [00:16<00:12, 33.56it/s]Predicting...:  57%|█████▋    | 530/929 [00:17<00:12, 32.41it/s]Predicting...:  60%|██████    | 561/929 [00:19<00:15, 24.37it/s]Predicting...:  63%|██████▎   | 589/929 [00:22<00:19, 17.58it/s]Predicting...:  67%|██████▋   | 621/929 [00:24<00:18, 16.37it/s]Predicting...:  70%|███████   | 653/929 [00:25<00:14, 19.64it/s]Predicting...:  73%|███████▎  | 680/929 [00:26<00:12, 19.28it/s]Predicting...:  76%|███████▌  | 708/929 [00:30<00:15, 14.21it/s]Predicting...:  80%|███████▉  | 740/929 [00:30<00:10, 17.88it/s]Predicting...:  83%|████████▎ | 767/929 [00:31<00:07, 20.52it/s]Predicting...:  87%|████████▋ | 804/929 [00:33<00:05, 22.77it/s]Predicting...:  90%|█████████ | 838/929 [00:36<00:05, 17.24it/s]Predicting...:  94%|█████████▍| 873/929 [00:36<00:02, 21.52it/s]Predicting...:  99%|█████████▉| 920/929 [00:38<00:00, 24.62it/s]Predicting...: 100%|██████████| 929/929 [00:38<00:00, 26.39it/s]Predicting...: 100%|██████████| 929/929 [00:38<00:00, 24.22it/s]
+2023-06-02 21:46:38,250 - INFO - joeynmt.prediction - Evaluation result (greedy) loss:   2.65, ppl:  14.16, acc:   0.28, generation: 38.3811[sec], evaluation: 0.0000[sec]
+2023-06-02 21:46:38,251 - INFO - joeynmt.training - Hooray! New best validation result [ppl]!
+2023-06-02 21:46:38,484 - INFO - joeynmt.training - Example #0
+2023-06-02 21:46:38,485 - INFO - joeynmt.training - 	Source:     L'anno scorso ho mostrato queste diapositive  per dimostrare che la calotta glaciale artica,  che per quasi tre milioni di anni ha avuto  le dimensioni dei 48 Stati Uniti continentali,  si è ristretta del 40%.
+2023-06-02 21:46:38,485 - INFO - joeynmt.training - 	Reference:  Last year I showed these two slides so that demonstrate that the arctic ice cap, which for most of the last three million years has been the size of the lower 48 states, has shrunk by 40 percent.
+2023-06-02 21:46:38,485 - INFO - joeynmt.training - 	Hypothesis: And I have to <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+2023-06-02 21:46:38,485 - INFO - joeynmt.training - Example #1
+2023-06-02 21:46:38,485 - INFO - joeynmt.training - 	Source:     Tuttavia questo sottovaluta la gravità del problema  perché non mostra lo spessore del ghiaccio.
+2023-06-02 21:46:38,485 - INFO - joeynmt.training - 	Reference:  But this understates the seriousness of this particular problem because it doesn't show the thickness of the ice.
+2023-06-02 21:46:38,486 - INFO - joeynmt.training - 	Hypothesis: <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+2023-06-02 21:46:38,486 - INFO - joeynmt.training - Example #2
+2023-06-02 21:46:38,486 - INFO - joeynmt.training - 	Source:     La calotta glaciale artica è, in un certo senso,  il cuore pulsante del sistema climatico globale.
+2023-06-02 21:46:38,486 - INFO - joeynmt.training - 	Reference:  The arctic ice cap is, in a sense, the beating heart of the global climate system.
+2023-06-02 21:46:38,486 - INFO - joeynmt.training - 	Hypothesis: <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+2023-06-02 21:46:38,486 - INFO - joeynmt.training - Example #3
+2023-06-02 21:46:38,487 - INFO - joeynmt.training - 	Source:     Si espande d'inverno e si ritira d'estate.
+2023-06-02 21:46:38,487 - INFO - joeynmt.training - 	Reference:  It expands in winter and contracts in summer.
+2023-06-02 21:46:38,487 - INFO - joeynmt.training - 	Hypothesis: <unk> <unk> <unk> <unk>
+2023-06-02 21:46:38,487 - INFO - joeynmt.training - Example #4
+2023-06-02 21:46:38,487 - INFO - joeynmt.training - 	Source:     La prossima diapositiva sarà una rapida  carrellata sugli avvenimenti degli ultimi 25 anni.
+2023-06-02 21:46:38,488 - INFO - joeynmt.training - 	Reference:  The next slide I show you will be a rapid fast-forward of what's happened over the last 25 years.
+2023-06-02 21:46:38,488 - INFO - joeynmt.training - 	Hypothesis: <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+2023-06-02 21:47:10,876 - INFO - joeynmt.training - Epoch   1, Step:      600, Batch Loss:     2.524712, Batch Acc: 0.294986, Tokens per Sec:     2033, Lr: 0.000300
+2023-06-02 21:47:42,122 - INFO - joeynmt.training - Epoch   1, Step:      700, Batch Loss:     2.477948, Batch Acc: 0.303082, Tokens per Sec:     2100, Lr: 0.000300
+2023-06-02 21:48:14,538 - INFO - joeynmt.training - Epoch   1, Step:      800, Batch Loss:     2.545991, Batch Acc: 0.317347, Tokens per Sec:     2044, Lr: 0.000300
+2023-06-02 21:48:46,563 - INFO - joeynmt.training - Epoch   1, Step:      900, Batch Loss:     2.549404, Batch Acc: 0.328903, Tokens per Sec:     2027, Lr: 0.000300
+2023-06-02 21:49:19,034 - INFO - joeynmt.training - Epoch   1, Step:     1000, Batch Loss:     2.373033, Batch Acc: 0.336608, Tokens per Sec:     2060, Lr: 0.000300
+2023-06-02 21:49:19,034 - INFO - joeynmt.prediction - Predicting 929 example(s)... (Greedy decoding with min_output_length=1, max_output_length=-1, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+Predicting...:   0%|          | 0/929 [00:00<?, ?it/s]Predicting...:   6%|▌         | 52/929 [00:00<00:13, 67.38it/s]Predicting...:  12%|█▏        | 116/929 [00:01<00:12, 67.53it/s]Predicting...:  15%|█▌        | 142/929 [00:02<00:17, 44.12it/s]Predicting...:  21%|██        | 196/929 [00:03<00:15, 46.94it/s]Predicting...:  26%|██▌       | 241/929 [00:04<00:14, 46.22it/s]Predicting...:  29%|██▊       | 266/929 [00:07<00:25, 26.00it/s]Predicting...:  32%|███▏      | 297/929 [00:08<00:23, 27.00it/s]Predicting...:  36%|███▌      | 333/929 [00:09<00:19, 30.05it/s]Predicting...:  39%|███▉      | 364/929 [00:10<00:18, 30.39it/s]Predicting...:  44%|████▍     | 412/929 [00:11<00:14, 36.89it/s]Predicting...:  50%|████▉     | 462/929 [00:12<00:11, 42.41it/s]Predicting...:  54%|█████▎    | 498/929 [00:13<00:11, 36.06it/s]Predicting...:  57%|█████▋    | 530/929 [00:14<00:10, 37.99it/s]Predicting...:  60%|██████    | 561/929 [00:15<00:12, 29.34it/s]Predicting...:  63%|██████▎   | 589/929 [00:17<00:13, 24.46it/s]Predicting...:  67%|██████▋   | 621/929 [00:19<00:14, 21.55it/s]Predicting...:  70%|███████   | 653/929 [00:20<00:12, 21.79it/s]Predicting...:  73%|███████▎  | 680/929 [00:22<00:12, 20.21it/s]Predicting...:  76%|███████▌  | 708/929 [00:26<00:15, 14.09it/s]Predicting...:  80%|███████▉  | 740/929 [00:27<00:12, 15.37it/s]Predicting...:  83%|████████▎ | 767/929 [00:29<00:09, 16.51it/s]Predicting...:  87%|████████▋ | 804/929 [00:31<00:07, 17.11it/s]Predicting...:  90%|█████████ | 838/929 [00:34<00:06, 14.57it/s]Predicting...:  94%|█████████▍| 873/929 [00:35<00:03, 15.99it/s]Predicting...:  99%|█████████▉| 920/929 [00:37<00:00, 19.45it/s]Predicting...: 100%|██████████| 929/929 [00:37<00:00, 20.71it/s]Predicting...: 100%|██████████| 929/929 [00:37<00:00, 24.69it/s]
+2023-06-02 21:49:56,675 - INFO - joeynmt.prediction - Evaluation result (greedy) loss:   2.42, ppl:  11.26, acc:   0.33, generation: 37.6326[sec], evaluation: 0.0000[sec]
+2023-06-02 21:49:56,676 - INFO - joeynmt.training - Hooray! New best validation result [ppl]!
+2023-06-02 21:49:56,960 - INFO - joeynmt.training - Example #0
+2023-06-02 21:49:56,960 - INFO - joeynmt.training - 	Source:     L'anno scorso ho mostrato queste diapositive  per dimostrare che la calotta glaciale artica,  che per quasi tre milioni di anni ha avuto  le dimensioni dei 48 Stati Uniti continentali,  si è ristretta del 40%.
+2023-06-02 21:49:56,961 - INFO - joeynmt.training - 	Reference:  Last year I showed these two slides so that demonstrate that the arctic ice cap, which for most of the last three million years has been the size of the lower 48 states, has shrunk by 40 percent.
+2023-06-02 21:49:56,961 - INFO - joeynmt.training - 	Hypothesis: <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+2023-06-02 21:49:56,961 - INFO - joeynmt.training - Example #1
+2023-06-02 21:49:56,961 - INFO - joeynmt.training - 	Source:     Tuttavia questo sottovaluta la gravità del problema  perché non mostra lo spessore del ghiaccio.
+2023-06-02 21:49:56,961 - INFO - joeynmt.training - 	Reference:  But this understates the seriousness of this particular problem because it doesn't show the thickness of the ice.
+2023-06-02 21:49:56,962 - INFO - joeynmt.training - 	Hypothesis: <unk> this <unk> <unk> <unk> because the <unk> because the <unk> <unk> <unk>
+2023-06-02 21:49:56,962 - INFO - joeynmt.training - Example #2
+2023-06-02 21:49:56,962 - INFO - joeynmt.training - 	Source:     La calotta glaciale artica è, in un certo senso,  il cuore pulsante del sistema climatico globale.
+2023-06-02 21:49:56,962 - INFO - joeynmt.training - 	Reference:  The arctic ice cap is, in a sense, the beating heart of the global climate system.
+2023-06-02 21:49:56,962 - INFO - joeynmt.training - 	Hypothesis: The <unk> <unk> is a <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+2023-06-02 21:49:56,963 - INFO - joeynmt.training - Example #3
+2023-06-02 21:49:56,963 - INFO - joeynmt.training - 	Source:     Si espande d'inverno e si ritira d'estate.
+2023-06-02 21:49:56,963 - INFO - joeynmt.training - 	Reference:  It expands in winter and contracts in summer.
+2023-06-02 21:49:56,963 - INFO - joeynmt.training - 	Hypothesis: <unk> <unk> <unk> and <unk> <unk>
+2023-06-02 21:49:56,963 - INFO - joeynmt.training - Example #4
+2023-06-02 21:49:56,964 - INFO - joeynmt.training - 	Source:     La prossima diapositiva sarà una rapida  carrellata sugli avvenimenti degli ultimi 25 anni.
+2023-06-02 21:49:56,964 - INFO - joeynmt.training - 	Reference:  The next slide I show you will be a rapid fast-forward of what's happened over the last 25 years.
+2023-06-02 21:49:56,964 - INFO - joeynmt.training - 	Hypothesis: The <unk> is <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+2023-06-02 21:50:30,532 - INFO - joeynmt.training - Epoch   1, Step:     1100, Batch Loss:     2.294900, Batch Acc: 0.345918, Tokens per Sec:     1907, Lr: 0.000300
+2023-06-02 21:51:03,853 - INFO - joeynmt.training - Epoch   1, Step:     1200, Batch Loss:     2.382410, Batch Acc: 0.347743, Tokens per Sec:     1892, Lr: 0.000300
+2023-06-02 21:51:37,819 - INFO - joeynmt.training - Epoch   1, Step:     1300, Batch Loss:     2.268692, Batch Acc: 0.364318, Tokens per Sec:     1945, Lr: 0.000300
+2023-06-02 21:52:12,367 - INFO - joeynmt.training - Epoch   1, Step:     1400, Batch Loss:     2.398929, Batch Acc: 0.363003, Tokens per Sec:     1892, Lr: 0.000300
+2023-06-02 21:52:46,637 - INFO - joeynmt.training - Epoch   1, Step:     1500, Batch Loss:     2.178185, Batch Acc: 0.374397, Tokens per Sec:     1923, Lr: 0.000300
+2023-06-02 21:52:46,637 - INFO - joeynmt.prediction - Predicting 929 example(s)... (Greedy decoding with min_output_length=1, max_output_length=-1, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+Predicting...:   0%|          | 0/929 [00:00<?, ?it/s]Predicting...:   6%|▌         | 52/929 [00:00<00:16, 53.76it/s]Predicting...:  12%|█▏        | 116/929 [00:01<00:10, 75.49it/s]Predicting...:  15%|█▌        | 142/929 [00:03<00:22, 35.13it/s]Predicting...:  21%|██        | 196/929 [00:04<00:18, 40.49it/s]Predicting...:  26%|██▌       | 241/929 [00:05<00:16, 41.29it/s]Predicting...:  29%|██▊       | 266/929 [00:07<00:22, 30.01it/s]Predicting...:  32%|███▏      | 297/929 [00:08<00:23, 26.63it/s]Predicting...:  36%|███▌      | 333/929 [00:09<00:21, 27.57it/s]Predicting...:  39%|███▉      | 364/929 [00:11<00:24, 23.44it/s]Predicting...:  44%|████▍     | 412/929 [00:12<00:17, 29.84it/s]Predicting...:  50%|████▉     | 462/929 [00:13<00:13, 34.38it/s]Predicting...:  54%|█████▎    | 498/929 [00:16<00:17, 25.20it/s]Predicting...:  57%|█████▋    | 530/929 [00:17<00:15, 26.04it/s]Predicting...:  60%|██████    | 561/929 [00:20<00:19, 19.19it/s]Predicting...:  63%|██████▎   | 589/929 [00:23<00:22, 15.09it/s]Predicting...:  67%|██████▋   | 621/929 [00:25<00:19, 15.57it/s]Predicting...:  70%|███████   | 653/929 [00:26<00:16, 16.53it/s]Predicting...:  73%|███████▎  | 680/929 [00:28<00:14, 16.69it/s]Predicting...:  76%|███████▌  | 708/929 [00:32<00:17, 12.37it/s]Predicting...:  80%|███████▉  | 740/929 [00:34<00:14, 13.32it/s]Predicting...:  83%|████████▎ | 767/929 [00:35<00:11, 13.89it/s]Predicting...:  87%|████████▋ | 804/929 [00:37<00:08, 15.20it/s]Predicting...:  90%|█████████ | 838/929 [00:39<00:05, 17.32it/s]Predicting...:  94%|█████████▍| 873/929 [00:41<00:03, 16.90it/s]Predicting...:  99%|█████████▉| 920/929 [00:42<00:00, 21.36it/s]Predicting...: 100%|██████████| 929/929 [00:42<00:00, 22.95it/s]Predicting...: 100%|██████████| 929/929 [00:42<00:00, 21.78it/s]
+2023-06-02 21:53:29,302 - INFO - joeynmt.prediction - Evaluation result (greedy) loss:   2.30, ppl:   9.95, acc:   0.35, generation: 42.6557[sec], evaluation: 0.0000[sec]
+2023-06-02 21:53:29,302 - INFO - joeynmt.training - Hooray! New best validation result [ppl]!
+2023-06-02 21:53:29,538 - INFO - joeynmt.training - Example #0
+2023-06-02 21:53:29,538 - INFO - joeynmt.training - 	Source:     L'anno scorso ho mostrato queste diapositive  per dimostrare che la calotta glaciale artica,  che per quasi tre milioni di anni ha avuto  le dimensioni dei 48 Stati Uniti continentali,  si è ristretta del 40%.
+2023-06-02 21:53:29,539 - INFO - joeynmt.training - 	Reference:  Last year I showed these two slides so that demonstrate that the arctic ice cap, which for most of the last three million years has been the size of the lower 48 states, has shrunk by 40 percent.
+2023-06-02 21:53:29,539 - INFO - joeynmt.training - 	Hypothesis: <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>     <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+2023-06-02 21:53:29,539 - INFO - joeynmt.training - Example #1
+2023-06-02 21:53:29,539 - INFO - joeynmt.training - 	Source:     Tuttavia questo sottovaluta la gravità del problema  perché non mostra lo spessore del ghiaccio.
+2023-06-02 21:53:29,539 - INFO - joeynmt.training - 	Reference:  But this understates the seriousness of this particular problem because it doesn't show the thickness of the ice.
+2023-06-02 21:53:29,539 - INFO - joeynmt.training - 	Hypothesis: <unk> this <unk> <unk> <unk> <unk> because it's not <unk> <unk> <unk> <unk> <unk>
+2023-06-02 21:53:29,539 - INFO - joeynmt.training - Example #2
+2023-06-02 21:53:29,540 - INFO - joeynmt.training - 	Source:     La calotta glaciale artica è, in un certo senso,  il cuore pulsante del sistema climatico globale.
+2023-06-02 21:53:29,540 - INFO - joeynmt.training - 	Reference:  The arctic ice cap is, in a sense, the beating heart of the global climate system.
+2023-06-02 21:53:29,540 - INFO - joeynmt.training - 	Hypothesis: <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+2023-06-02 21:53:29,540 - INFO - joeynmt.training - Example #3
+2023-06-02 21:53:29,541 - INFO - joeynmt.training - 	Source:     Si espande d'inverno e si ritira d'estate.
+2023-06-02 21:53:29,541 - INFO - joeynmt.training - 	Reference:  It expands in winter and contracts in summer.
+2023-06-02 21:53:29,541 - INFO - joeynmt.training - 	Hypothesis: <unk> <unk> <unk> and <unk>
+2023-06-02 21:53:29,541 - INFO - joeynmt.training - Example #4
+2023-06-02 21:53:29,541 - INFO - joeynmt.training - 	Source:     La prossima diapositiva sarà una rapida  carrellata sugli avvenimenti degli ultimi 25 anni.
+2023-06-02 21:53:29,542 - INFO - joeynmt.training - 	Reference:  The next slide I show you will be a rapid fast-forward of what's happened over the last 25 years.
+2023-06-02 21:53:29,542 - INFO - joeynmt.training - 	Hypothesis: <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+2023-06-02 21:54:04,320 - INFO - joeynmt.training - Epoch   1, Step:     1600, Batch Loss:     2.132757, Batch Acc: 0.382811, Tokens per Sec:     1881, Lr: 0.000300
+2023-06-02 21:54:37,606 - INFO - joeynmt.training - Epoch   1, Step:     1700, Batch Loss:     2.138386, Batch Acc: 0.388055, Tokens per Sec:     1993, Lr: 0.000300
+2023-06-02 21:55:11,939 - INFO - joeynmt.training - Epoch   1, Step:     1800, Batch Loss:     2.262200, Batch Acc: 0.392362, Tokens per Sec:     1849, Lr: 0.000300
+2023-06-02 21:55:44,197 - INFO - joeynmt.training - Epoch   1, Step:     1900, Batch Loss:     2.057975, Batch Acc: 0.399187, Tokens per Sec:     1991, Lr: 0.000300
+2023-06-02 21:56:18,446 - INFO - joeynmt.training - Epoch   1, Step:     2000, Batch Loss:     2.029313, Batch Acc: 0.407464, Tokens per Sec:     1903, Lr: 0.000300
+2023-06-02 21:56:18,447 - INFO - joeynmt.prediction - Predicting 929 example(s)... (Greedy decoding with min_output_length=1, max_output_length=-1, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+Predicting...:   0%|          | 0/929 [00:00<?, ?it/s]Predicting...:   6%|▌         | 52/929 [00:01<00:18, 48.23it/s]Predicting...:  12%|█▏        | 116/929 [00:02<00:14, 57.07it/s]Predicting...:  15%|█▌        | 142/929 [00:03<00:25, 31.34it/s]Predicting...:  21%|██        | 196/929 [00:04<00:17, 41.32it/s]Predicting...:  26%|██▌       | 241/929 [00:05<00:17, 39.15it/s]Predicting...:  29%|██▊       | 266/929 [00:06<00:16, 39.65it/s]Predicting...:  32%|███▏      | 297/929 [00:07<00:18, 33.61it/s]Predicting...:  36%|███▌      | 333/929 [00:09<00:18, 32.04it/s]Predicting...:  39%|███▉      | 364/929 [00:11<00:22, 24.60it/s]Predicting...:  44%|████▍     | 412/929 [00:12<00:16, 31.00it/s]Predicting...:  50%|████▉     | 462/929 [00:13<00:13, 35.03it/s]Predicting...:  54%|█████▎    | 498/929 [00:15<00:16, 25.48it/s]Predicting...:  57%|█████▋    | 530/929 [00:16<00:15, 25.12it/s]Predicting...:  60%|██████    | 561/929 [00:18<00:15, 24.03it/s]Predicting...:  63%|██████▎   | 589/929 [00:20<00:16, 20.99it/s]Predicting...:  67%|██████▋   | 621/929 [00:22<00:15, 19.56it/s]Predicting...:  70%|███████   | 653/929 [00:23<00:13, 20.70it/s]Predicting...:  73%|███████▎  | 680/929 [00:24<00:12, 19.87it/s]Predicting...:  76%|███████▌  | 708/929 [00:28<00:15, 14.21it/s]Predicting...:  80%|███████▉  | 740/929 [00:29<00:12, 15.61it/s]Predicting...:  83%|████████▎ | 767/929 [00:31<00:09, 16.52it/s]Predicting...:  87%|████████▋ | 804/929 [00:32<00:06, 20.28it/s]Predicting...:  90%|█████████ | 838/929 [00:34<00:04, 20.17it/s]Predicting...:  94%|█████████▍| 873/929 [00:35<00:02, 21.59it/s]Predicting...:  99%|█████████▉| 920/929 [00:36<00:00, 27.36it/s]Predicting...: 100%|██████████| 929/929 [00:36<00:00, 29.07it/s]Predicting...: 100%|██████████| 929/929 [00:36<00:00, 25.42it/s]
+2023-06-02 21:56:54,997 - INFO - joeynmt.prediction - Evaluation result (greedy) loss:   2.15, ppl:   8.56, acc:   0.38, generation: 36.5420[sec], evaluation: 0.0000[sec]
+2023-06-02 21:56:54,998 - INFO - joeynmt.training - Hooray! New best validation result [ppl]!
+2023-06-02 21:56:55,224 - INFO - joeynmt.training - Example #0
+2023-06-02 21:56:55,224 - INFO - joeynmt.training - 	Source:     L'anno scorso ho mostrato queste diapositive  per dimostrare che la calotta glaciale artica,  che per quasi tre milioni di anni ha avuto  le dimensioni dei 48 Stati Uniti continentali,  si è ristretta del 40%.
+2023-06-02 21:56:55,224 - INFO - joeynmt.training - 	Reference:  Last year I showed these two slides so that demonstrate that the arctic ice cap, which for most of the last three million years has been the size of the lower 48 states, has shrunk by 40 percent.
+2023-06-02 21:56:55,224 - INFO - joeynmt.training - 	Hypothesis: <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+2023-06-02 21:56:55,225 - INFO - joeynmt.training - Example #1
+2023-06-02 21:56:55,225 - INFO - joeynmt.training - 	Source:     Tuttavia questo sottovaluta la gravità del problema  perché non mostra lo spessore del ghiaccio.
+2023-06-02 21:56:55,225 - INFO - joeynmt.training - 	Reference:  But this understates the seriousness of this particular problem because it doesn't show the thickness of the ice.
+2023-06-02 21:56:55,225 - INFO - joeynmt.training - 	Hypothesis: <unk> this <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+2023-06-02 21:56:55,225 - INFO - joeynmt.training - Example #2
+2023-06-02 21:56:55,226 - INFO - joeynmt.training - 	Source:     La calotta glaciale artica è, in un certo senso,  il cuore pulsante del sistema climatico globale.
+2023-06-02 21:56:55,226 - INFO - joeynmt.training - 	Reference:  The arctic ice cap is, in a sense, the beating heart of the global climate system.
+2023-06-02 21:56:55,226 - INFO - joeynmt.training - 	Hypothesis: The <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+2023-06-02 21:56:55,226 - INFO - joeynmt.training - Example #3
+2023-06-02 21:56:55,227 - INFO - joeynmt.training - 	Source:     Si espande d'inverno e si ritira d'estate.
+2023-06-02 21:56:55,227 - INFO - joeynmt.training - 	Reference:  It expands in winter and contracts in summer.
+2023-06-02 21:56:55,227 - INFO - joeynmt.training - 	Hypothesis: <unk> <unk> and <unk> <unk>
+2023-06-02 21:56:55,227 - INFO - joeynmt.training - Example #4
+2023-06-02 21:56:55,227 - INFO - joeynmt.training - 	Source:     La prossima diapositiva sarà una rapida  carrellata sugli avvenimenti degli ultimi 25 anni.
+2023-06-02 21:56:55,228 - INFO - joeynmt.training - 	Reference:  The next slide I show you will be a rapid fast-forward of what's happened over the last 25 years.
+2023-06-02 21:56:55,228 - INFO - joeynmt.training - 	Hypothesis: The next <unk> will be a <unk> <unk> <unk> <unk> <unk>
+2023-06-02 21:57:29,589 - INFO - joeynmt.training - Epoch   1, Step:     2100, Batch Loss:     2.060775, Batch Acc: 0.410058, Tokens per Sec:     1887, Lr: 0.000300
+2023-06-02 21:58:02,944 - INFO - joeynmt.training - Epoch   1, Step:     2200, Batch Loss:     2.102282, Batch Acc: 0.409804, Tokens per Sec:     1977, Lr: 0.000300
+2023-06-02 21:58:37,116 - INFO - joeynmt.training - Epoch   1, Step:     2300, Batch Loss:     1.972489, Batch Acc: 0.413872, Tokens per Sec:     1915, Lr: 0.000300
+2023-06-02 21:59:10,230 - INFO - joeynmt.training - Epoch   1, Step:     2400, Batch Loss:     2.123492, Batch Acc: 0.414248, Tokens per Sec:     1958, Lr: 0.000300
+2023-06-02 21:59:48,538 - INFO - joeynmt.training - Epoch   1, Step:     2500, Batch Loss:     1.985670, Batch Acc: 0.423917, Tokens per Sec:     1711, Lr: 0.000300
+2023-06-02 21:59:48,538 - INFO - joeynmt.prediction - Predicting 929 example(s)... (Greedy decoding with min_output_length=1, max_output_length=-1, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+Predicting...:   0%|          | 0/929 [00:00<?, ?it/s]Predicting...:   6%|▌         | 52/929 [00:02<00:34, 25.75it/s]Predicting...:  12%|█▏        | 116/929 [00:03<00:20, 39.77it/s]Predicting...:  15%|█▌        | 142/929 [00:07<00:48, 16.25it/s]Predicting...:  21%|██        | 196/929 [00:08<00:31, 22.95it/s]Predicting...:  26%|██▌       | 241/929 [00:11<00:33, 20.35it/s]Predicting...:  29%|██▊       | 266/929 [00:12<00:31, 21.32it/s]Predicting...:  32%|███▏      | 297/929 [00:14<00:37, 16.76it/s]Predicting...:  36%|███▌      | 333/929 [00:17<00:36, 16.16it/s]Predicting...:  39%|███▉      | 364/929 [00:18<00:33, 16.93it/s]Predicting...:  44%|████▍     | 412/929 [00:20<00:23, 21.82it/s]Predicting...:  50%|████▉     | 462/929 [00:21<00:18, 25.16it/s]Predicting...:  54%|█████▎    | 498/929 [00:24<00:21, 19.89it/s]Predicting...:  57%|█████▋    | 530/929 [00:27<00:24, 16.14it/s]Predicting...:  60%|██████    | 561/929 [00:30<00:26, 13.90it/s]Predicting...:  63%|██████▎   | 589/929 [00:32<00:23, 14.43it/s]Predicting...:  67%|██████▋   | 621/929 [00:34<00:21, 14.48it/s]Predicting...:  70%|███████   | 653/929 [00:37<00:19, 13.80it/s]Predicting...:  73%|███████▎  | 680/929 [00:38<00:17, 14.48it/s]Predicting...:  76%|███████▌  | 708/929 [00:42<00:18, 11.72it/s]Predicting...:  80%|███████▉  | 740/929 [00:44<00:14, 13.18it/s]Predicting...:  83%|████████▎ | 767/929 [00:45<00:11, 14.18it/s]Predicting...:  87%|████████▋ | 804/929 [00:47<00:08, 15.21it/s]Predicting...:  90%|█████████ | 838/929 [00:49<00:05, 15.70it/s]Predicting...:  94%|█████████▍| 873/929 [00:52<00:03, 14.86it/s]Predicting...:  99%|█████████▉| 920/929 [00:53<00:00, 19.32it/s]Predicting...: 100%|██████████| 929/929 [00:53<00:00, 20.64it/s]Predicting...: 100%|██████████| 929/929 [00:53<00:00, 17.31it/s]
+2023-06-02 22:00:42,213 - INFO - joeynmt.prediction - Evaluation result (greedy) loss:   2.08, ppl:   8.01, acc:   0.40, generation: 53.6654[sec], evaluation: 0.0000[sec]
+2023-06-02 22:00:42,213 - INFO - joeynmt.training - Hooray! New best validation result [ppl]!
+2023-06-02 22:00:42,450 - INFO - joeynmt.training - Example #0
+2023-06-02 22:00:42,450 - INFO - joeynmt.training - 	Source:     L'anno scorso ho mostrato queste diapositive  per dimostrare che la calotta glaciale artica,  che per quasi tre milioni di anni ha avuto  le dimensioni dei 48 Stati Uniti continentali,  si è ristretta del 40%.
+2023-06-02 22:00:42,450 - INFO - joeynmt.training - 	Reference:  Last year I showed these two slides so that demonstrate that the arctic ice cap, which for most of the last three million years has been the size of the lower 48 states, has shrunk by 40 percent.
+2023-06-02 22:00:42,451 - INFO - joeynmt.training - 	Hypothesis: <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+2023-06-02 22:00:42,451 - INFO - joeynmt.training - Example #1
+2023-06-02 22:00:42,451 - INFO - joeynmt.training - 	Source:     Tuttavia questo sottovaluta la gravità del problema  perché non mostra lo spessore del ghiaccio.
+2023-06-02 22:00:42,451 - INFO - joeynmt.training - 	Reference:  But this understates the seriousness of this particular problem because it doesn't show the thickness of the ice.
+2023-06-02 22:00:42,451 - INFO - joeynmt.training - 	Hypothesis: <unk> this <unk> the <unk> of the problem <unk>
+2023-06-02 22:00:42,451 - INFO - joeynmt.training - Example #2
+2023-06-02 22:00:42,452 - INFO - joeynmt.training - 	Source:     La calotta glaciale artica è, in un certo senso,  il cuore pulsante del sistema climatico globale.
+2023-06-02 22:00:42,452 - INFO - joeynmt.training - 	Reference:  The arctic ice cap is, in a sense, the beating heart of the global climate system.
+2023-06-02 22:00:42,452 - INFO - joeynmt.training - 	Hypothesis: The <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+2023-06-02 22:00:42,452 - INFO - joeynmt.training - Example #3
+2023-06-02 22:00:42,453 - INFO - joeynmt.training - 	Source:     Si espande d'inverno e si ritira d'estate.
+2023-06-02 22:00:42,453 - INFO - joeynmt.training - 	Reference:  It expands in winter and contracts in summer.
+2023-06-02 22:00:42,453 - INFO - joeynmt.training - 	Hypothesis: You <unk> <unk> and <unk> <unk>
+2023-06-02 22:00:42,453 - INFO - joeynmt.training - Example #4
+2023-06-02 22:00:42,453 - INFO - joeynmt.training - 	Source:     La prossima diapositiva sarà una rapida  carrellata sugli avvenimenti degli ultimi 25 anni.
+2023-06-02 22:00:42,454 - INFO - joeynmt.training - 	Reference:  The next slide I show you will be a rapid fast-forward of what's happened over the last 25 years.
+2023-06-02 22:00:42,454 - INFO - joeynmt.training - 	Hypothesis: The next <unk> is going to be a <unk> <unk> <unk> <unk>
+2023-06-02 22:01:16,794 - INFO - joeynmt.training - Epoch   1, Step:     2600, Batch Loss:     1.941251, Batch Acc: 0.424361, Tokens per Sec:     1894, Lr: 0.000300
+2023-06-02 22:01:50,280 - INFO - joeynmt.training - Epoch   1, Step:     2700, Batch Loss:     1.980314, Batch Acc: 0.426774, Tokens per Sec:     1982, Lr: 0.000300
+2023-06-02 22:02:15,316 - INFO - joeynmt.training - Epoch   1: total training loss 6506.04
+2023-06-02 22:02:15,316 - INFO - joeynmt.training - EPOCH 2
+2023-06-02 22:02:24,350 - INFO - joeynmt.training - Epoch   2, Step:     2800, Batch Loss:     2.102605, Batch Acc: 0.447637, Tokens per Sec:     1888, Lr: 0.000300
+2023-06-02 22:02:58,041 - INFO - joeynmt.training - Epoch   2, Step:     2900, Batch Loss:     1.694045, Batch Acc: 0.447236, Tokens per Sec:     1970, Lr: 0.000300
+2023-06-02 22:03:32,629 - INFO - joeynmt.training - Epoch   2, Step:     3000, Batch Loss:     2.196477, Batch Acc: 0.445066, Tokens per Sec:     1938, Lr: 0.000300
+2023-06-02 22:03:32,629 - INFO - joeynmt.prediction - Predicting 929 example(s)... (Greedy decoding with min_output_length=1, max_output_length=-1, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+Predicting...:   0%|          | 0/929 [00:00<?, ?it/s]Predicting...:   6%|▌         | 52/929 [00:01<00:17, 49.91it/s]Predicting...:  12%|█▏        | 116/929 [00:02<00:16, 49.87it/s]Predicting...:  15%|█▌        | 142/929 [00:03<00:24, 32.59it/s]Predicting...:  21%|██        | 196/929 [00:04<00:18, 39.00it/s]Predicting...:  26%|██▌       | 241/929 [00:06<00:19, 34.49it/s]Predicting...:  29%|██▊       | 266/929 [00:07<00:22, 28.96it/s]Predicting...:  32%|███▏      | 297/929 [00:09<00:22, 28.09it/s]Predicting...:  36%|███▌      | 333/929 [00:10<00:24, 24.81it/s]Predicting...:  39%|███▉      | 364/929 [00:12<00:27, 20.92it/s]Predicting...:  44%|████▍     | 412/929 [00:13<00:18, 28.11it/s]Predicting...:  50%|████▉     | 462/929 [00:14<00:14, 33.12it/s]Predicting...:  54%|█████▎    | 498/929 [00:15<00:13, 32.43it/s]Predicting...:  57%|█████▋    | 530/929 [00:17<00:13, 30.12it/s]Predicting...:  60%|██████    | 561/929 [00:19<00:14, 24.75it/s]Predicting...:  63%|██████▎   | 589/929 [00:20<00:13, 24.89it/s]Predicting...:  67%|██████▋   | 621/929 [00:21<00:12, 24.55it/s]Predicting...:  70%|███████   | 653/929 [00:22<00:10, 26.15it/s]Predicting...:  73%|███████▎  | 680/929 [00:24<00:10, 23.06it/s]Predicting...:  76%|███████▌  | 708/929 [00:26<00:11, 19.76it/s]Predicting...:  80%|███████▉  | 740/929 [00:27<00:08, 21.47it/s]Predicting...:  83%|████████▎ | 767/929 [00:28<00:07, 22.79it/s]Predicting...:  87%|████████▋ | 804/929 [00:29<00:04, 25.02it/s]Predicting...:  90%|█████████ | 838/929 [00:32<00:05, 17.14it/s]Predicting...:  94%|█████████▍| 873/929 [00:33<00:02, 19.88it/s]Predicting...:  99%|█████████▉| 920/929 [00:34<00:00, 25.74it/s]Predicting...: 100%|██████████| 929/929 [00:35<00:00, 26.53it/s]
+2023-06-02 22:04:07,661 - INFO - joeynmt.prediction - Evaluation result (greedy) loss:   2.00, ppl:   7.41, acc:   0.42, generation: 35.0221[sec], evaluation: 0.0000[sec]
+2023-06-02 22:04:07,662 - INFO - joeynmt.training - Hooray! New best validation result [ppl]!
+2023-06-02 22:04:07,889 - INFO - joeynmt.helpers - delete word_level_transformer/500.ckpt
+2023-06-02 22:04:07,891 - INFO - joeynmt.training - Example #0
+2023-06-02 22:04:07,892 - INFO - joeynmt.training - 	Source:     L'anno scorso ho mostrato queste diapositive  per dimostrare che la calotta glaciale artica,  che per quasi tre milioni di anni ha avuto  le dimensioni dei 48 Stati Uniti continentali,  si è ristretta del 40%.
+2023-06-02 22:04:07,892 - INFO - joeynmt.training - 	Reference:  Last year I showed these two slides so that demonstrate that the arctic ice cap, which for most of the last three million years has been the size of the lower 48 states, has shrunk by 40 percent.
+2023-06-02 22:04:07,892 - INFO - joeynmt.training - 	Hypothesis: <unk> <unk> I got these <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> that <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+2023-06-02 22:04:07,892 - INFO - joeynmt.training - Example #1
+2023-06-02 22:04:07,893 - INFO - joeynmt.training - 	Source:     Tuttavia questo sottovaluta la gravità del problema  perché non mostra lo spessore del ghiaccio.
+2023-06-02 22:04:07,893 - INFO - joeynmt.training - 	Reference:  But this understates the seriousness of this particular problem because it doesn't show the thickness of the ice.
+2023-06-02 22:04:07,893 - INFO - joeynmt.training - 	Hypothesis: <unk> this <unk> the <unk> of the <unk> <unk> because it doesn't <unk> the <unk>
+2023-06-02 22:04:07,893 - INFO - joeynmt.training - Example #2
+2023-06-02 22:04:07,893 - INFO - joeynmt.training - 	Source:     La calotta glaciale artica è, in un certo senso,  il cuore pulsante del sistema climatico globale.
+2023-06-02 22:04:07,893 - INFO - joeynmt.training - 	Reference:  The arctic ice cap is, in a sense, the beating heart of the global climate system.
+2023-06-02 22:04:07,893 - INFO - joeynmt.training - 	Hypothesis: The <unk> <unk> <unk> is, in a <unk> <unk> <unk>
+2023-06-02 22:04:07,894 - INFO - joeynmt.training - Example #3
+2023-06-02 22:04:07,894 - INFO - joeynmt.training - 	Source:     Si espande d'inverno e si ritira d'estate.
+2023-06-02 22:04:07,894 - INFO - joeynmt.training - 	Reference:  It expands in winter and contracts in summer.
+2023-06-02 22:04:07,894 - INFO - joeynmt.training - 	Hypothesis: You can <unk> and <unk> <unk>
+2023-06-02 22:04:07,894 - INFO - joeynmt.training - Example #4
+2023-06-02 22:04:07,895 - INFO - joeynmt.training - 	Source:     La prossima diapositiva sarà una rapida  carrellata sugli avvenimenti degli ultimi 25 anni.
+2023-06-02 22:04:07,895 - INFO - joeynmt.training - 	Reference:  The next slide I show you will be a rapid fast-forward of what's happened over the last 25 years.
+2023-06-02 22:04:07,895 - INFO - joeynmt.training - 	Hypothesis: The next <unk> will be a <unk> <unk> <unk>
+2023-06-02 22:04:42,055 - INFO - joeynmt.training - Epoch   2, Step:     3100, Batch Loss:     1.928567, Batch Acc: 0.446707, Tokens per Sec:     1913, Lr: 0.000300
+2023-06-02 22:05:16,139 - INFO - joeynmt.training - Epoch   2, Step:     3200, Batch Loss:     1.808095, Batch Acc: 0.449731, Tokens per Sec:     1917, Lr: 0.000300
+2023-06-02 22:05:50,279 - INFO - joeynmt.training - Epoch   2, Step:     3300, Batch Loss:     1.885299, Batch Acc: 0.448108, Tokens per Sec:     1960, Lr: 0.000300
+2023-06-02 22:06:25,121 - INFO - joeynmt.training - Epoch   2, Step:     3400, Batch Loss:     1.965934, Batch Acc: 0.452149, Tokens per Sec:     1877, Lr: 0.000300
+2023-06-02 22:07:01,100 - INFO - joeynmt.training - Epoch   2, Step:     3500, Batch Loss:     2.040475, Batch Acc: 0.451869, Tokens per Sec:     1795, Lr: 0.000300
+2023-06-02 22:07:01,100 - INFO - joeynmt.prediction - Predicting 929 example(s)... (Greedy decoding with min_output_length=1, max_output_length=-1, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+Predicting...:   0%|          | 0/929 [00:00<?, ?it/s]Predicting...:   6%|▌         | 52/929 [00:01<00:21, 41.73it/s]Predicting...:  12%|█▏        | 116/929 [00:02<00:14, 57.58it/s]Predicting...:  15%|█▌        | 142/929 [00:03<00:25, 31.07it/s]Predicting...:  21%|██        | 196/929 [00:06<00:25, 28.28it/s]Predicting...:  26%|██▌       | 241/929 [00:07<00:23, 29.56it/s]Predicting...:  29%|██▊       | 266/929 [00:09<00:26, 25.11it/s]Predicting...:  32%|███▏      | 297/929 [00:10<00:25, 25.25it/s]Predicting...:  36%|███▌      | 333/929 [00:11<00:23, 25.36it/s]Predicting...:  39%|███▉      | 364/929 [00:13<00:26, 20.99it/s]Predicting...:  44%|████▍     | 412/929 [00:15<00:20, 25.63it/s]Predicting...:  50%|████▉     | 462/929 [00:16<00:17, 26.95it/s]Predicting...:  54%|█████▎    | 498/929 [00:18<00:17, 24.94it/s]Predicting...:  57%|█████▋    | 530/929 [00:19<00:16, 24.78it/s]Predicting...:  60%|██████    | 561/929 [00:21<00:17, 20.59it/s]Predicting...:  63%|██████▎   | 589/929 [00:25<00:21, 15.63it/s]Predicting...:  67%|██████▋   | 621/929 [00:27<00:20, 14.86it/s]Predicting...:  70%|███████   | 653/929 [00:29<00:17, 15.34it/s]Predicting...:  73%|███████▎  | 680/929 [00:32<00:19, 12.98it/s]Predicting...:  76%|███████▌  | 708/929 [00:35<00:20, 10.94it/s]Predicting...:  80%|███████▉  | 740/929 [00:37<00:15, 12.39it/s]Predicting...:  83%|████████▎ | 767/929 [00:39<00:12, 13.18it/s]Predicting...:  87%|████████▋ | 804/929 [00:40<00:07, 15.72it/s]Predicting...:  90%|█████████ | 838/929 [00:42<00:04, 18.49it/s]Predicting...:  94%|█████████▍| 873/929 [00:43<00:02, 19.01it/s]Predicting...:  99%|█████████▉| 920/929 [00:44<00:00, 24.62it/s]Predicting...: 100%|██████████| 929/929 [00:44<00:00, 20.68it/s]
+2023-06-02 22:07:46,027 - INFO - joeynmt.prediction - Evaluation result (greedy) loss:   1.97, ppl:   7.14, acc:   0.43, generation: 44.9176[sec], evaluation: 0.0000[sec]
+2023-06-02 22:07:46,028 - INFO - joeynmt.training - Hooray! New best validation result [ppl]!
+2023-06-02 22:07:46,261 - INFO - joeynmt.helpers - delete word_level_transformer/1000.ckpt
+2023-06-02 22:07:46,264 - INFO - joeynmt.training - Example #0
+2023-06-02 22:07:46,264 - INFO - joeynmt.training - 	Source:     L'anno scorso ho mostrato queste diapositive  per dimostrare che la calotta glaciale artica,  che per quasi tre milioni di anni ha avuto  le dimensioni dei 48 Stati Uniti continentali,  si è ristretta del 40%.
+2023-06-02 22:07:46,264 - INFO - joeynmt.training - 	Reference:  Last year I showed these two slides so that demonstrate that the arctic ice cap, which for most of the last three million years has been the size of the lower 48 states, has shrunk by 40 percent.
+2023-06-02 22:07:46,265 - INFO - joeynmt.training - 	Hypothesis: <unk> <unk> I got these <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+2023-06-02 22:07:46,265 - INFO - joeynmt.training - Example #1
+2023-06-02 22:07:46,265 - INFO - joeynmt.training - 	Source:     Tuttavia questo sottovaluta la gravità del problema  perché non mostra lo spessore del ghiaccio.
+2023-06-02 22:07:46,265 - INFO - joeynmt.training - 	Reference:  But this understates the seriousness of this particular problem because it doesn't show the thickness of the ice.
+2023-06-02 22:07:46,265 - INFO - joeynmt.training - 	Hypothesis: <unk> this <unk> the <unk> <unk> <unk> because it shows it <unk> <unk>
+2023-06-02 22:07:46,265 - INFO - joeynmt.training - Example #2
+2023-06-02 22:07:46,266 - INFO - joeynmt.training - 	Source:     La calotta glaciale artica è, in un certo senso,  il cuore pulsante del sistema climatico globale.
+2023-06-02 22:07:46,266 - INFO - joeynmt.training - 	Reference:  The arctic ice cap is, in a sense, the beating heart of the global climate system.
+2023-06-02 22:07:46,266 - INFO - joeynmt.training - 	Hypothesis: <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+2023-06-02 22:07:46,266 - INFO - joeynmt.training - Example #3
+2023-06-02 22:07:46,267 - INFO - joeynmt.training - 	Source:     Si espande d'inverno e si ritira d'estate.
+2023-06-02 22:07:46,267 - INFO - joeynmt.training - 	Reference:  It expands in winter and contracts in summer.
+2023-06-02 22:07:46,267 - INFO - joeynmt.training - 	Hypothesis: They <unk> <unk> and <unk> <unk>
+2023-06-02 22:07:46,267 - INFO - joeynmt.training - Example #4
+2023-06-02 22:07:46,267 - INFO - joeynmt.training - 	Source:     La prossima diapositiva sarà una rapida  carrellata sugli avvenimenti degli ultimi 25 anni.
+2023-06-02 22:07:46,268 - INFO - joeynmt.training - 	Reference:  The next slide I show you will be a rapid fast-forward of what's happened over the last 25 years.
+2023-06-02 22:07:46,268 - INFO - joeynmt.training - 	Hypothesis: The next next <unk> is going to be a <unk> <unk> <unk> in the last 25 years.
+2023-06-02 22:08:21,484 - INFO - joeynmt.training - Epoch   2, Step:     3600, Batch Loss:     1.906851, Batch Acc: 0.451707, Tokens per Sec:     1864, Lr: 0.000300
+2023-06-02 22:08:57,742 - INFO - joeynmt.training - Epoch   2, Step:     3700, Batch Loss:     1.933786, Batch Acc: 0.455371, Tokens per Sec:     1796, Lr: 0.000300
+2023-06-02 22:09:32,521 - INFO - joeynmt.training - Epoch   2, Step:     3800, Batch Loss:     1.820435, Batch Acc: 0.456978, Tokens per Sec:     1850, Lr: 0.000300
+2023-06-02 22:10:06,770 - INFO - joeynmt.training - Epoch   2, Step:     3900, Batch Loss:     1.852758, Batch Acc: 0.459826, Tokens per Sec:     1950, Lr: 0.000300
+2023-06-02 22:10:42,524 - INFO - joeynmt.training - Epoch   2, Step:     4000, Batch Loss:     1.843206, Batch Acc: 0.461708, Tokens per Sec:     1838, Lr: 0.000300
+2023-06-02 22:10:42,524 - INFO - joeynmt.prediction - Predicting 929 example(s)... (Greedy decoding with min_output_length=1, max_output_length=-1, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+Predicting...:   0%|          | 0/929 [00:00<?, ?it/s]Predicting...:   6%|▌         | 52/929 [00:00<00:15, 57.34it/s]Predicting...:  12%|█▏        | 116/929 [00:01<00:12, 65.67it/s]Predicting...:  15%|█▌        | 142/929 [00:03<00:21, 36.25it/s]Predicting...:  21%|██        | 196/929 [00:04<00:18, 39.00it/s]Predicting...:  26%|██▌       | 241/929 [00:05<00:16, 40.73it/s]Predicting...:  29%|██▊       | 266/929 [00:07<00:21, 30.83it/s]Predicting...:  32%|███▏      | 297/929 [00:09<00:28, 22.08it/s]Predicting...:  36%|███▌      | 333/929 [00:11<00:25, 23.08it/s]Predicting...:  39%|███▉      | 364/929 [00:12<00:22, 24.64it/s]Predicting...:  44%|████▍     | 412/929 [00:13<00:19, 25.94it/s]Predicting...:  50%|████▉     | 462/929 [00:15<00:15, 29.70it/s]Predicting...:  54%|█████▎    | 498/929 [00:16<00:15, 28.09it/s]Predicting...:  57%|█████▋    | 530/929 [00:19<00:19, 20.06it/s]Predicting...:  60%|██████    | 561/929 [00:21<00:19, 18.51it/s]Predicting...:  63%|██████▎   | 589/929 [00:23<00:19, 17.39it/s]Predicting...:  67%|██████▋   | 621/929 [00:25<00:17, 17.79it/s]Predicting...:  70%|███████   | 653/929 [00:26<00:15, 18.17it/s]Predicting...:  73%|███████▎  | 680/929 [00:29<00:17, 14.05it/s]Predicting...:  76%|███████▌  | 708/929 [00:33<00:19, 11.53it/s]Predicting...:  80%|███████▉  | 740/929 [00:34<00:14, 13.37it/s]Predicting...:  83%|████████▎ | 767/929 [00:36<00:11, 14.42it/s]Predicting...:  87%|████████▋ | 804/929 [00:39<00:08, 14.40it/s]Predicting...:  90%|█████████ | 838/929 [00:41<00:06, 15.05it/s]Predicting...:  94%|█████████▍| 873/929 [00:42<00:03, 17.22it/s]Predicting...:  99%|█████████▉| 920/929 [00:43<00:00, 23.65it/s]Predicting...: 100%|██████████| 929/929 [00:43<00:00, 25.13it/s]Predicting...: 100%|██████████| 929/929 [00:43<00:00, 21.42it/s]
+2023-06-02 22:11:25,903 - INFO - joeynmt.prediction - Evaluation result (greedy) loss:   1.97, ppl:   7.20, acc:   0.42, generation: 43.3690[sec], evaluation: 0.0000[sec]
+2023-06-02 22:11:26,148 - INFO - joeynmt.helpers - delete word_level_transformer/1500.ckpt
+2023-06-02 22:11:26,151 - INFO - joeynmt.training - Example #0
+2023-06-02 22:11:26,152 - INFO - joeynmt.training - 	Source:     L'anno scorso ho mostrato queste diapositive  per dimostrare che la calotta glaciale artica,  che per quasi tre milioni di anni ha avuto  le dimensioni dei 48 Stati Uniti continentali,  si è ristretta del 40%.
+2023-06-02 22:11:26,152 - INFO - joeynmt.training - 	Reference:  Last year I showed these two slides so that demonstrate that the arctic ice cap, which for most of the last three million years has been the size of the lower 48 states, has shrunk by 40 percent.
+2023-06-02 22:11:26,152 - INFO - joeynmt.training - 	Hypothesis: <unk> <unk> I showed these <unk>  for <unk> that <unk> <unk> <unk> <unk>  which is <unk> <unk>  that for three million years has the <unk> <unk>   <unk> is <unk> of the <unk> <unk>
+2023-06-02 22:11:26,152 - INFO - joeynmt.training - Example #1
+2023-06-02 22:11:26,152 - INFO - joeynmt.training - 	Source:     Tuttavia questo sottovaluta la gravità del problema  perché non mostra lo spessore del ghiaccio.
+2023-06-02 22:11:26,152 - INFO - joeynmt.training - 	Reference:  But this understates the seriousness of this particular problem because it doesn't show the thickness of the ice.
+2023-06-02 22:11:26,152 - INFO - joeynmt.training - 	Hypothesis: <unk> this <unk> the <unk> of the problem --  because it doesn't <unk> the <unk> of the <unk>
+2023-06-02 22:11:26,153 - INFO - joeynmt.training - Example #2
+2023-06-02 22:11:26,153 - INFO - joeynmt.training - 	Source:     La calotta glaciale artica è, in un certo senso,  il cuore pulsante del sistema climatico globale.
+2023-06-02 22:11:26,153 - INFO - joeynmt.training - 	Reference:  The arctic ice cap is, in a sense, the beating heart of the global climate system.
+2023-06-02 22:11:26,153 - INFO - joeynmt.training - 	Hypothesis: The <unk> <unk> is, in a <unk>  the heart <unk> <unk> system.
+2023-06-02 22:11:26,153 - INFO - joeynmt.training - Example #3
+2023-06-02 22:11:26,154 - INFO - joeynmt.training - 	Source:     Si espande d'inverno e si ritira d'estate.
+2023-06-02 22:11:26,154 - INFO - joeynmt.training - 	Reference:  It expands in winter and contracts in summer.
+2023-06-02 22:11:26,154 - INFO - joeynmt.training - 	Hypothesis: They <unk> <unk> and <unk>
+2023-06-02 22:11:26,154 - INFO - joeynmt.training - Example #4
+2023-06-02 22:11:26,155 - INFO - joeynmt.training - 	Source:     La prossima diapositiva sarà una rapida  carrellata sugli avvenimenti degli ultimi 25 anni.
+2023-06-02 22:11:26,155 - INFO - joeynmt.training - 	Reference:  The next slide I show you will be a rapid fast-forward of what's happened over the last 25 years.
+2023-06-02 22:11:26,155 - INFO - joeynmt.training - 	Hypothesis: The next <unk> is going to be a <unk>  <unk> <unk>
+2023-06-02 22:12:00,303 - INFO - joeynmt.training - Epoch   2, Step:     4100, Batch Loss:     1.776782, Batch Acc: 0.457145, Tokens per Sec:     1871, Lr: 0.000300
+2023-06-02 22:12:34,639 - INFO - joeynmt.training - Epoch   2, Step:     4200, Batch Loss:     1.814832, Batch Acc: 0.464418, Tokens per Sec:     1933, Lr: 0.000300
+2023-06-02 22:13:09,178 - INFO - joeynmt.training - Epoch   2, Step:     4300, Batch Loss:     1.712972, Batch Acc: 0.466341, Tokens per Sec:     1910, Lr: 0.000300
+2023-06-02 22:13:43,664 - INFO - joeynmt.training - Epoch   2, Step:     4400, Batch Loss:     1.866241, Batch Acc: 0.469586, Tokens per Sec:     1917, Lr: 0.000300
+2023-06-02 22:14:17,771 - INFO - joeynmt.training - Epoch   2, Step:     4500, Batch Loss:     1.766693, Batch Acc: 0.471404, Tokens per Sec:     1943, Lr: 0.000300
+2023-06-02 22:14:17,772 - INFO - joeynmt.prediction - Predicting 929 example(s)... (Greedy decoding with min_output_length=1, max_output_length=-1, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+Predicting...:   0%|          | 0/929 [00:00<?, ?it/s]Predicting...:   6%|▌         | 52/929 [00:01<00:17, 49.91it/s]Predicting...:  12%|█▏        | 116/929 [00:01<00:11, 68.72it/s]Predicting...:  15%|█▌        | 142/929 [00:03<00:23, 33.96it/s]Predicting...:  21%|██        | 196/929 [00:04<00:17, 41.95it/s]Predicting...:  26%|██▌       | 241/929 [00:06<00:18, 36.38it/s]Predicting...:  29%|██▊       | 266/929 [00:08<00:29, 22.51it/s]Predicting...:  32%|███▏      | 297/929 [00:09<00:27, 23.10it/s]Predicting...:  36%|███▌      | 333/929 [00:11<00:23, 24.96it/s]Predicting...:  39%|███▉      | 364/929 [00:13<00:26, 21.05it/s]Predicting...:  44%|████▍     | 412/929 [00:14<00:21, 23.99it/s]Predicting...:  50%|████▉     | 462/929 [00:15<00:16, 28.85it/s]Predicting...:  54%|█████▎    | 498/929 [00:18<00:19, 21.61it/s]Predicting...:  57%|█████▋    | 530/929 [00:20<00:19, 20.26it/s]Predicting...:  60%|██████    | 561/929 [00:22<00:19, 18.77it/s]Predicting...:  63%|██████▎   | 589/929 [00:24<00:19, 17.76it/s]Predicting...:  67%|██████▋   | 621/929 [00:25<00:15, 19.97it/s]Predicting...:  70%|███████   | 653/929 [00:27<00:14, 19.71it/s]Predicting...:  73%|███████▎  | 680/929 [00:30<00:16, 14.71it/s]Predicting...:  76%|███████▌  | 708/929 [00:34<00:19, 11.59it/s]Predicting...:  80%|███████▉  | 740/929 [00:35<00:13, 14.23it/s]Predicting...:  83%|████████▎ | 767/929 [00:36<00:10, 15.29it/s]Predicting...:  87%|████████▋ | 804/929 [00:37<00:06, 20.73it/s]Predicting...:  90%|█████████ | 838/929 [00:39<00:04, 19.23it/s]Predicting...:  94%|█████████▍| 873/929 [00:41<00:02, 18.98it/s]Predicting...:  99%|█████████▉| 920/929 [00:41<00:00, 25.71it/s]Predicting...: 100%|██████████| 929/929 [00:41<00:00, 27.52it/s]Predicting...: 100%|██████████| 929/929 [00:41<00:00, 22.13it/s]
+2023-06-02 22:14:59,756 - INFO - joeynmt.prediction - Evaluation result (greedy) loss:   1.93, ppl:   6.92, acc:   0.43, generation: 41.9713[sec], evaluation: 0.0000[sec]
+2023-06-02 22:14:59,761 - INFO - joeynmt.training - Hooray! New best validation result [ppl]!
+2023-06-02 22:14:59,998 - INFO - joeynmt.helpers - delete word_level_transformer/2000.ckpt
+2023-06-02 22:15:00,000 - INFO - joeynmt.training - Example #0
+2023-06-02 22:15:00,001 - INFO - joeynmt.training - 	Source:     L'anno scorso ho mostrato queste diapositive  per dimostrare che la calotta glaciale artica,  che per quasi tre milioni di anni ha avuto  le dimensioni dei 48 Stati Uniti continentali,  si è ristretta del 40%.
+2023-06-02 22:15:00,001 - INFO - joeynmt.training - 	Reference:  Last year I showed these two slides so that demonstrate that the arctic ice cap, which for most of the last three million years has been the size of the lower 48 states, has shrunk by 40 percent.
+2023-06-02 22:15:00,001 - INFO - joeynmt.training - 	Hypothesis: <unk> I showed these <unk>  for <unk> that <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> that for almost three million years had had <unk>  <unk>
+2023-06-02 22:15:00,001 - INFO - joeynmt.training - Example #1
+2023-06-02 22:15:00,001 - INFO - joeynmt.training - 	Source:     Tuttavia questo sottovaluta la gravità del problema  perché non mostra lo spessore del ghiaccio.
+2023-06-02 22:15:00,001 - INFO - joeynmt.training - 	Reference:  But this understates the seriousness of this particular problem because it doesn't show the thickness of the ice.
+2023-06-02 22:15:00,001 - INFO - joeynmt.training - 	Hypothesis: <unk> this <unk> the <unk> of the <unk>  because it shows the <unk>
+2023-06-02 22:15:00,002 - INFO - joeynmt.training - Example #2
+2023-06-02 22:15:00,002 - INFO - joeynmt.training - 	Source:     La calotta glaciale artica è, in un certo senso,  il cuore pulsante del sistema climatico globale.
+2023-06-02 22:15:00,003 - INFO - joeynmt.training - 	Reference:  The arctic ice cap is, in a sense, the beating heart of the global climate system.
+2023-06-02 22:15:00,003 - INFO - joeynmt.training - 	Hypothesis: The <unk> <unk> <unk> is, in a sense,  the heart of the <unk> system
+2023-06-02 22:15:00,003 - INFO - joeynmt.training - Example #3
+2023-06-02 22:15:00,003 - INFO - joeynmt.training - 	Source:     Si espande d'inverno e si ritira d'estate.
+2023-06-02 22:15:00,004 - INFO - joeynmt.training - 	Reference:  It expands in winter and contracts in summer.
+2023-06-02 22:15:00,004 - INFO - joeynmt.training - 	Hypothesis: They <unk> <unk> and <unk>
+2023-06-02 22:15:00,004 - INFO - joeynmt.training - Example #4
+2023-06-02 22:15:00,004 - INFO - joeynmt.training - 	Source:     La prossima diapositiva sarà una rapida  carrellata sugli avvenimenti degli ultimi 25 anni.
+2023-06-02 22:15:00,004 - INFO - joeynmt.training - 	Reference:  The next slide I show you will be a rapid fast-forward of what's happened over the last 25 years.
+2023-06-02 22:15:00,005 - INFO - joeynmt.training - 	Hypothesis: The next <unk> will be a <unk>  <unk> on the last 25 years.
+2023-06-02 22:15:34,608 - INFO - joeynmt.training - Epoch   2, Step:     4600, Batch Loss:     1.885247, Batch Acc: 0.471714, Tokens per Sec:     1920, Lr: 0.000300
+2023-06-02 22:16:07,608 - INFO - joeynmt.training - Epoch   2, Step:     4700, Batch Loss:     1.812253, Batch Acc: 0.471453, Tokens per Sec:     2027, Lr: 0.000300
+2023-06-02 22:16:41,621 - INFO - joeynmt.training - Epoch   2, Step:     4800, Batch Loss:     1.760980, Batch Acc: 0.466303, Tokens per Sec:     1893, Lr: 0.000300
+2023-06-02 22:17:15,724 - INFO - joeynmt.training - Epoch   2, Step:     4900, Batch Loss:     1.848679, Batch Acc: 0.475778, Tokens per Sec:     1975, Lr: 0.000300
+2023-06-02 22:17:49,857 - INFO - joeynmt.training - Epoch   2, Step:     5000, Batch Loss:     1.678720, Batch Acc: 0.471932, Tokens per Sec:     1948, Lr: 0.000300
+2023-06-02 22:17:49,858 - INFO - joeynmt.prediction - Predicting 929 example(s)... (Greedy decoding with min_output_length=1, max_output_length=-1, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+Predicting...:   0%|          | 0/929 [00:00<?, ?it/s]Predicting...:   6%|▌         | 52/929 [00:01<00:18, 48.40it/s]Predicting...:  12%|█▏        | 116/929 [00:01<00:13, 62.07it/s]Predicting...:  15%|█▌        | 142/929 [00:03<00:22, 35.10it/s]Predicting...:  21%|██        | 196/929 [00:04<00:19, 37.78it/s]Predicting...:  26%|██▌       | 241/929 [00:06<00:18, 38.11it/s]Predicting...:  29%|██▊       | 266/929 [00:07<00:23, 28.07it/s]Predicting...:  32%|███▏      | 297/929 [00:09<00:26, 24.01it/s]Predicting...:  36%|███▌      | 333/929 [00:10<00:23, 25.43it/s]Predicting...:  39%|███▉      | 364/929 [00:13<00:32, 17.54it/s]Predicting...:  44%|████▍     | 412/929 [00:14<00:22, 23.01it/s]Predicting...:  50%|████▉     | 462/929 [00:16<00:16, 28.39it/s]Predicting...:  54%|█████▎    | 498/929 [00:17<00:16, 25.51it/s]Predicting...:  57%|█████▋    | 530/929 [00:20<00:18, 21.13it/s]Predicting...:  60%|██████    | 561/929 [00:22<00:19, 19.06it/s]Predicting...:  63%|██████▎   | 589/929 [00:23<00:18, 18.51it/s]Predicting...:  67%|██████▋   | 621/929 [00:24<00:14, 20.72it/s]Predicting...:  70%|███████   | 653/929 [00:26<00:13, 20.31it/s]Predicting...:  73%|███████▎  | 680/929 [00:28<00:12, 19.33it/s]Predicting...:  76%|███████▌  | 708/929 [00:31<00:15, 14.29it/s]Predicting...:  80%|███████▉  | 740/929 [00:32<00:11, 16.92it/s]Predicting...:  83%|████████▎ | 767/929 [00:35<00:11, 14.19it/s]Predicting...:  87%|████████▋ | 804/929 [00:36<00:07, 17.46it/s]Predicting...:  90%|█████████ | 838/929 [00:38<00:04, 18.38it/s]Predicting...:  94%|█████████▍| 873/929 [00:39<00:02, 19.44it/s]Predicting...:  99%|█████████▉| 920/929 [00:40<00:00, 26.10it/s]Predicting...: 100%|██████████| 929/929 [00:40<00:00, 27.19it/s]Predicting...: 100%|██████████| 929/929 [00:40<00:00, 22.85it/s]
+2023-06-02 22:18:30,523 - INFO - joeynmt.prediction - Evaluation result (greedy) loss:   1.90, ppl:   6.69, acc:   0.44, generation: 40.6559[sec], evaluation: 0.0000[sec]
+2023-06-02 22:18:30,524 - INFO - joeynmt.training - Hooray! New best validation result [ppl]!
+2023-06-02 22:18:30,768 - INFO - joeynmt.helpers - delete word_level_transformer/2500.ckpt
+2023-06-02 22:18:30,771 - INFO - joeynmt.training - Example #0
+2023-06-02 22:18:30,771 - INFO - joeynmt.training - 	Source:     L'anno scorso ho mostrato queste diapositive  per dimostrare che la calotta glaciale artica,  che per quasi tre milioni di anni ha avuto  le dimensioni dei 48 Stati Uniti continentali,  si è ristretta del 40%.
+2023-06-02 22:18:30,771 - INFO - joeynmt.training - 	Reference:  Last year I showed these two slides so that demonstrate that the arctic ice cap, which for most of the last three million years has been the size of the lower 48 states, has shrunk by 40 percent.
+2023-06-02 22:18:30,771 - INFO - joeynmt.training - 	Hypothesis: <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>  that <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+2023-06-02 22:18:30,771 - INFO - joeynmt.training - Example #1
+2023-06-02 22:18:30,772 - INFO - joeynmt.training - 	Source:     Tuttavia questo sottovaluta la gravità del problema  perché non mostra lo spessore del ghiaccio.
+2023-06-02 22:18:30,772 - INFO - joeynmt.training - 	Reference:  But this understates the seriousness of this particular problem because it doesn't show the thickness of the ice.
+2023-06-02 22:18:30,772 - INFO - joeynmt.training - 	Hypothesis: <unk> this <unk> the <unk> of the problem of the <unk>
+2023-06-02 22:18:30,772 - INFO - joeynmt.training - Example #2
+2023-06-02 22:18:30,773 - INFO - joeynmt.training - 	Source:     La calotta glaciale artica è, in un certo senso,  il cuore pulsante del sistema climatico globale.
+2023-06-02 22:18:30,773 - INFO - joeynmt.training - 	Reference:  The arctic ice cap is, in a sense, the beating heart of the global climate system.
+2023-06-02 22:18:30,773 - INFO - joeynmt.training - 	Hypothesis: <unk> <unk> <unk> <unk> <unk> <unk>
+2023-06-02 22:18:30,773 - INFO - joeynmt.training - Example #3
+2023-06-02 22:18:30,774 - INFO - joeynmt.training - 	Source:     Si espande d'inverno e si ritira d'estate.
+2023-06-02 22:18:30,774 - INFO - joeynmt.training - 	Reference:  It expands in winter and contracts in summer.
+2023-06-02 22:18:30,774 - INFO - joeynmt.training - 	Hypothesis: You <unk> <unk> and <unk> <unk>
+2023-06-02 22:18:30,774 - INFO - joeynmt.training - Example #4
+2023-06-02 22:18:30,774 - INFO - joeynmt.training - 	Source:     La prossima diapositiva sarà una rapida  carrellata sugli avvenimenti degli ultimi 25 anni.
+2023-06-02 22:18:30,774 - INFO - joeynmt.training - 	Reference:  The next slide I show you will be a rapid fast-forward of what's happened over the last 25 years.
+2023-06-02 22:18:30,774 - INFO - joeynmt.training - 	Hypothesis: The next <unk> is going to be a <unk>  <unk> <unk>
+2023-06-02 22:19:05,253 - INFO - joeynmt.training - Epoch   2, Step:     5100, Batch Loss:     1.771435, Batch Acc: 0.472491, Tokens per Sec:     1844, Lr: 0.000300
+2023-06-02 22:19:38,809 - INFO - joeynmt.training - Epoch   2, Step:     5200, Batch Loss:     1.672521, Batch Acc: 0.475512, Tokens per Sec:     1964, Lr: 0.000300
+2023-06-02 22:20:12,910 - INFO - joeynmt.training - Epoch   2, Step:     5300, Batch Loss:     1.715767, Batch Acc: 0.477868, Tokens per Sec:     1916, Lr: 0.000300
+2023-06-02 22:20:46,164 - INFO - joeynmt.training - Epoch   2, Step:     5400, Batch Loss:     1.841955, Batch Acc: 0.471046, Tokens per Sec:     1904, Lr: 0.000300
+2023-06-02 22:21:19,097 - INFO - joeynmt.training - Epoch   2, Step:     5500, Batch Loss:     1.733704, Batch Acc: 0.475052, Tokens per Sec:     2016, Lr: 0.000300
+2023-06-02 22:21:19,097 - INFO - joeynmt.prediction - Predicting 929 example(s)... (Greedy decoding with min_output_length=1, max_output_length=-1, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+Predicting...:   0%|          | 0/929 [00:00<?, ?it/s]Predicting...:   6%|▌         | 52/929 [00:01<00:25, 34.70it/s]Predicting...:  12%|█▏        | 116/929 [00:02<00:15, 50.81it/s]Predicting...:  15%|█▌        | 142/929 [00:03<00:23, 33.35it/s]Predicting...:  21%|██        | 196/929 [00:04<00:17, 41.02it/s]Predicting...:  26%|██▌       | 241/929 [00:06<00:21, 32.65it/s]Predicting...:  29%|██▊       | 266/929 [00:08<00:25, 25.89it/s]Predicting...:  32%|███▏      | 297/929 [00:09<00:22, 28.73it/s]Predicting...:  36%|███▌      | 333/929 [00:10<00:22, 26.86it/s]Predicting...:  39%|███▉      | 364/929 [00:14<00:33, 16.62it/s]Predicting...:  44%|████▍     | 412/929 [00:15<00:22, 22.78it/s]Predicting...:  50%|████▉     | 462/929 [00:16<00:16, 28.41it/s]Predicting...:  54%|█████▎    | 498/929 [00:17<00:15, 27.41it/s]Predicting...:  57%|█████▋    | 530/929 [00:20<00:20, 19.19it/s]Predicting...:  60%|██████    | 561/929 [00:24<00:24, 15.02it/s]Predicting...:  63%|██████▎   | 589/929 [00:25<00:22, 15.31it/s]Predicting...:  67%|██████▋   | 621/929 [00:27<00:18, 16.86it/s]Predicting...:  70%|███████   | 653/929 [00:29<00:16, 17.08it/s]Predicting...:  73%|███████▎  | 680/929 [00:30<00:14, 16.64it/s]Predicting...:  76%|███████▌  | 708/929 [00:32<00:13, 15.80it/s]Predicting...:  80%|███████▉  | 740/929 [00:34<00:11, 17.01it/s]Predicting...:  83%|████████▎ | 767/929 [00:35<00:08, 18.04it/s]Predicting...:  87%|████████▋ | 804/929 [00:37<00:06, 20.28it/s]Predicting...:  90%|█████████ | 838/929 [00:40<00:05, 15.93it/s]Predicting...:  94%|█████████▍| 873/929 [00:41<00:03, 17.93it/s]Predicting...:  99%|█████████▉| 920/929 [00:42<00:00, 24.75it/s]Predicting...: 100%|██████████| 929/929 [00:42<00:00, 21.87it/s]
+2023-06-02 22:22:01,590 - INFO - joeynmt.prediction - Evaluation result (greedy) loss:   1.91, ppl:   6.76, acc:   0.44, generation: 42.4835[sec], evaluation: 0.0000[sec]
+2023-06-02 22:22:01,820 - INFO - joeynmt.helpers - delete word_level_transformer/3000.ckpt
+2023-06-02 22:22:01,822 - INFO - joeynmt.training - Example #0
+2023-06-02 22:22:01,823 - INFO - joeynmt.training - 	Source:     L'anno scorso ho mostrato queste diapositive  per dimostrare che la calotta glaciale artica,  che per quasi tre milioni di anni ha avuto  le dimensioni dei 48 Stati Uniti continentali,  si è ristretta del 40%.
+2023-06-02 22:22:01,823 - INFO - joeynmt.training - 	Reference:  Last year I showed these two slides so that demonstrate that the arctic ice cap, which for most of the last three million years has been the size of the lower 48 states, has shrunk by 40 percent.
+2023-06-02 22:22:01,823 - INFO - joeynmt.training - 	Hypothesis: <unk> <unk> I showed these <unk>  for <unk> that <unk> <unk> <unk>  that for almost three million years had  that for almost three million years had               <unk> <unk> <unk>
+2023-06-02 22:22:01,823 - INFO - joeynmt.training - Example #1
+2023-06-02 22:22:01,824 - INFO - joeynmt.training - 	Source:     Tuttavia questo sottovaluta la gravità del problema  perché non mostra lo spessore del ghiaccio.
+2023-06-02 22:22:01,824 - INFO - joeynmt.training - 	Reference:  But this understates the seriousness of this particular problem because it doesn't show the thickness of the ice.
+2023-06-02 22:22:01,824 - INFO - joeynmt.training - 	Hypothesis: <unk> this <unk> the <unk> of the problem --  because it doesn't show the <unk>
+2023-06-02 22:22:01,824 - INFO - joeynmt.training - Example #2
+2023-06-02 22:22:01,825 - INFO - joeynmt.training - 	Source:     La calotta glaciale artica è, in un certo senso,  il cuore pulsante del sistema climatico globale.
+2023-06-02 22:22:01,825 - INFO - joeynmt.training - 	Reference:  The arctic ice cap is, in a sense, the beating heart of the global climate system.
+2023-06-02 22:22:01,825 - INFO - joeynmt.training - 	Hypothesis: The <unk> <unk> is, in a certain sense,   the heart of the <unk> <unk> <unk>
+2023-06-02 22:22:01,825 - INFO - joeynmt.training - Example #3
+2023-06-02 22:22:01,825 - INFO - joeynmt.training - 	Source:     Si espande d'inverno e si ritira d'estate.
+2023-06-02 22:22:01,826 - INFO - joeynmt.training - 	Reference:  It expands in winter and contracts in summer.
+2023-06-02 22:22:01,826 - INFO - joeynmt.training - 	Hypothesis: You <unk> <unk> and <unk>
+2023-06-02 22:22:01,826 - INFO - joeynmt.training - Example #4
+2023-06-02 22:22:01,826 - INFO - joeynmt.training - 	Source:     La prossima diapositiva sarà una rapida  carrellata sugli avvenimenti degli ultimi 25 anni.
+2023-06-02 22:22:01,826 - INFO - joeynmt.training - 	Reference:  The next slide I show you will be a rapid fast-forward of what's happened over the last 25 years.
+2023-06-02 22:22:01,826 - INFO - joeynmt.training - 	Hypothesis: The next <unk> will be a <unk>  <unk> on the last 25 years.
+2023-06-02 22:22:15,018 - INFO - joeynmt.training - Epoch   2: total training loss 5061.91
+2023-06-02 22:22:15,018 - INFO - joeynmt.training - EPOCH 3
+2023-06-02 22:22:37,165 - INFO - joeynmt.training - Epoch   3, Step:     5600, Batch Loss:     1.608590, Batch Acc: 0.493482, Tokens per Sec:     1794, Lr: 0.000300
+2023-06-02 22:23:11,173 - INFO - joeynmt.training - Epoch   3, Step:     5700, Batch Loss:     1.878402, Batch Acc: 0.495218, Tokens per Sec:     1946, Lr: 0.000300
+2023-06-02 22:23:44,742 - INFO - joeynmt.training - Epoch   3, Step:     5800, Batch Loss:     1.613591, Batch Acc: 0.488047, Tokens per Sec:     1954, Lr: 0.000300
+2023-06-02 22:24:18,066 - INFO - joeynmt.training - Epoch   3, Step:     5900, Batch Loss:     1.728747, Batch Acc: 0.486227, Tokens per Sec:     1953, Lr: 0.000300
+2023-06-02 22:24:49,947 - INFO - joeynmt.training - Epoch   3, Step:     6000, Batch Loss:     1.723897, Batch Acc: 0.493636, Tokens per Sec:     2041, Lr: 0.000300
+2023-06-02 22:24:49,948 - INFO - joeynmt.prediction - Predicting 929 example(s)... (Greedy decoding with min_output_length=1, max_output_length=-1, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+Predicting...:   0%|          | 0/929 [00:00<?, ?it/s]Predicting...:   6%|▌         | 52/929 [00:01<00:18, 46.81it/s]Predicting...:  12%|█▏        | 116/929 [00:02<00:14, 58.01it/s]Predicting...:  15%|█▌        | 142/929 [00:03<00:21, 37.27it/s]Predicting...:  21%|██        | 196/929 [00:04<00:15, 46.87it/s]Predicting...:  26%|██▌       | 241/929 [00:05<00:15, 43.58it/s]Predicting...:  29%|██▊       | 266/929 [00:07<00:26, 25.47it/s]Predicting...:  32%|███▏      | 297/929 [00:08<00:23, 26.55it/s]Predicting...:  36%|███▌      | 333/929 [00:10<00:22, 26.38it/s]Predicting...:  39%|███▉      | 364/929 [00:13<00:32, 17.36it/s]Predicting...:  44%|████▍     | 412/929 [00:14<00:22, 22.71it/s]Predicting...:  50%|████▉     | 462/929 [00:16<00:17, 26.21it/s]Predicting...:  54%|█████▎    | 498/929 [00:17<00:16, 26.01it/s]Predicting...:  57%|█████▋    | 530/929 [00:19<00:17, 23.18it/s]Predicting...:  60%|██████    | 561/929 [00:20<00:16, 21.77it/s]Predicting...:  63%|██████▎   | 589/929 [00:22<00:16, 20.75it/s]Predicting...:  67%|██████▋   | 621/929 [00:23<00:14, 21.55it/s]Predicting...:  70%|███████   | 653/929 [00:25<00:13, 21.05it/s]Predicting...:  73%|███████▎  | 680/929 [00:27<00:12, 19.35it/s]Predicting...:  76%|███████▌  | 708/929 [00:30<00:16, 13.71it/s]Predicting...:  80%|███████▉  | 740/929 [00:32<00:12, 15.17it/s]Predicting...:  83%|████████▎ | 767/929 [00:33<00:10, 15.70it/s]Predicting...:  87%|████████▋ | 804/929 [00:35<00:06, 18.66it/s]Predicting...:  90%|█████████ | 838/929 [00:36<00:04, 21.12it/s]Predicting...:  94%|█████████▍| 873/929 [00:38<00:02, 19.28it/s]Predicting...:  99%|█████████▉| 920/929 [00:39<00:00, 25.75it/s]Predicting...: 100%|██████████| 929/929 [00:39<00:00, 23.56it/s]
+2023-06-02 22:25:29,385 - INFO - joeynmt.prediction - Evaluation result (greedy) loss:   1.89, ppl:   6.65, acc:   0.44, generation: 39.4275[sec], evaluation: 0.0000[sec]
+2023-06-02 22:25:29,386 - INFO - joeynmt.training - Hooray! New best validation result [ppl]!
+2023-06-02 22:25:29,628 - INFO - joeynmt.helpers - delete word_level_transformer/4000.ckpt
+2023-06-02 22:25:29,630 - INFO - joeynmt.training - Example #0
+2023-06-02 22:25:29,631 - INFO - joeynmt.training - 	Source:     L'anno scorso ho mostrato queste diapositive  per dimostrare che la calotta glaciale artica,  che per quasi tre milioni di anni ha avuto  le dimensioni dei 48 Stati Uniti continentali,  si è ristretta del 40%.
+2023-06-02 22:25:29,631 - INFO - joeynmt.training - 	Reference:  Last year I showed these two slides so that demonstrate that the arctic ice cap, which for most of the last three million years has been the size of the lower 48 states, has shrunk by 40 percent.
+2023-06-02 22:25:29,631 - INFO - joeynmt.training - 	Hypothesis: <unk> last last year I showed these <unk>  for <unk> <unk> <unk> <unk> <unk> <unk>  that for almost three million years had the size of the United States of the United States of the <unk>
+2023-06-02 22:25:29,631 - INFO - joeynmt.training - Example #1
+2023-06-02 22:25:29,631 - INFO - joeynmt.training - 	Source:     Tuttavia questo sottovaluta la gravità del problema  perché non mostra lo spessore del ghiaccio.
+2023-06-02 22:25:29,631 - INFO - joeynmt.training - 	Reference:  But this understates the seriousness of this particular problem because it doesn't show the thickness of the ice.
+2023-06-02 22:25:29,632 - INFO - joeynmt.training - 	Hypothesis: <unk> this <unk> the <unk> of the <unk>  because it doesn't <unk> the <unk> of the <unk>
+2023-06-02 22:25:29,632 - INFO - joeynmt.training - Example #2
+2023-06-02 22:25:29,632 - INFO - joeynmt.training - 	Source:     La calotta glaciale artica è, in un certo senso,  il cuore pulsante del sistema climatico globale.
+2023-06-02 22:25:29,632 - INFO - joeynmt.training - 	Reference:  The arctic ice cap is, in a sense, the beating heart of the global climate system.
+2023-06-02 22:25:29,632 - INFO - joeynmt.training - 	Hypothesis: <unk> <unk> <unk> <unk> <unk> <unk>
+2023-06-02 22:25:29,632 - INFO - joeynmt.training - Example #3
+2023-06-02 22:25:29,633 - INFO - joeynmt.training - 	Source:     Si espande d'inverno e si ritira d'estate.
+2023-06-02 22:25:29,633 - INFO - joeynmt.training - 	Reference:  It expands in winter and contracts in summer.
+2023-06-02 22:25:29,633 - INFO - joeynmt.training - 	Hypothesis: <unk> <unk> and <unk> <unk>
+2023-06-02 22:25:29,633 - INFO - joeynmt.training - Example #4
+2023-06-02 22:25:29,634 - INFO - joeynmt.training - 	Source:     La prossima diapositiva sarà una rapida  carrellata sugli avvenimenti degli ultimi 25 anni.
+2023-06-02 22:25:29,634 - INFO - joeynmt.training - 	Reference:  The next slide I show you will be a rapid fast-forward of what's happened over the last 25 years.
+2023-06-02 22:25:29,634 - INFO - joeynmt.training - 	Hypothesis: <unk> will be a <unk>  <unk> <unk> <unk> <unk> <unk>
+2023-06-02 22:26:03,489 - INFO - joeynmt.training - Epoch   3, Step:     6100, Batch Loss:     1.823446, Batch Acc: 0.494301, Tokens per Sec:     1958, Lr: 0.000300
+2023-06-02 22:26:37,090 - INFO - joeynmt.training - Epoch   3, Step:     6200, Batch Loss:     1.738169, Batch Acc: 0.490629, Tokens per Sec:     1944, Lr: 0.000300
+2023-06-02 22:27:12,380 - INFO - joeynmt.training - Epoch   3, Step:     6300, Batch Loss:     1.713459, Batch Acc: 0.492683, Tokens per Sec:     1863, Lr: 0.000300
+2023-06-02 22:27:46,890 - INFO - joeynmt.training - Epoch   3, Step:     6400, Batch Loss:     1.773676, Batch Acc: 0.489149, Tokens per Sec:     1855, Lr: 0.000300
+2023-06-02 22:28:32,862 - INFO - joeynmt.training - Epoch   3, Step:     6500, Batch Loss:     1.817409, Batch Acc: 0.491769, Tokens per Sec:     1479, Lr: 0.000300
+2023-06-02 22:28:32,862 - INFO - joeynmt.prediction - Predicting 929 example(s)... (Greedy decoding with min_output_length=1, max_output_length=-1, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+Predicting...:   0%|          | 0/929 [00:00<?, ?it/s]Predicting...:   6%|▌         | 52/929 [00:01<00:19, 45.29it/s]Predicting...:  12%|█▏        | 116/929 [00:02<00:16, 49.85it/s]Predicting...:  15%|█▌        | 142/929 [00:04<00:31, 25.21it/s]Predicting...:  21%|██        | 196/929 [00:06<00:25, 28.37it/s]Predicting...:  26%|██▌       | 241/929 [00:08<00:24, 27.52it/s]Predicting...:  29%|██▊       | 266/929 [00:09<00:29, 22.77it/s]Predicting...:  32%|███▏      | 297/929 [00:13<00:38, 16.41it/s]Predicting...:  36%|███▌      | 333/929 [00:15<00:36, 16.15it/s]Predicting...:  39%|███▉      | 364/929 [00:17<00:37, 15.07it/s]Predicting...:  44%|████▍     | 412/929 [00:18<00:25, 20.46it/s]Predicting...:  50%|████▉     | 462/929 [00:20<00:20, 22.58it/s]Predicting...:  54%|█████▎    | 498/929 [00:23<00:21, 19.93it/s]Predicting...:  57%|█████▋    | 530/929 [00:25<00:21, 18.77it/s]Predicting...:  60%|██████    | 561/929 [00:28<00:24, 14.93it/s]Predicting...:  63%|██████▎   | 589/929 [00:30<00:23, 14.38it/s]Predicting...:  67%|██████▋   | 621/929 [00:33<00:23, 12.85it/s]Predicting...:  70%|███████   | 653/929 [00:36<00:21, 12.80it/s]Predicting...:  73%|███████▎  | 680/929 [00:38<00:18, 13.13it/s]Predicting...:  76%|███████▌  | 708/929 [00:40<00:17, 12.91it/s]Predicting...:  80%|███████▉  | 740/929 [00:42<00:13, 13.59it/s]Predicting...:  83%|████████▎ | 767/929 [00:43<00:10, 14.89it/s]Predicting...:  87%|████████▋ | 804/929 [00:45<00:07, 16.14it/s]Predicting...:  90%|█████████ | 838/929 [00:46<00:04, 20.31it/s]Predicting...:  94%|█████████▍| 873/929 [00:48<00:02, 20.67it/s]Predicting...:  99%|█████████▉| 920/929 [00:49<00:00, 25.81it/s]Predicting...: 100%|██████████| 929/929 [00:49<00:00, 27.23it/s]Predicting...: 100%|██████████| 929/929 [00:49<00:00, 18.86it/s]
+2023-06-02 22:29:22,131 - INFO - joeynmt.prediction - Evaluation result (greedy) loss:   1.85, ppl:   6.38, acc:   0.45, generation: 49.2591[sec], evaluation: 0.0000[sec]
+2023-06-02 22:29:22,132 - INFO - joeynmt.training - Hooray! New best validation result [ppl]!
+2023-06-02 22:29:22,369 - INFO - joeynmt.helpers - delete word_level_transformer/3500.ckpt
+2023-06-02 22:29:22,371 - INFO - joeynmt.training - Example #0
+2023-06-02 22:29:22,372 - INFO - joeynmt.training - 	Source:     L'anno scorso ho mostrato queste diapositive  per dimostrare che la calotta glaciale artica,  che per quasi tre milioni di anni ha avuto  le dimensioni dei 48 Stati Uniti continentali,  si è ristretta del 40%.
+2023-06-02 22:29:22,372 - INFO - joeynmt.training - 	Reference:  Last year I showed these two slides so that demonstrate that the arctic ice cap, which for most of the last three million years has been the size of the lower 48 states, has shrunk by 40 percent.
+2023-06-02 22:29:22,372 - INFO - joeynmt.training - 	Hypothesis: <unk> <unk> I showed these <unk>  for <unk> that <unk> <unk> <unk> <unk> that for almost three million years had the size of the United States <unk> <unk>  which is <unk> <unk> <unk>
+2023-06-02 22:29:22,372 - INFO - joeynmt.training - Example #1
+2023-06-02 22:29:22,373 - INFO - joeynmt.training - 	Source:     Tuttavia questo sottovaluta la gravità del problema  perché non mostra lo spessore del ghiaccio.
+2023-06-02 22:29:22,373 - INFO - joeynmt.training - 	Reference:  But this understates the seriousness of this particular problem because it doesn't show the thickness of the ice.
+2023-06-02 22:29:22,373 - INFO - joeynmt.training - 	Hypothesis: <unk> this <unk> the <unk> of the problem  because it doesn't show the <unk> of the <unk>
+2023-06-02 22:29:22,373 - INFO - joeynmt.training - Example #2
+2023-06-02 22:29:22,374 - INFO - joeynmt.training - 	Source:     La calotta glaciale artica è, in un certo senso,  il cuore pulsante del sistema climatico globale.
+2023-06-02 22:29:22,374 - INFO - joeynmt.training - 	Reference:  The arctic ice cap is, in a sense, the beating heart of the global climate system.
+2023-06-02 22:29:22,374 - INFO - joeynmt.training - 	Hypothesis: <unk> <unk> <unk> is, in a sense,  the heart <unk> of the <unk> of the <unk> <unk> <unk>
+2023-06-02 22:29:22,374 - INFO - joeynmt.training - Example #3
+2023-06-02 22:29:22,375 - INFO - joeynmt.training - 	Source:     Si espande d'inverno e si ritira d'estate.
+2023-06-02 22:29:22,375 - INFO - joeynmt.training - 	Reference:  It expands in winter and contracts in summer.
+2023-06-02 22:29:22,375 - INFO - joeynmt.training - 	Hypothesis: It <unk> <unk> and <unk> <unk>
+2023-06-02 22:29:22,375 - INFO - joeynmt.training - Example #4
+2023-06-02 22:29:22,375 - INFO - joeynmt.training - 	Source:     La prossima diapositiva sarà una rapida  carrellata sugli avvenimenti degli ultimi 25 anni.
+2023-06-02 22:29:22,376 - INFO - joeynmt.training - 	Reference:  The next slide I show you will be a rapid fast-forward of what's happened over the last 25 years.
+2023-06-02 22:29:22,376 - INFO - joeynmt.training - 	Hypothesis: The next <unk> will be a <unk>  <unk> on the last <unk>
+2023-06-02 22:30:01,191 - INFO - joeynmt.training - Epoch   3, Step:     6600, Batch Loss:     1.746278, Batch Acc: 0.493273, Tokens per Sec:     1675, Lr: 0.000300
+2023-06-02 22:30:38,870 - INFO - joeynmt.training - Epoch   3, Step:     6700, Batch Loss:     1.628233, Batch Acc: 0.487837, Tokens per Sec:     1702, Lr: 0.000300
+2023-06-02 22:31:14,644 - INFO - joeynmt.training - Epoch   3, Step:     6800, Batch Loss:     1.829865, Batch Acc: 0.495988, Tokens per Sec:     1916, Lr: 0.000300
+2023-06-02 22:31:56,764 - INFO - joeynmt.training - Epoch   3, Step:     6900, Batch Loss:     1.685760, Batch Acc: 0.493977, Tokens per Sec:     1575, Lr: 0.000300
+2023-06-02 22:32:38,295 - INFO - joeynmt.training - Epoch   3, Step:     7000, Batch Loss:     1.713234, Batch Acc: 0.497375, Tokens per Sec:     1623, Lr: 0.000300
+2023-06-02 22:32:38,296 - INFO - joeynmt.prediction - Predicting 929 example(s)... (Greedy decoding with min_output_length=1, max_output_length=-1, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+Predicting...:   0%|          | 0/929 [00:00<?, ?it/s]Predicting...:   6%|▌         | 52/929 [00:01<00:18, 46.80it/s]Predicting...:  12%|█▏        | 116/929 [00:01<00:12, 62.80it/s]Predicting...:  15%|█▌        | 142/929 [00:03<00:23, 33.12it/s]Predicting...:  21%|██        | 196/929 [00:04<00:16, 43.34it/s]Predicting...:  26%|██▌       | 241/929 [00:06<00:20, 34.27it/s]Predicting...:  29%|██▊       | 266/929 [00:08<00:30, 21.76it/s]Predicting...:  32%|███▏      | 297/929 [00:10<00:30, 21.06it/s]Predicting...:  36%|███▌      | 333/929 [00:12<00:29, 20.41it/s]Predicting...:  39%|███▉      | 364/929 [00:14<00:30, 18.32it/s]Predicting...:  44%|████▍     | 412/929 [00:15<00:22, 22.69it/s]Predicting...:  50%|████▉     | 462/929 [00:17<00:18, 25.91it/s]Predicting...:  54%|█████▎    | 498/929 [00:19<00:19, 22.02it/s]Predicting...:  57%|█████▋    | 530/929 [00:21<00:19, 20.77it/s]Predicting...:  60%|██████    | 561/929 [00:23<00:18, 19.55it/s]Predicting...:  63%|██████▎   | 589/929 [00:25<00:20, 16.86it/s]Predicting...:  67%|██████▋   | 621/929 [00:27<00:18, 16.25it/s]Predicting...:  70%|███████   | 653/929 [00:29<00:17, 16.02it/s]Predicting...:  73%|███████▎  | 680/929 [00:31<00:16, 15.50it/s]Predicting...:  76%|███████▌  | 708/929 [00:33<00:15, 14.49it/s]Predicting...:  80%|███████▉  | 740/929 [00:36<00:13, 14.24it/s]Predicting...:  83%|████████▎ | 767/929 [00:37<00:10, 15.07it/s]Predicting...:  87%|████████▋ | 804/929 [00:39<00:07, 16.47it/s]Predicting...:  90%|█████████ | 838/929 [00:41<00:05, 17.13it/s]Predicting...:  94%|█████████▍| 873/929 [00:43<00:03, 16.66it/s]Predicting...:  99%|█████████▉| 920/929 [00:45<00:00, 20.51it/s]Predicting...: 100%|██████████| 929/929 [00:45<00:00, 21.72it/s]Predicting...: 100%|██████████| 929/929 [00:45<00:00, 20.49it/s]
+2023-06-02 22:33:23,641 - INFO - joeynmt.prediction - Evaluation result (greedy) loss:   1.87, ppl:   6.46, acc:   0.45, generation: 45.3348[sec], evaluation: 0.0000[sec]
+2023-06-02 22:33:23,901 - INFO - joeynmt.helpers - delete word_level_transformer/4500.ckpt
+2023-06-02 22:33:23,903 - INFO - joeynmt.training - Example #0
+2023-06-02 22:33:23,904 - INFO - joeynmt.training - 	Source:     L'anno scorso ho mostrato queste diapositive  per dimostrare che la calotta glaciale artica,  che per quasi tre milioni di anni ha avuto  le dimensioni dei 48 Stati Uniti continentali,  si è ristretta del 40%.
+2023-06-02 22:33:23,904 - INFO - joeynmt.training - 	Reference:  Last year I showed these two slides so that demonstrate that the arctic ice cap, which for most of the last three million years has been the size of the lower 48 states, has shrunk by 40 percent.
+2023-06-02 22:33:23,904 - INFO - joeynmt.training - 	Hypothesis: <unk> <unk> <unk>  to showed these <unk>  to <unk> that <unk> <unk> <unk>  that for almost three million years had the size of the United States States <unk>  <unk> is <unk> <unk>
+2023-06-02 22:33:23,904 - INFO - joeynmt.training - Example #1
+2023-06-02 22:33:23,905 - INFO - joeynmt.training - 	Source:     Tuttavia questo sottovaluta la gravità del problema  perché non mostra lo spessore del ghiaccio.
+2023-06-02 22:33:23,905 - INFO - joeynmt.training - 	Reference:  But this understates the seriousness of this particular problem because it doesn't show the thickness of the ice.
+2023-06-02 22:33:23,905 - INFO - joeynmt.training - 	Hypothesis: <unk> this <unk> the <unk> of the problem  because it doesn't show the <unk> of the <unk>
+2023-06-02 22:33:23,905 - INFO - joeynmt.training - Example #2
+2023-06-02 22:33:23,906 - INFO - joeynmt.training - 	Source:     La calotta glaciale artica è, in un certo senso,  il cuore pulsante del sistema climatico globale.
+2023-06-02 22:33:23,906 - INFO - joeynmt.training - 	Reference:  The arctic ice cap is, in a sense, the beating heart of the global climate system.
+2023-06-02 22:33:23,906 - INFO - joeynmt.training - 	Hypothesis: The <unk> <unk> is in a sense,  the heart of the <unk> of the <unk> system system <unk>
+2023-06-02 22:33:23,906 - INFO - joeynmt.training - Example #3
+2023-06-02 22:33:23,907 - INFO - joeynmt.training - 	Source:     Si espande d'inverno e si ritira d'estate.
+2023-06-02 22:33:23,907 - INFO - joeynmt.training - 	Reference:  It expands in winter and contracts in summer.
+2023-06-02 22:33:23,907 - INFO - joeynmt.training - 	Hypothesis: <unk> <unk> and <unk> <unk>
+2023-06-02 22:33:23,907 - INFO - joeynmt.training - Example #4
+2023-06-02 22:33:23,907 - INFO - joeynmt.training - 	Source:     La prossima diapositiva sarà una rapida  carrellata sugli avvenimenti degli ultimi 25 anni.
+2023-06-02 22:33:23,907 - INFO - joeynmt.training - 	Reference:  The next slide I show you will be a rapid fast-forward of what's happened over the last 25 years.
+2023-06-02 22:33:23,908 - INFO - joeynmt.training - 	Hypothesis: The next <unk> is going to be a <unk>  <unk> on the last 25 years.
+2023-06-02 22:33:58,479 - INFO - joeynmt.training - Epoch   3, Step:     7100, Batch Loss:     1.745834, Batch Acc: 0.490981, Tokens per Sec:     1887, Lr: 0.000300
+2023-06-02 22:34:32,765 - INFO - joeynmt.training - Epoch   3, Step:     7200, Batch Loss:     1.588272, Batch Acc: 0.493965, Tokens per Sec:     1921, Lr: 0.000300
+2023-06-02 22:35:12,186 - INFO - joeynmt.training - Epoch   3, Step:     7300, Batch Loss:     1.771153, Batch Acc: 0.494469, Tokens per Sec:     1637, Lr: 0.000300
+2023-06-02 22:35:49,467 - INFO - joeynmt.training - Epoch   3, Step:     7400, Batch Loss:     1.688862, Batch Acc: 0.495914, Tokens per Sec:     1750, Lr: 0.000300
+2023-06-02 22:36:36,250 - INFO - joeynmt.training - Epoch   3, Step:     7500, Batch Loss:     1.785834, Batch Acc: 0.493365, Tokens per Sec:     1405, Lr: 0.000300
+2023-06-02 22:36:36,251 - INFO - joeynmt.prediction - Predicting 929 example(s)... (Greedy decoding with min_output_length=1, max_output_length=-1, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+Predicting...:   0%|          | 0/929 [00:00<?, ?it/s]Predicting...:   6%|▌         | 52/929 [00:01<00:25, 34.66it/s]Predicting...:  12%|█▏        | 116/929 [00:02<00:16, 50.51it/s]Predicting...:  15%|█▌        | 142/929 [00:04<00:27, 29.13it/s]Predicting...:  21%|██        | 196/929 [00:05<00:20, 35.36it/s]Predicting...:  26%|██▌       | 241/929 [00:08<00:27, 25.26it/s]Predicting...:  29%|██▊       | 266/929 [00:10<00:31, 21.38it/s]Predicting...:  32%|███▏      | 297/929 [00:11<00:30, 21.04it/s]Predicting...:  36%|███▌      | 333/929 [00:13<00:31, 18.77it/s]Predicting...:  39%|███▉      | 364/929 [00:17<00:39, 14.14it/s]Predicting...:  44%|████▍     | 412/929 [00:19<00:29, 17.74it/s]Predicting...:  50%|████▉     | 462/929 [00:20<00:20, 22.53it/s]Predicting...:  54%|█████▎    | 498/929 [00:21<00:19, 22.39it/s]Predicting...:  57%|█████▋    | 530/929 [00:24<00:20, 19.56it/s]Predicting...:  60%|██████    | 561/929 [00:27<00:25, 14.56it/s]Predicting...:  63%|██████▎   | 589/929 [00:29<00:21, 15.52it/s]Predicting...:  67%|██████▋   | 621/929 [00:30<00:18, 16.38it/s]Predicting...:  70%|███████   | 653/929 [00:32<00:16, 17.03it/s]Predicting...:  73%|███████▎  | 680/929 [00:34<00:15, 16.48it/s]Predicting...:  76%|███████▌  | 708/929 [00:36<00:13, 16.28it/s]Predicting...:  80%|███████▉  | 740/929 [00:37<00:10, 17.23it/s]Predicting...:  83%|████████▎ | 767/929 [00:39<00:09, 17.31it/s]Predicting...:  87%|████████▋ | 804/929 [00:40<00:05, 21.02it/s]Predicting...:  90%|█████████ | 838/929 [00:42<00:04, 20.29it/s]Predicting...:  94%|█████████▍| 873/929 [00:44<00:03, 18.45it/s]Predicting...:  99%|█████████▉| 920/929 [00:45<00:00, 24.25it/s]Predicting...: 100%|██████████| 929/929 [00:45<00:00, 25.08it/s]Predicting...: 100%|██████████| 929/929 [00:45<00:00, 20.33it/s]
+2023-06-02 22:37:21,946 - INFO - joeynmt.prediction - Evaluation result (greedy) loss:   1.82, ppl:   6.17, acc:   0.46, generation: 45.6857[sec], evaluation: 0.0000[sec]
+2023-06-02 22:37:21,947 - INFO - joeynmt.training - Hooray! New best validation result [ppl]!
+2023-06-02 22:37:22,194 - INFO - joeynmt.helpers - delete word_level_transformer/5500.ckpt
+2023-06-02 22:37:22,196 - INFO - joeynmt.training - Example #0
+2023-06-02 22:37:22,197 - INFO - joeynmt.training - 	Source:     L'anno scorso ho mostrato queste diapositive  per dimostrare che la calotta glaciale artica,  che per quasi tre milioni di anni ha avuto  le dimensioni dei 48 Stati Uniti continentali,  si è ristretta del 40%.
+2023-06-02 22:37:22,197 - INFO - joeynmt.training - 	Reference:  Last year I showed these two slides so that demonstrate that the arctic ice cap, which for most of the last three million years has been the size of the lower 48 states, has shrunk by 40 percent.
+2023-06-02 22:37:22,197 - INFO - joeynmt.training - 	Hypothesis: <unk> last <unk> I showed these <unk>  to <unk> that <unk> <unk> <unk> <unk> <unk> <unk> that for almost three million years has had the size of the <unk> <unk>   <unk> is <unk> <unk> <unk>
+2023-06-02 22:37:22,197 - INFO - joeynmt.training - Example #1
+2023-06-02 22:37:22,198 - INFO - joeynmt.training - 	Source:     Tuttavia questo sottovaluta la gravità del problema  perché non mostra lo spessore del ghiaccio.
+2023-06-02 22:37:22,198 - INFO - joeynmt.training - 	Reference:  But this understates the seriousness of this particular problem because it doesn't show the thickness of the ice.
+2023-06-02 22:37:22,198 - INFO - joeynmt.training - 	Hypothesis: <unk> this <unk> the <unk> of the problem --  because it doesn't show the <unk> of the <unk>
+2023-06-02 22:37:22,198 - INFO - joeynmt.training - Example #2
+2023-06-02 22:37:22,199 - INFO - joeynmt.training - 	Source:     La calotta glaciale artica è, in un certo senso,  il cuore pulsante del sistema climatico globale.
+2023-06-02 22:37:22,199 - INFO - joeynmt.training - 	Reference:  The arctic ice cap is, in a sense, the beating heart of the global climate system.
+2023-06-02 22:37:22,199 - INFO - joeynmt.training - 	Hypothesis: <unk> <unk> <unk> is, in a sense, <unk>  the heart of the <unk> global <unk>
+2023-06-02 22:37:22,199 - INFO - joeynmt.training - Example #3
+2023-06-02 22:37:22,200 - INFO - joeynmt.training - 	Source:     Si espande d'inverno e si ritira d'estate.
+2023-06-02 22:37:22,200 - INFO - joeynmt.training - 	Reference:  It expands in winter and contracts in summer.
+2023-06-02 22:37:22,200 - INFO - joeynmt.training - 	Hypothesis: They <unk> <unk> and <unk> <unk>
+2023-06-02 22:37:22,200 - INFO - joeynmt.training - Example #4
+2023-06-02 22:37:22,200 - INFO - joeynmt.training - 	Source:     La prossima diapositiva sarà una rapida  carrellata sugli avvenimenti degli ultimi 25 anni.
+2023-06-02 22:37:22,200 - INFO - joeynmt.training - 	Reference:  The next slide I show you will be a rapid fast-forward of what's happened over the last 25 years.
+2023-06-02 22:37:22,200 - INFO - joeynmt.training - 	Hypothesis: The next next <unk> is going to be a <unk>  <unk> about the last 25 years.
+2023-06-02 22:38:08,249 - INFO - joeynmt.training - Epoch   3, Step:     7600, Batch Loss:     1.754036, Batch Acc: 0.494374, Tokens per Sec:     1405, Lr: 0.000300
+2023-06-02 22:38:48,211 - INFO - joeynmt.training - Epoch   3, Step:     7700, Batch Loss:     1.693057, Batch Acc: 0.495481, Tokens per Sec:     1647, Lr: 0.000300
+2023-06-02 22:39:24,659 - INFO - joeynmt.training - Epoch   3, Step:     7800, Batch Loss:     1.561446, Batch Acc: 0.503089, Tokens per Sec:     1790, Lr: 0.000300
+2023-06-02 22:40:00,441 - INFO - joeynmt.training - Epoch   3, Step:     7900, Batch Loss:     1.642072, Batch Acc: 0.497641, Tokens per Sec:     1825, Lr: 0.000300
+2023-06-02 22:40:38,920 - INFO - joeynmt.training - Epoch   3, Step:     8000, Batch Loss:     1.745887, Batch Acc: 0.497913, Tokens per Sec:     1712, Lr: 0.000300
+2023-06-02 22:40:38,921 - INFO - joeynmt.prediction - Predicting 929 example(s)... (Greedy decoding with min_output_length=1, max_output_length=-1, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+Predicting...:   0%|          | 0/929 [00:00<?, ?it/s]Predicting...:   6%|▌         | 52/929 [00:02<00:37, 23.42it/s]Predicting...:  12%|█▏        | 116/929 [00:03<00:23, 35.03it/s]Predicting...:  15%|█▌        | 142/929 [00:05<00:31, 25.03it/s]Predicting...:  21%|██        | 196/929 [00:06<00:22, 32.01it/s]Predicting...:  26%|██▌       | 241/929 [00:08<00:23, 29.90it/s]Predicting...:  29%|██▊       | 266/929 [00:09<00:27, 24.09it/s]Predicting...:  32%|███▏      | 297/929 [00:13<00:37, 17.06it/s]Predicting...:  36%|███▌      | 333/929 [00:14<00:33, 17.93it/s]Predicting...:  39%|███▉      | 364/929 [00:18<00:41, 13.74it/s]Predicting...:  44%|████▍     | 412/929 [00:19<00:28, 18.41it/s]Predicting...:  50%|████▉     | 462/929 [00:22<00:24, 19.41it/s]Predicting...:  54%|█████▎    | 498/929 [00:25<00:26, 16.27it/s]Predicting...:  57%|█████▋    | 530/929 [00:27<00:25, 15.81it/s]Predicting...:  60%|██████    | 561/929 [00:29<00:23, 15.43it/s]Predicting...:  63%|██████▎   | 589/929 [00:33<00:28, 11.83it/s]Predicting...:  67%|██████▋   | 621/929 [00:34<00:22, 13.78it/s]Predicting...:  70%|███████   | 653/929 [00:36<00:19, 14.43it/s]Predicting...:  73%|███████▎  | 680/929 [00:40<00:20, 12.14it/s]Predicting...:  76%|███████▌  | 708/929 [00:42<00:17, 12.55it/s]Predicting...:  80%|███████▉  | 740/929 [00:44<00:14, 13.23it/s]Predicting...:  83%|████████▎ | 767/929 [00:47<00:13, 11.61it/s]Predicting...:  87%|████████▋ | 804/929 [00:49<00:09, 13.47it/s]Predicting...:  90%|█████████ | 838/929 [00:51<00:06, 14.79it/s]Predicting...:  94%|█████████▍| 873/929 [00:53<00:03, 14.07it/s]Predicting...:  99%|█████████▉| 920/929 [00:55<00:00, 18.56it/s]Predicting...: 100%|██████████| 929/929 [00:55<00:00, 19.99it/s]Predicting...: 100%|██████████| 929/929 [00:55<00:00, 16.83it/s]
+2023-06-02 22:41:34,117 - INFO - joeynmt.prediction - Evaluation result (greedy) loss:   1.87, ppl:   6.50, acc:   0.44, generation: 55.1849[sec], evaluation: 0.0000[sec]
+2023-06-02 22:41:34,350 - INFO - joeynmt.helpers - delete word_level_transformer/5000.ckpt
+2023-06-02 22:41:34,352 - INFO - joeynmt.training - Example #0
+2023-06-02 22:41:34,353 - INFO - joeynmt.training - 	Source:     L'anno scorso ho mostrato queste diapositive  per dimostrare che la calotta glaciale artica,  che per quasi tre milioni di anni ha avuto  le dimensioni dei 48 Stati Uniti continentali,  si è ristretta del 40%.
+2023-06-02 22:41:34,353 - INFO - joeynmt.training - 	Reference:  Last year I showed these two slides so that demonstrate that the arctic ice cap, which for most of the last three million years has been the size of the lower 48 states, has shrunk by 40 percent.
+2023-06-02 22:41:34,353 - INFO - joeynmt.training - 	Hypothesis: <unk> I showed these <unk>  for <unk> <unk> <unk>  that for almost three million years has had  that for almost three million years has been <unk>              for <unk> <unk> <unk> <unk>
+2023-06-02 22:41:34,353 - INFO - joeynmt.training - Example #1
+2023-06-02 22:41:34,354 - INFO - joeynmt.training - 	Source:     Tuttavia questo sottovaluta la gravità del problema  perché non mostra lo spessore del ghiaccio.
+2023-06-02 22:41:34,354 - INFO - joeynmt.training - 	Reference:  But this understates the seriousness of this particular problem because it doesn't show the thickness of the ice.
+2023-06-02 22:41:34,354 - INFO - joeynmt.training - 	Hypothesis: <unk> this <unk> the <unk> of the problem  because it shows the <unk>
+2023-06-02 22:41:34,354 - INFO - joeynmt.training - Example #2
+2023-06-02 22:41:34,355 - INFO - joeynmt.training - 	Source:     La calotta glaciale artica è, in un certo senso,  il cuore pulsante del sistema climatico globale.
+2023-06-02 22:41:34,355 - INFO - joeynmt.training - 	Reference:  The arctic ice cap is, in a sense, the beating heart of the global climate system.
+2023-06-02 22:41:34,355 - INFO - joeynmt.training - 	Hypothesis: The <unk> <unk> is, in a sense,  the heart of the <unk> <unk> <unk>
+2023-06-02 22:41:34,355 - INFO - joeynmt.training - Example #3
+2023-06-02 22:41:34,356 - INFO - joeynmt.training - 	Source:     Si espande d'inverno e si ritira d'estate.
+2023-06-02 22:41:34,356 - INFO - joeynmt.training - 	Reference:  It expands in winter and contracts in summer.
+2023-06-02 22:41:34,356 - INFO - joeynmt.training - 	Hypothesis: They <unk> <unk> and <unk>
+2023-06-02 22:41:34,356 - INFO - joeynmt.training - Example #4
+2023-06-02 22:41:34,356 - INFO - joeynmt.training - 	Source:     La prossima diapositiva sarà una rapida  carrellata sugli avvenimenti degli ultimi 25 anni.
+2023-06-02 22:41:34,356 - INFO - joeynmt.training - 	Reference:  The next slide I show you will be a rapid fast-forward of what's happened over the last 25 years.
+2023-06-02 22:41:34,356 - INFO - joeynmt.training - 	Hypothesis: The next <unk> is a <unk>  <unk> on the last 25 years.
+2023-06-02 22:42:10,315 - INFO - joeynmt.training - Epoch   3, Step:     8100, Batch Loss:     1.761020, Batch Acc: 0.500171, Tokens per Sec:     1780, Lr: 0.000300
+2023-06-02 22:42:48,540 - INFO - joeynmt.training - Epoch   3, Step:     8200, Batch Loss:     1.740691, Batch Acc: 0.499217, Tokens per Sec:     1754, Lr: 0.000300
+2023-06-02 22:43:25,177 - INFO - joeynmt.training - Epoch   3, Step:     8300, Batch Loss:     1.665006, Batch Acc: 0.497786, Tokens per Sec:     1775, Lr: 0.000300
+2023-06-02 22:43:27,646 - INFO - joeynmt.training - Epoch   3: total training loss 4681.16
+2023-06-02 22:43:27,646 - INFO - joeynmt.training - EPOCH 4
+2023-06-02 22:43:47,914 - INFO - joeynmt.model - Building an encoder-decoder model...
+2023-06-02 22:43:47,988 - INFO - joeynmt.model - Enc-dec model built.
+2023-06-02 22:43:48,016 - INFO - joeynmt.helpers - Load model from /Users/songyafeng/6/Machine_Translation/Ex5/mt-exercise-5/word_level_transformer/7500.ckpt.
+2023-06-02 22:43:48,022 - INFO - joeynmt.prediction - Model(
+	encoder=TransformerEncoder(num_layers=4, num_heads=2, alpha=1.0, layer_norm="pre", activation=ReLU()),
+	decoder=TransformerDecoder(num_layers=1, num_heads=2, alpha=1.0, layer_norm="post", activation=ReLU()),
+	src_embed=Embeddings(embedding_dim=256, vocab_size=2004),
+	trg_embed=Embeddings(embedding_dim=256, vocab_size=2004),
+	loss_function=None)
+2023-06-02 22:43:48,023 - INFO - joeynmt.prediction - Decoding on dev set...
+2023-06-02 22:43:48,023 - INFO - joeynmt.prediction - Predicting 929 example(s)... (Beam search with beam_size=5, beam_alpha=1.0, n_best=1, min_output_length=1, max_output_length=-1, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+Predicting...:   0%|          | 0/929 [00:00<?, ?it/s]Predicting...:   7%|▋         | 64/929 [00:02<00:27, 31.08it/s]Predicting...:  14%|█▍        | 128/929 [00:05<00:32, 24.31it/s]Predicting...:  21%|██        | 192/929 [00:07<00:28, 25.73it/s]Predicting...:  28%|██▊       | 256/929 [00:10<00:27, 24.67it/s]Predicting...:  34%|███▍      | 320/929 [00:14<00:29, 20.66it/s]Predicting...:  41%|████▏     | 384/929 [00:17<00:27, 19.61it/s]Predicting...:  48%|████▊     | 448/929 [00:20<00:22, 21.61it/s]Predicting...:  48%|████▊     | 448/929 [00:20<00:22, 21.74it/s]
+Traceback (most recent call last):
+  File "/Users/songyafeng/anaconda3/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/Users/songyafeng/anaconda3/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/Users/songyafeng/6/Machine_Translation/Ex5/joeynmt/joeynmt/__main__.py", line 61, in <module>
+    main()
+  File "/Users/songyafeng/6/Machine_Translation/Ex5/joeynmt/joeynmt/__main__.py", line 41, in main
+    train(cfg_file=args.config_path, skip_test=args.skip_test)
+  File "/Users/songyafeng/6/Machine_Translation/Ex5/joeynmt/joeynmt/training.py", line 846, in train
+    test(
+  File "/Users/songyafeng/6/Machine_Translation/Ex5/joeynmt/joeynmt/prediction.py", line 424, in test
+    _, _, hypotheses, hypotheses_raw, seq_scores, att_scores, = predict(
+  File "/Users/songyafeng/6/Machine_Translation/Ex5/joeynmt/joeynmt/prediction.py", line 178, in predict
+    output, hyp_scores, attention_scores = search(
+  File "/Users/songyafeng/6/Machine_Translation/Ex5/joeynmt/joeynmt/search.py", line 730, in search
+    stacked_output, stacked_scores, stacked_attention_scores = beam_search(
+  File "/Users/songyafeng/6/Machine_Translation/Ex5/joeynmt/joeynmt/search.py", line 429, in beam_search
+    logits, _, _, _ = model(  # logits before final softmax
+  File "/Users/songyafeng/6/Machine_Translation/Ex5/mt-exercise-5/venvs/torch3/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/Users/songyafeng/6/Machine_Translation/Ex5/joeynmt/joeynmt/model.py", line 124, in forward
+    outputs, hidden, att_probs, att_vectors = self._decode(**kwargs)
+  File "/Users/songyafeng/6/Machine_Translation/Ex5/joeynmt/joeynmt/model.py", line 212, in _decode
+    return self.decoder(
+  File "/Users/songyafeng/6/Machine_Translation/Ex5/mt-exercise-5/venvs/torch3/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/Users/songyafeng/6/Machine_Translation/Ex5/joeynmt/joeynmt/decoders.py", line 582, in forward
+    x, att = layer(x=x,
+  File "/Users/songyafeng/6/Machine_Translation/Ex5/mt-exercise-5/venvs/torch3/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/Users/songyafeng/6/Machine_Translation/Ex5/joeynmt/joeynmt/transformer_layers.py", line 387, in forward
+    h2, att = self.src_trg_att(memory,
+  File "/Users/songyafeng/6/Machine_Translation/Ex5/mt-exercise-5/venvs/torch3/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/Users/songyafeng/6/Machine_Translation/Ex5/joeynmt/joeynmt/transformer_layers.py", line 99, in forward
+    context = torch.matmul(attention_probs, v)
+KeyboardInterrupt
