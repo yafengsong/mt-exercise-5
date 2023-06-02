@@ -35,6 +35,6 @@ Train a model:
 
 The training process can be interrupted at any time, and the best checkpoint will always be saved.
 
-Evaluate a trained model with
+Evaluate a trained model with 
 
     ./scripts/evaluate.sh
