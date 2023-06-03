@@ -1,0 +1,4 @@
+2023-06-03 09:59:46,753 - INFO - root - Hello! This is Joey-NMT (version 2.2.0).
+2023-06-03 09:59:47,001 - INFO - joeynmt.model - Building an encoder-decoder model...
+2023-06-03 09:59:47,066 - INFO - joeynmt.model - Enc-dec model built.
+2023-06-03 09:59:47,101 - INFO - joeynmt.helpers - Load model from /Users/songyafeng/6/Machine_Translation/Ex5/mt-exercise-5/models/bpe_level_transformer/2000.ckpt.

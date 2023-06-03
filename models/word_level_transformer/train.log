@@ -1,0 +1,823 @@
+2023-06-02 21:43:35,346 - INFO - root - Hello! This is Joey-NMT (version 2.2.0).
+2023-06-02 21:43:35,346 - INFO - joeynmt.helpers -                           cfg.name : word_level_transformer
+2023-06-02 21:43:35,346 - INFO - joeynmt.helpers -                cfg.joeynmt_version : 2.0.0
+2023-06-02 21:43:35,346 - INFO - joeynmt.helpers -                     cfg.data.train : data/train
+2023-06-02 21:43:35,347 - INFO - joeynmt.helpers -                       cfg.data.dev : data/dev
+2023-06-02 21:43:35,347 - INFO - joeynmt.helpers -                      cfg.data.test : data/test
+2023-06-02 21:43:35,347 - INFO - joeynmt.helpers -              cfg.data.dataset_type : plain
+2023-06-02 21:43:35,347 - INFO - joeynmt.helpers -                  cfg.data.src.lang : it
+2023-06-02 21:43:35,347 - INFO - joeynmt.helpers -             cfg.data.src.lowercase : False
+2023-06-02 21:43:35,347 - INFO - joeynmt.helpers -                 cfg.data.src.level : word
+2023-06-02 21:43:35,347 - INFO - joeynmt.helpers -             cfg.data.src.voc_limit : 2000
+2023-06-02 21:43:35,347 - INFO - joeynmt.helpers -          cfg.data.src.voc_min_freq : 1
+2023-06-02 21:43:35,347 - INFO - joeynmt.helpers -            cfg.data.src.max_length : 100
+2023-06-02 21:43:35,347 - INFO - joeynmt.helpers -                  cfg.data.trg.lang : en
+2023-06-02 21:43:35,347 - INFO - joeynmt.helpers -             cfg.data.trg.lowercase : False
+2023-06-02 21:43:35,347 - INFO - joeynmt.helpers -                 cfg.data.trg.level : word
+2023-06-02 21:43:35,347 - INFO - joeynmt.helpers -             cfg.data.trg.voc_limit : 2000
+2023-06-02 21:43:35,347 - INFO - joeynmt.helpers -          cfg.data.trg.voc_min_freq : 1
+2023-06-02 21:43:35,347 - INFO - joeynmt.helpers -            cfg.data.trg.max_length : 100
+2023-06-02 21:43:35,347 - INFO - joeynmt.helpers -              cfg.testing.beam_size : 5
+2023-06-02 21:43:35,347 - INFO - joeynmt.helpers -             cfg.testing.beam_alpha : 1.0
+2023-06-02 21:43:35,347 - INFO - joeynmt.helpers -           cfg.training.random_seed : 42
+2023-06-02 21:43:35,347 - INFO - joeynmt.helpers -             cfg.training.optimizer : adam
+2023-06-02 21:43:35,347 - INFO - joeynmt.helpers -         cfg.training.normalization : tokens
+2023-06-02 21:43:35,347 - INFO - joeynmt.helpers -         cfg.training.learning_rate : 0.0003
+2023-06-02 21:43:35,348 - INFO - joeynmt.helpers -            cfg.training.batch_size : 2048
+2023-06-02 21:43:35,348 - INFO - joeynmt.helpers -            cfg.training.batch_type : token
+2023-06-02 21:43:35,348 - INFO - joeynmt.helpers -       cfg.training.eval_batch_size : 1024
+2023-06-02 21:43:35,348 - INFO - joeynmt.helpers -       cfg.training.eval_batch_type : token
+2023-06-02 21:43:35,348 - INFO - joeynmt.helpers -            cfg.training.scheduling : plateau
+2023-06-02 21:43:35,348 - INFO - joeynmt.helpers -              cfg.training.patience : 8
+2023-06-02 21:43:35,348 - INFO - joeynmt.helpers -          cfg.training.weight_decay : 0.0
+2023-06-02 21:43:35,348 - INFO - joeynmt.helpers -       cfg.training.decrease_factor : 0.7
+2023-06-02 21:43:35,348 - INFO - joeynmt.helpers - cfg.training.early_stopping_metric : ppl
+2023-06-02 21:43:35,348 - INFO - joeynmt.helpers -                cfg.training.epochs : 10
+2023-06-02 21:43:35,348 - INFO - joeynmt.helpers -       cfg.training.validation_freq : 500
+2023-06-02 21:43:35,348 - INFO - joeynmt.helpers -          cfg.training.logging_freq : 100
+2023-06-02 21:43:35,348 - INFO - joeynmt.helpers -           cfg.training.eval_metric : ['bleu']
+2023-06-02 21:43:35,348 - INFO - joeynmt.helpers -             cfg.training.model_dir : word_level_transformer
+2023-06-02 21:43:35,348 - INFO - joeynmt.helpers -             cfg.training.overwrite : False
+2023-06-02 21:43:35,348 - INFO - joeynmt.helpers -               cfg.training.shuffle : True
+2023-06-02 21:43:35,348 - INFO - joeynmt.helpers -              cfg.training.use_cuda : False
+2023-06-02 21:43:35,348 - INFO - joeynmt.helpers -     cfg.training.max_output_length : 100
+2023-06-02 21:43:35,348 - INFO - joeynmt.helpers -     cfg.training.print_valid_sents : [0, 1, 2, 3, 4]
+2023-06-02 21:43:35,348 - INFO - joeynmt.helpers -       cfg.training.label_smoothing : 0.3
+2023-06-02 21:43:35,348 - INFO - joeynmt.helpers -              cfg.model.initializer : xavier_uniform
+2023-06-02 21:43:35,349 - INFO - joeynmt.helpers -         cfg.model.bias_initializer : zeros
+2023-06-02 21:43:35,349 - INFO - joeynmt.helpers -                cfg.model.init_gain : 1.0
+2023-06-02 21:43:35,349 - INFO - joeynmt.helpers -        cfg.model.embed_initializer : xavier_uniform
+2023-06-02 21:43:35,349 - INFO - joeynmt.helpers -          cfg.model.embed_init_gain : 1.0
+2023-06-02 21:43:35,349 - INFO - joeynmt.helpers -          cfg.model.tied_embeddings : False
+2023-06-02 21:43:35,349 - INFO - joeynmt.helpers -             cfg.model.tied_softmax : True
+2023-06-02 21:43:35,349 - INFO - joeynmt.helpers -             cfg.model.encoder.type : transformer
+2023-06-02 21:43:35,349 - INFO - joeynmt.helpers -       cfg.model.encoder.num_layers : 4
+2023-06-02 21:43:35,349 - INFO - joeynmt.helpers -        cfg.model.encoder.num_heads : 2
+2023-06-02 21:43:35,349 - INFO - joeynmt.helpers - cfg.model.encoder.embeddings.embedding_dim : 256
+2023-06-02 21:43:35,349 - INFO - joeynmt.helpers - cfg.model.encoder.embeddings.scale : True
+2023-06-02 21:43:35,349 - INFO - joeynmt.helpers - cfg.model.encoder.embeddings.dropout : 0
+2023-06-02 21:43:35,349 - INFO - joeynmt.helpers -      cfg.model.encoder.hidden_size : 256
+2023-06-02 21:43:35,349 - INFO - joeynmt.helpers -          cfg.model.encoder.ff_size : 512
+2023-06-02 21:43:35,349 - INFO - joeynmt.helpers -          cfg.model.encoder.dropout : 0
+2023-06-02 21:43:35,349 - INFO - joeynmt.helpers -             cfg.model.decoder.type : transformer
+2023-06-02 21:43:35,349 - INFO - joeynmt.helpers -       cfg.model.decoder.num_layers : 1
+2023-06-02 21:43:35,349 - INFO - joeynmt.helpers -        cfg.model.decoder.num_heads : 2
+2023-06-02 21:43:35,349 - INFO - joeynmt.helpers - cfg.model.decoder.embeddings.embedding_dim : 256
+2023-06-02 21:43:35,349 - INFO - joeynmt.helpers - cfg.model.decoder.embeddings.scale : True
+2023-06-02 21:43:35,349 - INFO - joeynmt.helpers - cfg.model.decoder.embeddings.dropout : 0
+2023-06-02 21:43:35,349 - INFO - joeynmt.helpers -      cfg.model.decoder.hidden_size : 256
+2023-06-02 21:43:35,349 - INFO - joeynmt.helpers -          cfg.model.decoder.ff_size : 512
+2023-06-02 21:43:35,350 - INFO - joeynmt.helpers -          cfg.model.decoder.dropout : 0
+2023-06-02 21:43:35,351 - INFO - joeynmt.data - Building tokenizer...
+2023-06-02 21:43:35,351 - INFO - joeynmt.tokenizers - it tokenizer: BasicTokenizer(level=word, lowercase=False, normalize=False, filter_by_length=(-1, 100), pretokenizer=none)
+2023-06-02 21:43:35,351 - INFO - joeynmt.tokenizers - en tokenizer: BasicTokenizer(level=word, lowercase=False, normalize=False, filter_by_length=(-1, 100), pretokenizer=none)
+2023-06-02 21:43:35,351 - INFO - joeynmt.data - Loading train set...
+2023-06-02 21:43:35,505 - INFO - joeynmt.data - Building vocabulary...
+2023-06-02 21:43:37,074 - INFO - joeynmt.data - Loading dev set...
+2023-06-02 21:43:37,078 - INFO - joeynmt.data - Loading test set...
+2023-06-02 21:43:37,081 - INFO - joeynmt.data - Data loaded.
+2023-06-02 21:43:37,081 - INFO - joeynmt.data - Train dataset: PlaintextDataset(split=train, len=100000, src_lang=it, trg_lang=en, has_trg=True, random_subset=-1)
+2023-06-02 21:43:37,081 - INFO - joeynmt.data - Valid dataset: PlaintextDataset(split=dev, len=929, src_lang=it, trg_lang=en, has_trg=True, random_subset=-1)
+2023-06-02 21:43:37,082 - INFO - joeynmt.data -  Test dataset: PlaintextDataset(split=test, len=1566, src_lang=it, trg_lang=en, has_trg=True, random_subset=-1)
+2023-06-02 21:43:37,082 - INFO - joeynmt.data - First training example:
+	[SRC] Al Gore: arrestiamo il riscaldamento globale
+	[TRG] Al Gore: Averting the climate crisis
+2023-06-02 21:43:37,082 - INFO - joeynmt.data - First 10 Src tokens: (0) <unk> (1) <pad> (2) <s> (3) </s> (4) di (5) che (6) e (7) la (8) un (9) è
+2023-06-02 21:43:37,082 - INFO - joeynmt.data - First 10 Trg tokens: (0) <unk> (1) <pad> (2) <s> (3) </s> (4) the (5) to (6) of (7) a (8) and (9) that
+2023-06-02 21:43:37,082 - INFO - joeynmt.data - Number of unique Src tokens (vocab_size): 2004
+2023-06-02 21:43:37,082 - INFO - joeynmt.data - Number of unique Trg tokens (vocab_size): 2004
+2023-06-02 21:43:37,084 - INFO - joeynmt.model - Building an encoder-decoder model...
+2023-06-02 21:43:37,142 - INFO - joeynmt.model - Enc-dec model built.
+2023-06-02 21:43:37,144 - INFO - joeynmt.model - Total params: 3925248
+2023-06-02 21:43:37,145 - DEBUG - joeynmt.model - Trainable parameters: ['decoder.layers.0.dec_layer_norm.bias', 'decoder.layers.0.dec_layer_norm.weight', 'decoder.layers.0.feed_forward.layer_norm.bias', 'decoder.layers.0.feed_forward.layer_norm.weight', 'decoder.layers.0.feed_forward.pwff_layer.0.bias', 'decoder.layers.0.feed_forward.pwff_layer.0.weight', 'decoder.layers.0.feed_forward.pwff_layer.3.bias', 'decoder.layers.0.feed_forward.pwff_layer.3.weight', 'decoder.layers.0.src_trg_att.k_layer.bias', 'decoder.layers.0.src_trg_att.k_layer.weight', 'decoder.layers.0.src_trg_att.output_layer.bias', 'decoder.layers.0.src_trg_att.output_layer.weight', 'decoder.layers.0.src_trg_att.q_layer.bias', 'decoder.layers.0.src_trg_att.q_layer.weight', 'decoder.layers.0.src_trg_att.v_layer.bias', 'decoder.layers.0.src_trg_att.v_layer.weight', 'decoder.layers.0.trg_trg_att.k_layer.bias', 'decoder.layers.0.trg_trg_att.k_layer.weight', 'decoder.layers.0.trg_trg_att.output_layer.bias', 'decoder.layers.0.trg_trg_att.output_layer.weight', 'decoder.layers.0.trg_trg_att.q_layer.bias', 'decoder.layers.0.trg_trg_att.q_layer.weight', 'decoder.layers.0.trg_trg_att.v_layer.bias', 'decoder.layers.0.trg_trg_att.v_layer.weight', 'decoder.layers.0.x_layer_norm.bias', 'decoder.layers.0.x_layer_norm.weight', 'encoder.layers.0.feed_forward.layer_norm.bias', 'encoder.layers.0.feed_forward.layer_norm.weight', 'encoder.layers.0.feed_forward.pwff_layer.0.bias', 'encoder.layers.0.feed_forward.pwff_layer.0.weight', 'encoder.layers.0.feed_forward.pwff_layer.3.bias', 'encoder.layers.0.feed_forward.pwff_layer.3.weight', 'encoder.layers.0.layer_norm.bias', 'encoder.layers.0.layer_norm.weight', 'encoder.layers.0.src_src_att.k_layer.bias', 'encoder.layers.0.src_src_att.k_layer.weight', 'encoder.layers.0.src_src_att.output_layer.bias', 'encoder.layers.0.src_src_att.output_layer.weight', 'encoder.layers.0.src_src_att.q_layer.bias', 'encoder.layers.0.src_src_att.q_layer.weight', 'encoder.layers.0.src_src_att.v_layer.bias', 'encoder.layers.0.src_src_att.v_layer.weight', 'encoder.layers.1.feed_forward.layer_norm.bias', 'encoder.layers.1.feed_forward.layer_norm.weight', 'encoder.layers.1.feed_forward.pwff_layer.0.bias', 'encoder.layers.1.feed_forward.pwff_layer.0.weight', 'encoder.layers.1.feed_forward.pwff_layer.3.bias', 'encoder.layers.1.feed_forward.pwff_layer.3.weight', 'encoder.layers.1.layer_norm.bias', 'encoder.layers.1.layer_norm.weight', 'encoder.layers.1.src_src_att.k_layer.bias', 'encoder.layers.1.src_src_att.k_layer.weight', 'encoder.layers.1.src_src_att.output_layer.bias', 'encoder.layers.1.src_src_att.output_layer.weight', 'encoder.layers.1.src_src_att.q_layer.bias', 'encoder.layers.1.src_src_att.q_layer.weight', 'encoder.layers.1.src_src_att.v_layer.bias', 'encoder.layers.1.src_src_att.v_layer.weight', 'encoder.layers.2.feed_forward.layer_norm.bias', 'encoder.layers.2.feed_forward.layer_norm.weight', 'encoder.layers.2.feed_forward.pwff_layer.0.bias', 'encoder.layers.2.feed_forward.pwff_layer.0.weight', 'encoder.layers.2.feed_forward.pwff_layer.3.bias', 'encoder.layers.2.feed_forward.pwff_layer.3.weight', 'encoder.layers.2.layer_norm.bias', 'encoder.layers.2.layer_norm.weight', 'encoder.layers.2.src_src_att.k_layer.bias', 'encoder.layers.2.src_src_att.k_layer.weight', 'encoder.layers.2.src_src_att.output_layer.bias', 'encoder.layers.2.src_src_att.output_layer.weight', 'encoder.layers.2.src_src_att.q_layer.bias', 'encoder.layers.2.src_src_att.q_layer.weight', 'encoder.layers.2.src_src_att.v_layer.bias', 'encoder.layers.2.src_src_att.v_layer.weight', 'encoder.layers.3.feed_forward.layer_norm.bias', 'encoder.layers.3.feed_forward.layer_norm.weight', 'encoder.layers.3.feed_forward.pwff_layer.0.bias', 'encoder.layers.3.feed_forward.pwff_layer.0.weight', 'encoder.layers.3.feed_forward.pwff_layer.3.bias', 'encoder.layers.3.feed_forward.pwff_layer.3.weight', 'encoder.layers.3.layer_norm.bias', 'encoder.layers.3.layer_norm.weight', 'encoder.layers.3.src_src_att.k_layer.bias', 'encoder.layers.3.src_src_att.k_layer.weight', 'encoder.layers.3.src_src_att.output_layer.bias', 'encoder.layers.3.src_src_att.output_layer.weight', 'encoder.layers.3.src_src_att.q_layer.bias', 'encoder.layers.3.src_src_att.q_layer.weight', 'encoder.layers.3.src_src_att.v_layer.bias', 'encoder.layers.3.src_src_att.v_layer.weight', 'src_embed.lut.weight', 'trg_embed.lut.weight']
+2023-06-02 21:43:37,145 - INFO - joeynmt.training - Model(
+	encoder=TransformerEncoder(num_layers=4, num_heads=2, alpha=1.0, layer_norm="pre", activation=ReLU()),
+	decoder=TransformerDecoder(num_layers=1, num_heads=2, alpha=1.0, layer_norm="post", activation=ReLU()),
+	src_embed=Embeddings(embedding_dim=256, vocab_size=2004),
+	trg_embed=Embeddings(embedding_dim=256, vocab_size=2004),
+	loss_function=XentLoss(criterion=KLDivLoss(), smoothing=0.3))
+2023-06-02 21:43:37,145 - INFO - joeynmt.builders - Adam(lr=0.0003, weight_decay=0.0, betas=(0.9, 0.999))
+2023-06-02 21:43:37,145 - INFO - joeynmt.builders - ReduceLROnPlateau(mode=min, verbose=False, threshold_mode=abs, eps=0.0, factor=0.7, patience=8)
+2023-06-02 21:43:37,146 - INFO - joeynmt.training - Train stats:
+	device: cpu
+	n_gpu: 0
+	16-bits training: False
+	gradient accumulation: 1
+	batch size per device: 2048
+	effective batch size (w. parallel & accumulation): 2048
+2023-06-02 21:43:37,146 - INFO - joeynmt.training - EPOCH 1
+2023-06-02 21:44:05,080 - INFO - joeynmt.training - Epoch   1, Step:      100, Batch Loss:     3.126760, Batch Acc: 0.209129, Tokens per Sec:     2397, Lr: 0.000300
+2023-06-02 21:44:32,793 - INFO - joeynmt.training - Epoch   1, Step:      200, Batch Loss:     2.980583, Batch Acc: 0.233038, Tokens per Sec:     2347, Lr: 0.000300
+2023-06-02 21:45:02,099 - INFO - joeynmt.training - Epoch   1, Step:      300, Batch Loss:     2.777190, Batch Acc: 0.247986, Tokens per Sec:     2211, Lr: 0.000300
+2023-06-02 21:45:30,155 - INFO - joeynmt.training - Epoch   1, Step:      400, Batch Loss:     2.768672, Batch Acc: 0.262852, Tokens per Sec:     2436, Lr: 0.000300
+2023-06-02 21:45:59,861 - INFO - joeynmt.training - Epoch   1, Step:      500, Batch Loss:     2.720722, Batch Acc: 0.278235, Tokens per Sec:     2194, Lr: 0.000300
+2023-06-02 21:45:59,861 - INFO - joeynmt.prediction - Predicting 929 example(s)... (Greedy decoding with min_output_length=1, max_output_length=-1, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2023-06-02 21:46:38,250 - INFO - joeynmt.prediction - Evaluation result (greedy) loss:   2.65, ppl:  14.16, acc:   0.28, generation: 38.3811[sec], evaluation: 0.0000[sec]
+2023-06-02 21:46:38,251 - INFO - joeynmt.training - Hooray! New best validation result [ppl]!
+2023-06-02 21:46:38,484 - INFO - joeynmt.training - Example #0
+2023-06-02 21:46:38,484 - DEBUG - joeynmt.training - 	Tokenized source:     ["L'anno", 'scorso', 'ho', 'mostrato', 'queste', 'diapositive', '', 'per', 'dimostrare', 'che', 'la', 'calotta', 'glaciale', 'artica,', '', 'che', 'per', 'quasi', 'tre', 'milioni', 'di', 'anni', 'ha', 'avuto', '', 'le', 'dimensioni', 'dei', '48', 'Stati', 'Uniti', 'continentali,', '', 'si', 'è', 'ristretta', 'del', '40%.']
+2023-06-02 21:46:38,484 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Last', 'year', 'I', 'showed', 'these', 'two', 'slides', 'so', 'that', 'demonstrate', 'that', 'the', 'arctic', 'ice', 'cap,', 'which', 'for', 'most', 'of', 'the', 'last', 'three', 'million', 'years', 'has', 'been', 'the', 'size', 'of', 'the', 'lower', '48', 'states,', 'has', 'shrunk', 'by', '40', 'percent.']
+2023-06-02 21:46:38,484 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['And', 'I', 'have', 'to', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '</s>']
+2023-06-02 21:46:38,485 - INFO - joeynmt.training - 	Source:     L'anno scorso ho mostrato queste diapositive  per dimostrare che la calotta glaciale artica,  che per quasi tre milioni di anni ha avuto  le dimensioni dei 48 Stati Uniti continentali,  si è ristretta del 40%.
+2023-06-02 21:46:38,485 - INFO - joeynmt.training - 	Reference:  Last year I showed these two slides so that demonstrate that the arctic ice cap, which for most of the last three million years has been the size of the lower 48 states, has shrunk by 40 percent.
+2023-06-02 21:46:38,485 - INFO - joeynmt.training - 	Hypothesis: And I have to <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+2023-06-02 21:46:38,485 - INFO - joeynmt.training - Example #1
+2023-06-02 21:46:38,485 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tuttavia', 'questo', 'sottovaluta', 'la', 'gravità', 'del', 'problema', '', 'perché', 'non', 'mostra', 'lo', 'spessore', 'del', 'ghiaccio.']
+2023-06-02 21:46:38,485 - DEBUG - joeynmt.training - 	Tokenized reference:  ['But', 'this', 'understates', 'the', 'seriousness', 'of', 'this', 'particular', 'problem', 'because', 'it', "doesn't", 'show', 'the', 'thickness', 'of', 'the', 'ice.']
+2023-06-02 21:46:38,485 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '</s>']
+2023-06-02 21:46:38,485 - INFO - joeynmt.training - 	Source:     Tuttavia questo sottovaluta la gravità del problema  perché non mostra lo spessore del ghiaccio.
+2023-06-02 21:46:38,485 - INFO - joeynmt.training - 	Reference:  But this understates the seriousness of this particular problem because it doesn't show the thickness of the ice.
+2023-06-02 21:46:38,486 - INFO - joeynmt.training - 	Hypothesis: <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+2023-06-02 21:46:38,486 - INFO - joeynmt.training - Example #2
+2023-06-02 21:46:38,486 - DEBUG - joeynmt.training - 	Tokenized source:     ['La', 'calotta', 'glaciale', 'artica', 'è,', 'in', 'un', 'certo', 'senso,', '', 'il', 'cuore', 'pulsante', 'del', 'sistema', 'climatico', 'globale.']
+2023-06-02 21:46:38,486 - DEBUG - joeynmt.training - 	Tokenized reference:  ['The', 'arctic', 'ice', 'cap', 'is,', 'in', 'a', 'sense,', 'the', 'beating', 'heart', 'of', 'the', 'global', 'climate', 'system.']
+2023-06-02 21:46:38,486 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '</s>']
+2023-06-02 21:46:38,486 - INFO - joeynmt.training - 	Source:     La calotta glaciale artica è, in un certo senso,  il cuore pulsante del sistema climatico globale.
+2023-06-02 21:46:38,486 - INFO - joeynmt.training - 	Reference:  The arctic ice cap is, in a sense, the beating heart of the global climate system.
+2023-06-02 21:46:38,486 - INFO - joeynmt.training - 	Hypothesis: <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+2023-06-02 21:46:38,486 - INFO - joeynmt.training - Example #3
+2023-06-02 21:46:38,486 - DEBUG - joeynmt.training - 	Tokenized source:     ['Si', 'espande', "d'inverno", 'e', 'si', 'ritira', "d'estate."]
+2023-06-02 21:46:38,486 - DEBUG - joeynmt.training - 	Tokenized reference:  ['It', 'expands', 'in', 'winter', 'and', 'contracts', 'in', 'summer.']
+2023-06-02 21:46:38,486 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['<unk>', '<unk>', '<unk>', '<unk>', '</s>']
+2023-06-02 21:46:38,487 - INFO - joeynmt.training - 	Source:     Si espande d'inverno e si ritira d'estate.
+2023-06-02 21:46:38,487 - INFO - joeynmt.training - 	Reference:  It expands in winter and contracts in summer.
+2023-06-02 21:46:38,487 - INFO - joeynmt.training - 	Hypothesis: <unk> <unk> <unk> <unk>
+2023-06-02 21:46:38,487 - INFO - joeynmt.training - Example #4
+2023-06-02 21:46:38,487 - DEBUG - joeynmt.training - 	Tokenized source:     ['La', 'prossima', 'diapositiva', 'sarà', 'una', 'rapida', '', 'carrellata', 'sugli', 'avvenimenti', 'degli', 'ultimi', '25', 'anni.']
+2023-06-02 21:46:38,487 - DEBUG - joeynmt.training - 	Tokenized reference:  ['The', 'next', 'slide', 'I', 'show', 'you', 'will', 'be', 'a', 'rapid', 'fast-forward', 'of', "what's", 'happened', 'over', 'the', 'last', '25', 'years.']
+2023-06-02 21:46:38,487 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '</s>']
+2023-06-02 21:46:38,487 - INFO - joeynmt.training - 	Source:     La prossima diapositiva sarà una rapida  carrellata sugli avvenimenti degli ultimi 25 anni.
+2023-06-02 21:46:38,488 - INFO - joeynmt.training - 	Reference:  The next slide I show you will be a rapid fast-forward of what's happened over the last 25 years.
+2023-06-02 21:46:38,488 - INFO - joeynmt.training - 	Hypothesis: <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+2023-06-02 21:47:10,876 - INFO - joeynmt.training - Epoch   1, Step:      600, Batch Loss:     2.524712, Batch Acc: 0.294986, Tokens per Sec:     2033, Lr: 0.000300
+2023-06-02 21:47:42,122 - INFO - joeynmt.training - Epoch   1, Step:      700, Batch Loss:     2.477948, Batch Acc: 0.303082, Tokens per Sec:     2100, Lr: 0.000300
+2023-06-02 21:48:14,538 - INFO - joeynmt.training - Epoch   1, Step:      800, Batch Loss:     2.545991, Batch Acc: 0.317347, Tokens per Sec:     2044, Lr: 0.000300
+2023-06-02 21:48:46,563 - INFO - joeynmt.training - Epoch   1, Step:      900, Batch Loss:     2.549404, Batch Acc: 0.328903, Tokens per Sec:     2027, Lr: 0.000300
+2023-06-02 21:49:19,034 - INFO - joeynmt.training - Epoch   1, Step:     1000, Batch Loss:     2.373033, Batch Acc: 0.336608, Tokens per Sec:     2060, Lr: 0.000300
+2023-06-02 21:49:19,034 - INFO - joeynmt.prediction - Predicting 929 example(s)... (Greedy decoding with min_output_length=1, max_output_length=-1, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2023-06-02 21:49:56,675 - INFO - joeynmt.prediction - Evaluation result (greedy) loss:   2.42, ppl:  11.26, acc:   0.33, generation: 37.6326[sec], evaluation: 0.0000[sec]
+2023-06-02 21:49:56,676 - INFO - joeynmt.training - Hooray! New best validation result [ppl]!
+2023-06-02 21:49:56,960 - INFO - joeynmt.training - Example #0
+2023-06-02 21:49:56,960 - DEBUG - joeynmt.training - 	Tokenized source:     ["L'anno", 'scorso', 'ho', 'mostrato', 'queste', 'diapositive', '', 'per', 'dimostrare', 'che', 'la', 'calotta', 'glaciale', 'artica,', '', 'che', 'per', 'quasi', 'tre', 'milioni', 'di', 'anni', 'ha', 'avuto', '', 'le', 'dimensioni', 'dei', '48', 'Stati', 'Uniti', 'continentali,', '', 'si', 'è', 'ristretta', 'del', '40%.']
+2023-06-02 21:49:56,960 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Last', 'year', 'I', 'showed', 'these', 'two', 'slides', 'so', 'that', 'demonstrate', 'that', 'the', 'arctic', 'ice', 'cap,', 'which', 'for', 'most', 'of', 'the', 'last', 'three', 'million', 'years', 'has', 'been', 'the', 'size', 'of', 'the', 'lower', '48', 'states,', 'has', 'shrunk', 'by', '40', 'percent.']
+2023-06-02 21:49:56,960 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '</s>']
+2023-06-02 21:49:56,960 - INFO - joeynmt.training - 	Source:     L'anno scorso ho mostrato queste diapositive  per dimostrare che la calotta glaciale artica,  che per quasi tre milioni di anni ha avuto  le dimensioni dei 48 Stati Uniti continentali,  si è ristretta del 40%.
+2023-06-02 21:49:56,961 - INFO - joeynmt.training - 	Reference:  Last year I showed these two slides so that demonstrate that the arctic ice cap, which for most of the last three million years has been the size of the lower 48 states, has shrunk by 40 percent.
+2023-06-02 21:49:56,961 - INFO - joeynmt.training - 	Hypothesis: <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+2023-06-02 21:49:56,961 - INFO - joeynmt.training - Example #1
+2023-06-02 21:49:56,961 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tuttavia', 'questo', 'sottovaluta', 'la', 'gravità', 'del', 'problema', '', 'perché', 'non', 'mostra', 'lo', 'spessore', 'del', 'ghiaccio.']
+2023-06-02 21:49:56,961 - DEBUG - joeynmt.training - 	Tokenized reference:  ['But', 'this', 'understates', 'the', 'seriousness', 'of', 'this', 'particular', 'problem', 'because', 'it', "doesn't", 'show', 'the', 'thickness', 'of', 'the', 'ice.']
+2023-06-02 21:49:56,961 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['<unk>', 'this', '<unk>', '<unk>', '<unk>', 'because', 'the', '<unk>', 'because', 'the', '<unk>', '<unk>', '<unk>', '</s>']
+2023-06-02 21:49:56,961 - INFO - joeynmt.training - 	Source:     Tuttavia questo sottovaluta la gravità del problema  perché non mostra lo spessore del ghiaccio.
+2023-06-02 21:49:56,961 - INFO - joeynmt.training - 	Reference:  But this understates the seriousness of this particular problem because it doesn't show the thickness of the ice.
+2023-06-02 21:49:56,962 - INFO - joeynmt.training - 	Hypothesis: <unk> this <unk> <unk> <unk> because the <unk> because the <unk> <unk> <unk>
+2023-06-02 21:49:56,962 - INFO - joeynmt.training - Example #2
+2023-06-02 21:49:56,962 - DEBUG - joeynmt.training - 	Tokenized source:     ['La', 'calotta', 'glaciale', 'artica', 'è,', 'in', 'un', 'certo', 'senso,', '', 'il', 'cuore', 'pulsante', 'del', 'sistema', 'climatico', 'globale.']
+2023-06-02 21:49:56,962 - DEBUG - joeynmt.training - 	Tokenized reference:  ['The', 'arctic', 'ice', 'cap', 'is,', 'in', 'a', 'sense,', 'the', 'beating', 'heart', 'of', 'the', 'global', 'climate', 'system.']
+2023-06-02 21:49:56,962 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['The', '<unk>', '<unk>', 'is', 'a', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '</s>']
+2023-06-02 21:49:56,962 - INFO - joeynmt.training - 	Source:     La calotta glaciale artica è, in un certo senso,  il cuore pulsante del sistema climatico globale.
+2023-06-02 21:49:56,962 - INFO - joeynmt.training - 	Reference:  The arctic ice cap is, in a sense, the beating heart of the global climate system.
+2023-06-02 21:49:56,962 - INFO - joeynmt.training - 	Hypothesis: The <unk> <unk> is a <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+2023-06-02 21:49:56,963 - INFO - joeynmt.training - Example #3
+2023-06-02 21:49:56,963 - DEBUG - joeynmt.training - 	Tokenized source:     ['Si', 'espande', "d'inverno", 'e', 'si', 'ritira', "d'estate."]
+2023-06-02 21:49:56,963 - DEBUG - joeynmt.training - 	Tokenized reference:  ['It', 'expands', 'in', 'winter', 'and', 'contracts', 'in', 'summer.']
+2023-06-02 21:49:56,963 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['<unk>', '<unk>', '<unk>', 'and', '<unk>', '<unk>', '</s>']
+2023-06-02 21:49:56,963 - INFO - joeynmt.training - 	Source:     Si espande d'inverno e si ritira d'estate.
+2023-06-02 21:49:56,963 - INFO - joeynmt.training - 	Reference:  It expands in winter and contracts in summer.
+2023-06-02 21:49:56,963 - INFO - joeynmt.training - 	Hypothesis: <unk> <unk> <unk> and <unk> <unk>
+2023-06-02 21:49:56,963 - INFO - joeynmt.training - Example #4
+2023-06-02 21:49:56,963 - DEBUG - joeynmt.training - 	Tokenized source:     ['La', 'prossima', 'diapositiva', 'sarà', 'una', 'rapida', '', 'carrellata', 'sugli', 'avvenimenti', 'degli', 'ultimi', '25', 'anni.']
+2023-06-02 21:49:56,963 - DEBUG - joeynmt.training - 	Tokenized reference:  ['The', 'next', 'slide', 'I', 'show', 'you', 'will', 'be', 'a', 'rapid', 'fast-forward', 'of', "what's", 'happened', 'over', 'the', 'last', '25', 'years.']
+2023-06-02 21:49:56,963 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['The', '<unk>', 'is', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '</s>']
+2023-06-02 21:49:56,964 - INFO - joeynmt.training - 	Source:     La prossima diapositiva sarà una rapida  carrellata sugli avvenimenti degli ultimi 25 anni.
+2023-06-02 21:49:56,964 - INFO - joeynmt.training - 	Reference:  The next slide I show you will be a rapid fast-forward of what's happened over the last 25 years.
+2023-06-02 21:49:56,964 - INFO - joeynmt.training - 	Hypothesis: The <unk> is <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+2023-06-02 21:50:30,532 - INFO - joeynmt.training - Epoch   1, Step:     1100, Batch Loss:     2.294900, Batch Acc: 0.345918, Tokens per Sec:     1907, Lr: 0.000300
+2023-06-02 21:51:03,853 - INFO - joeynmt.training - Epoch   1, Step:     1200, Batch Loss:     2.382410, Batch Acc: 0.347743, Tokens per Sec:     1892, Lr: 0.000300
+2023-06-02 21:51:37,819 - INFO - joeynmt.training - Epoch   1, Step:     1300, Batch Loss:     2.268692, Batch Acc: 0.364318, Tokens per Sec:     1945, Lr: 0.000300
+2023-06-02 21:52:12,367 - INFO - joeynmt.training - Epoch   1, Step:     1400, Batch Loss:     2.398929, Batch Acc: 0.363003, Tokens per Sec:     1892, Lr: 0.000300
+2023-06-02 21:52:46,637 - INFO - joeynmt.training - Epoch   1, Step:     1500, Batch Loss:     2.178185, Batch Acc: 0.374397, Tokens per Sec:     1923, Lr: 0.000300
+2023-06-02 21:52:46,637 - INFO - joeynmt.prediction - Predicting 929 example(s)... (Greedy decoding with min_output_length=1, max_output_length=-1, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2023-06-02 21:53:29,302 - INFO - joeynmt.prediction - Evaluation result (greedy) loss:   2.30, ppl:   9.95, acc:   0.35, generation: 42.6557[sec], evaluation: 0.0000[sec]
+2023-06-02 21:53:29,302 - INFO - joeynmt.training - Hooray! New best validation result [ppl]!
+2023-06-02 21:53:29,538 - INFO - joeynmt.training - Example #0
+2023-06-02 21:53:29,538 - DEBUG - joeynmt.training - 	Tokenized source:     ["L'anno", 'scorso', 'ho', 'mostrato', 'queste', 'diapositive', '', 'per', 'dimostrare', 'che', 'la', 'calotta', 'glaciale', 'artica,', '', 'che', 'per', 'quasi', 'tre', 'milioni', 'di', 'anni', 'ha', 'avuto', '', 'le', 'dimensioni', 'dei', '48', 'Stati', 'Uniti', 'continentali,', '', 'si', 'è', 'ristretta', 'del', '40%.']
+2023-06-02 21:53:29,538 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Last', 'year', 'I', 'showed', 'these', 'two', 'slides', 'so', 'that', 'demonstrate', 'that', 'the', 'arctic', 'ice', 'cap,', 'which', 'for', 'most', 'of', 'the', 'last', 'three', 'million', 'years', 'has', 'been', 'the', 'size', 'of', 'the', 'lower', '48', 'states,', 'has', 'shrunk', 'by', '40', 'percent.']
+2023-06-02 21:53:29,538 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '', '', '', '', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '</s>']
+2023-06-02 21:53:29,538 - INFO - joeynmt.training - 	Source:     L'anno scorso ho mostrato queste diapositive  per dimostrare che la calotta glaciale artica,  che per quasi tre milioni di anni ha avuto  le dimensioni dei 48 Stati Uniti continentali,  si è ristretta del 40%.
+2023-06-02 21:53:29,539 - INFO - joeynmt.training - 	Reference:  Last year I showed these two slides so that demonstrate that the arctic ice cap, which for most of the last three million years has been the size of the lower 48 states, has shrunk by 40 percent.
+2023-06-02 21:53:29,539 - INFO - joeynmt.training - 	Hypothesis: <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>     <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+2023-06-02 21:53:29,539 - INFO - joeynmt.training - Example #1
+2023-06-02 21:53:29,539 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tuttavia', 'questo', 'sottovaluta', 'la', 'gravità', 'del', 'problema', '', 'perché', 'non', 'mostra', 'lo', 'spessore', 'del', 'ghiaccio.']
+2023-06-02 21:53:29,539 - DEBUG - joeynmt.training - 	Tokenized reference:  ['But', 'this', 'understates', 'the', 'seriousness', 'of', 'this', 'particular', 'problem', 'because', 'it', "doesn't", 'show', 'the', 'thickness', 'of', 'the', 'ice.']
+2023-06-02 21:53:29,539 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['<unk>', 'this', '<unk>', '<unk>', '<unk>', '<unk>', 'because', "it's", 'not', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '</s>']
+2023-06-02 21:53:29,539 - INFO - joeynmt.training - 	Source:     Tuttavia questo sottovaluta la gravità del problema  perché non mostra lo spessore del ghiaccio.
+2023-06-02 21:53:29,539 - INFO - joeynmt.training - 	Reference:  But this understates the seriousness of this particular problem because it doesn't show the thickness of the ice.
+2023-06-02 21:53:29,539 - INFO - joeynmt.training - 	Hypothesis: <unk> this <unk> <unk> <unk> <unk> because it's not <unk> <unk> <unk> <unk> <unk>
+2023-06-02 21:53:29,539 - INFO - joeynmt.training - Example #2
+2023-06-02 21:53:29,540 - DEBUG - joeynmt.training - 	Tokenized source:     ['La', 'calotta', 'glaciale', 'artica', 'è,', 'in', 'un', 'certo', 'senso,', '', 'il', 'cuore', 'pulsante', 'del', 'sistema', 'climatico', 'globale.']
+2023-06-02 21:53:29,540 - DEBUG - joeynmt.training - 	Tokenized reference:  ['The', 'arctic', 'ice', 'cap', 'is,', 'in', 'a', 'sense,', 'the', 'beating', 'heart', 'of', 'the', 'global', 'climate', 'system.']
+2023-06-02 21:53:29,540 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '</s>']
+2023-06-02 21:53:29,540 - INFO - joeynmt.training - 	Source:     La calotta glaciale artica è, in un certo senso,  il cuore pulsante del sistema climatico globale.
+2023-06-02 21:53:29,540 - INFO - joeynmt.training - 	Reference:  The arctic ice cap is, in a sense, the beating heart of the global climate system.
+2023-06-02 21:53:29,540 - INFO - joeynmt.training - 	Hypothesis: <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+2023-06-02 21:53:29,540 - INFO - joeynmt.training - Example #3
+2023-06-02 21:53:29,540 - DEBUG - joeynmt.training - 	Tokenized source:     ['Si', 'espande', "d'inverno", 'e', 'si', 'ritira', "d'estate."]
+2023-06-02 21:53:29,540 - DEBUG - joeynmt.training - 	Tokenized reference:  ['It', 'expands', 'in', 'winter', 'and', 'contracts', 'in', 'summer.']
+2023-06-02 21:53:29,540 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['<unk>', '<unk>', '<unk>', 'and', '<unk>', '</s>']
+2023-06-02 21:53:29,541 - INFO - joeynmt.training - 	Source:     Si espande d'inverno e si ritira d'estate.
+2023-06-02 21:53:29,541 - INFO - joeynmt.training - 	Reference:  It expands in winter and contracts in summer.
+2023-06-02 21:53:29,541 - INFO - joeynmt.training - 	Hypothesis: <unk> <unk> <unk> and <unk>
+2023-06-02 21:53:29,541 - INFO - joeynmt.training - Example #4
+2023-06-02 21:53:29,541 - DEBUG - joeynmt.training - 	Tokenized source:     ['La', 'prossima', 'diapositiva', 'sarà', 'una', 'rapida', '', 'carrellata', 'sugli', 'avvenimenti', 'degli', 'ultimi', '25', 'anni.']
+2023-06-02 21:53:29,541 - DEBUG - joeynmt.training - 	Tokenized reference:  ['The', 'next', 'slide', 'I', 'show', 'you', 'will', 'be', 'a', 'rapid', 'fast-forward', 'of', "what's", 'happened', 'over', 'the', 'last', '25', 'years.']
+2023-06-02 21:53:29,541 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '</s>']
+2023-06-02 21:53:29,541 - INFO - joeynmt.training - 	Source:     La prossima diapositiva sarà una rapida  carrellata sugli avvenimenti degli ultimi 25 anni.
+2023-06-02 21:53:29,542 - INFO - joeynmt.training - 	Reference:  The next slide I show you will be a rapid fast-forward of what's happened over the last 25 years.
+2023-06-02 21:53:29,542 - INFO - joeynmt.training - 	Hypothesis: <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+2023-06-02 21:54:04,320 - INFO - joeynmt.training - Epoch   1, Step:     1600, Batch Loss:     2.132757, Batch Acc: 0.382811, Tokens per Sec:     1881, Lr: 0.000300
+2023-06-02 21:54:37,606 - INFO - joeynmt.training - Epoch   1, Step:     1700, Batch Loss:     2.138386, Batch Acc: 0.388055, Tokens per Sec:     1993, Lr: 0.000300
+2023-06-02 21:55:11,939 - INFO - joeynmt.training - Epoch   1, Step:     1800, Batch Loss:     2.262200, Batch Acc: 0.392362, Tokens per Sec:     1849, Lr: 0.000300
+2023-06-02 21:55:44,197 - INFO - joeynmt.training - Epoch   1, Step:     1900, Batch Loss:     2.057975, Batch Acc: 0.399187, Tokens per Sec:     1991, Lr: 0.000300
+2023-06-02 21:56:18,446 - INFO - joeynmt.training - Epoch   1, Step:     2000, Batch Loss:     2.029313, Batch Acc: 0.407464, Tokens per Sec:     1903, Lr: 0.000300
+2023-06-02 21:56:18,447 - INFO - joeynmt.prediction - Predicting 929 example(s)... (Greedy decoding with min_output_length=1, max_output_length=-1, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2023-06-02 21:56:54,997 - INFO - joeynmt.prediction - Evaluation result (greedy) loss:   2.15, ppl:   8.56, acc:   0.38, generation: 36.5420[sec], evaluation: 0.0000[sec]
+2023-06-02 21:56:54,998 - INFO - joeynmt.training - Hooray! New best validation result [ppl]!
+2023-06-02 21:56:55,224 - INFO - joeynmt.training - Example #0
+2023-06-02 21:56:55,224 - DEBUG - joeynmt.training - 	Tokenized source:     ["L'anno", 'scorso', 'ho', 'mostrato', 'queste', 'diapositive', '', 'per', 'dimostrare', 'che', 'la', 'calotta', 'glaciale', 'artica,', '', 'che', 'per', 'quasi', 'tre', 'milioni', 'di', 'anni', 'ha', 'avuto', '', 'le', 'dimensioni', 'dei', '48', 'Stati', 'Uniti', 'continentali,', '', 'si', 'è', 'ristretta', 'del', '40%.']
+2023-06-02 21:56:55,224 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Last', 'year', 'I', 'showed', 'these', 'two', 'slides', 'so', 'that', 'demonstrate', 'that', 'the', 'arctic', 'ice', 'cap,', 'which', 'for', 'most', 'of', 'the', 'last', 'three', 'million', 'years', 'has', 'been', 'the', 'size', 'of', 'the', 'lower', '48', 'states,', 'has', 'shrunk', 'by', '40', 'percent.']
+2023-06-02 21:56:55,224 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '</s>']
+2023-06-02 21:56:55,224 - INFO - joeynmt.training - 	Source:     L'anno scorso ho mostrato queste diapositive  per dimostrare che la calotta glaciale artica,  che per quasi tre milioni di anni ha avuto  le dimensioni dei 48 Stati Uniti continentali,  si è ristretta del 40%.
+2023-06-02 21:56:55,224 - INFO - joeynmt.training - 	Reference:  Last year I showed these two slides so that demonstrate that the arctic ice cap, which for most of the last three million years has been the size of the lower 48 states, has shrunk by 40 percent.
+2023-06-02 21:56:55,224 - INFO - joeynmt.training - 	Hypothesis: <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+2023-06-02 21:56:55,225 - INFO - joeynmt.training - Example #1
+2023-06-02 21:56:55,225 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tuttavia', 'questo', 'sottovaluta', 'la', 'gravità', 'del', 'problema', '', 'perché', 'non', 'mostra', 'lo', 'spessore', 'del', 'ghiaccio.']
+2023-06-02 21:56:55,225 - DEBUG - joeynmt.training - 	Tokenized reference:  ['But', 'this', 'understates', 'the', 'seriousness', 'of', 'this', 'particular', 'problem', 'because', 'it', "doesn't", 'show', 'the', 'thickness', 'of', 'the', 'ice.']
+2023-06-02 21:56:55,225 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['<unk>', 'this', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '</s>']
+2023-06-02 21:56:55,225 - INFO - joeynmt.training - 	Source:     Tuttavia questo sottovaluta la gravità del problema  perché non mostra lo spessore del ghiaccio.
+2023-06-02 21:56:55,225 - INFO - joeynmt.training - 	Reference:  But this understates the seriousness of this particular problem because it doesn't show the thickness of the ice.
+2023-06-02 21:56:55,225 - INFO - joeynmt.training - 	Hypothesis: <unk> this <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+2023-06-02 21:56:55,225 - INFO - joeynmt.training - Example #2
+2023-06-02 21:56:55,226 - DEBUG - joeynmt.training - 	Tokenized source:     ['La', 'calotta', 'glaciale', 'artica', 'è,', 'in', 'un', 'certo', 'senso,', '', 'il', 'cuore', 'pulsante', 'del', 'sistema', 'climatico', 'globale.']
+2023-06-02 21:56:55,226 - DEBUG - joeynmt.training - 	Tokenized reference:  ['The', 'arctic', 'ice', 'cap', 'is,', 'in', 'a', 'sense,', 'the', 'beating', 'heart', 'of', 'the', 'global', 'climate', 'system.']
+2023-06-02 21:56:55,226 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['The', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '</s>']
+2023-06-02 21:56:55,226 - INFO - joeynmt.training - 	Source:     La calotta glaciale artica è, in un certo senso,  il cuore pulsante del sistema climatico globale.
+2023-06-02 21:56:55,226 - INFO - joeynmt.training - 	Reference:  The arctic ice cap is, in a sense, the beating heart of the global climate system.
+2023-06-02 21:56:55,226 - INFO - joeynmt.training - 	Hypothesis: The <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+2023-06-02 21:56:55,226 - INFO - joeynmt.training - Example #3
+2023-06-02 21:56:55,226 - DEBUG - joeynmt.training - 	Tokenized source:     ['Si', 'espande', "d'inverno", 'e', 'si', 'ritira', "d'estate."]
+2023-06-02 21:56:55,226 - DEBUG - joeynmt.training - 	Tokenized reference:  ['It', 'expands', 'in', 'winter', 'and', 'contracts', 'in', 'summer.']
+2023-06-02 21:56:55,226 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['<unk>', '<unk>', 'and', '<unk>', '<unk>', '</s>']
+2023-06-02 21:56:55,227 - INFO - joeynmt.training - 	Source:     Si espande d'inverno e si ritira d'estate.
+2023-06-02 21:56:55,227 - INFO - joeynmt.training - 	Reference:  It expands in winter and contracts in summer.
+2023-06-02 21:56:55,227 - INFO - joeynmt.training - 	Hypothesis: <unk> <unk> and <unk> <unk>
+2023-06-02 21:56:55,227 - INFO - joeynmt.training - Example #4
+2023-06-02 21:56:55,227 - DEBUG - joeynmt.training - 	Tokenized source:     ['La', 'prossima', 'diapositiva', 'sarà', 'una', 'rapida', '', 'carrellata', 'sugli', 'avvenimenti', 'degli', 'ultimi', '25', 'anni.']
+2023-06-02 21:56:55,227 - DEBUG - joeynmt.training - 	Tokenized reference:  ['The', 'next', 'slide', 'I', 'show', 'you', 'will', 'be', 'a', 'rapid', 'fast-forward', 'of', "what's", 'happened', 'over', 'the', 'last', '25', 'years.']
+2023-06-02 21:56:55,227 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['The', 'next', '<unk>', 'will', 'be', 'a', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '</s>']
+2023-06-02 21:56:55,227 - INFO - joeynmt.training - 	Source:     La prossima diapositiva sarà una rapida  carrellata sugli avvenimenti degli ultimi 25 anni.
+2023-06-02 21:56:55,228 - INFO - joeynmt.training - 	Reference:  The next slide I show you will be a rapid fast-forward of what's happened over the last 25 years.
+2023-06-02 21:56:55,228 - INFO - joeynmt.training - 	Hypothesis: The next <unk> will be a <unk> <unk> <unk> <unk> <unk>
+2023-06-02 21:57:29,589 - INFO - joeynmt.training - Epoch   1, Step:     2100, Batch Loss:     2.060775, Batch Acc: 0.410058, Tokens per Sec:     1887, Lr: 0.000300
+2023-06-02 21:58:02,944 - INFO - joeynmt.training - Epoch   1, Step:     2200, Batch Loss:     2.102282, Batch Acc: 0.409804, Tokens per Sec:     1977, Lr: 0.000300
+2023-06-02 21:58:37,116 - INFO - joeynmt.training - Epoch   1, Step:     2300, Batch Loss:     1.972489, Batch Acc: 0.413872, Tokens per Sec:     1915, Lr: 0.000300
+2023-06-02 21:59:10,230 - INFO - joeynmt.training - Epoch   1, Step:     2400, Batch Loss:     2.123492, Batch Acc: 0.414248, Tokens per Sec:     1958, Lr: 0.000300
+2023-06-02 21:59:48,538 - INFO - joeynmt.training - Epoch   1, Step:     2500, Batch Loss:     1.985670, Batch Acc: 0.423917, Tokens per Sec:     1711, Lr: 0.000300
+2023-06-02 21:59:48,538 - INFO - joeynmt.prediction - Predicting 929 example(s)... (Greedy decoding with min_output_length=1, max_output_length=-1, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2023-06-02 22:00:42,213 - INFO - joeynmt.prediction - Evaluation result (greedy) loss:   2.08, ppl:   8.01, acc:   0.40, generation: 53.6654[sec], evaluation: 0.0000[sec]
+2023-06-02 22:00:42,213 - INFO - joeynmt.training - Hooray! New best validation result [ppl]!
+2023-06-02 22:00:42,450 - INFO - joeynmt.training - Example #0
+2023-06-02 22:00:42,450 - DEBUG - joeynmt.training - 	Tokenized source:     ["L'anno", 'scorso', 'ho', 'mostrato', 'queste', 'diapositive', '', 'per', 'dimostrare', 'che', 'la', 'calotta', 'glaciale', 'artica,', '', 'che', 'per', 'quasi', 'tre', 'milioni', 'di', 'anni', 'ha', 'avuto', '', 'le', 'dimensioni', 'dei', '48', 'Stati', 'Uniti', 'continentali,', '', 'si', 'è', 'ristretta', 'del', '40%.']
+2023-06-02 22:00:42,450 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Last', 'year', 'I', 'showed', 'these', 'two', 'slides', 'so', 'that', 'demonstrate', 'that', 'the', 'arctic', 'ice', 'cap,', 'which', 'for', 'most', 'of', 'the', 'last', 'three', 'million', 'years', 'has', 'been', 'the', 'size', 'of', 'the', 'lower', '48', 'states,', 'has', 'shrunk', 'by', '40', 'percent.']
+2023-06-02 22:00:42,450 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '</s>']
+2023-06-02 22:00:42,450 - INFO - joeynmt.training - 	Source:     L'anno scorso ho mostrato queste diapositive  per dimostrare che la calotta glaciale artica,  che per quasi tre milioni di anni ha avuto  le dimensioni dei 48 Stati Uniti continentali,  si è ristretta del 40%.
+2023-06-02 22:00:42,450 - INFO - joeynmt.training - 	Reference:  Last year I showed these two slides so that demonstrate that the arctic ice cap, which for most of the last three million years has been the size of the lower 48 states, has shrunk by 40 percent.
+2023-06-02 22:00:42,451 - INFO - joeynmt.training - 	Hypothesis: <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+2023-06-02 22:00:42,451 - INFO - joeynmt.training - Example #1
+2023-06-02 22:00:42,451 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tuttavia', 'questo', 'sottovaluta', 'la', 'gravità', 'del', 'problema', '', 'perché', 'non', 'mostra', 'lo', 'spessore', 'del', 'ghiaccio.']
+2023-06-02 22:00:42,451 - DEBUG - joeynmt.training - 	Tokenized reference:  ['But', 'this', 'understates', 'the', 'seriousness', 'of', 'this', 'particular', 'problem', 'because', 'it', "doesn't", 'show', 'the', 'thickness', 'of', 'the', 'ice.']
+2023-06-02 22:00:42,451 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['<unk>', 'this', '<unk>', 'the', '<unk>', 'of', 'the', 'problem', '<unk>', '</s>']
+2023-06-02 22:00:42,451 - INFO - joeynmt.training - 	Source:     Tuttavia questo sottovaluta la gravità del problema  perché non mostra lo spessore del ghiaccio.
+2023-06-02 22:00:42,451 - INFO - joeynmt.training - 	Reference:  But this understates the seriousness of this particular problem because it doesn't show the thickness of the ice.
+2023-06-02 22:00:42,451 - INFO - joeynmt.training - 	Hypothesis: <unk> this <unk> the <unk> of the problem <unk>
+2023-06-02 22:00:42,451 - INFO - joeynmt.training - Example #2
+2023-06-02 22:00:42,452 - DEBUG - joeynmt.training - 	Tokenized source:     ['La', 'calotta', 'glaciale', 'artica', 'è,', 'in', 'un', 'certo', 'senso,', '', 'il', 'cuore', 'pulsante', 'del', 'sistema', 'climatico', 'globale.']
+2023-06-02 22:00:42,452 - DEBUG - joeynmt.training - 	Tokenized reference:  ['The', 'arctic', 'ice', 'cap', 'is,', 'in', 'a', 'sense,', 'the', 'beating', 'heart', 'of', 'the', 'global', 'climate', 'system.']
+2023-06-02 22:00:42,452 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['The', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '</s>']
+2023-06-02 22:00:42,452 - INFO - joeynmt.training - 	Source:     La calotta glaciale artica è, in un certo senso,  il cuore pulsante del sistema climatico globale.
+2023-06-02 22:00:42,452 - INFO - joeynmt.training - 	Reference:  The arctic ice cap is, in a sense, the beating heart of the global climate system.
+2023-06-02 22:00:42,452 - INFO - joeynmt.training - 	Hypothesis: The <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+2023-06-02 22:00:42,452 - INFO - joeynmt.training - Example #3
+2023-06-02 22:00:42,452 - DEBUG - joeynmt.training - 	Tokenized source:     ['Si', 'espande', "d'inverno", 'e', 'si', 'ritira', "d'estate."]
+2023-06-02 22:00:42,452 - DEBUG - joeynmt.training - 	Tokenized reference:  ['It', 'expands', 'in', 'winter', 'and', 'contracts', 'in', 'summer.']
+2023-06-02 22:00:42,452 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['You', '<unk>', '<unk>', 'and', '<unk>', '<unk>', '</s>']
+2023-06-02 22:00:42,453 - INFO - joeynmt.training - 	Source:     Si espande d'inverno e si ritira d'estate.
+2023-06-02 22:00:42,453 - INFO - joeynmt.training - 	Reference:  It expands in winter and contracts in summer.
+2023-06-02 22:00:42,453 - INFO - joeynmt.training - 	Hypothesis: You <unk> <unk> and <unk> <unk>
+2023-06-02 22:00:42,453 - INFO - joeynmt.training - Example #4
+2023-06-02 22:00:42,453 - DEBUG - joeynmt.training - 	Tokenized source:     ['La', 'prossima', 'diapositiva', 'sarà', 'una', 'rapida', '', 'carrellata', 'sugli', 'avvenimenti', 'degli', 'ultimi', '25', 'anni.']
+2023-06-02 22:00:42,453 - DEBUG - joeynmt.training - 	Tokenized reference:  ['The', 'next', 'slide', 'I', 'show', 'you', 'will', 'be', 'a', 'rapid', 'fast-forward', 'of', "what's", 'happened', 'over', 'the', 'last', '25', 'years.']
+2023-06-02 22:00:42,453 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['The', 'next', '<unk>', 'is', 'going', 'to', 'be', 'a', '<unk>', '<unk>', '<unk>', '<unk>', '</s>']
+2023-06-02 22:00:42,453 - INFO - joeynmt.training - 	Source:     La prossima diapositiva sarà una rapida  carrellata sugli avvenimenti degli ultimi 25 anni.
+2023-06-02 22:00:42,454 - INFO - joeynmt.training - 	Reference:  The next slide I show you will be a rapid fast-forward of what's happened over the last 25 years.
+2023-06-02 22:00:42,454 - INFO - joeynmt.training - 	Hypothesis: The next <unk> is going to be a <unk> <unk> <unk> <unk>
+2023-06-02 22:01:16,794 - INFO - joeynmt.training - Epoch   1, Step:     2600, Batch Loss:     1.941251, Batch Acc: 0.424361, Tokens per Sec:     1894, Lr: 0.000300
+2023-06-02 22:01:50,280 - INFO - joeynmt.training - Epoch   1, Step:     2700, Batch Loss:     1.980314, Batch Acc: 0.426774, Tokens per Sec:     1982, Lr: 0.000300
+2023-06-02 22:02:15,316 - INFO - joeynmt.training - Epoch   1: total training loss 6506.04
+2023-06-02 22:02:15,316 - INFO - joeynmt.training - EPOCH 2
+2023-06-02 22:02:24,350 - INFO - joeynmt.training - Epoch   2, Step:     2800, Batch Loss:     2.102605, Batch Acc: 0.447637, Tokens per Sec:     1888, Lr: 0.000300
+2023-06-02 22:02:58,041 - INFO - joeynmt.training - Epoch   2, Step:     2900, Batch Loss:     1.694045, Batch Acc: 0.447236, Tokens per Sec:     1970, Lr: 0.000300
+2023-06-02 22:03:32,629 - INFO - joeynmt.training - Epoch   2, Step:     3000, Batch Loss:     2.196477, Batch Acc: 0.445066, Tokens per Sec:     1938, Lr: 0.000300
+2023-06-02 22:03:32,629 - INFO - joeynmt.prediction - Predicting 929 example(s)... (Greedy decoding with min_output_length=1, max_output_length=-1, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2023-06-02 22:04:07,661 - INFO - joeynmt.prediction - Evaluation result (greedy) loss:   2.00, ppl:   7.41, acc:   0.42, generation: 35.0221[sec], evaluation: 0.0000[sec]
+2023-06-02 22:04:07,662 - INFO - joeynmt.training - Hooray! New best validation result [ppl]!
+2023-06-02 22:04:07,889 - INFO - joeynmt.helpers - delete word_level_transformer/500.ckpt
+2023-06-02 22:04:07,891 - INFO - joeynmt.training - Example #0
+2023-06-02 22:04:07,891 - DEBUG - joeynmt.training - 	Tokenized source:     ["L'anno", 'scorso', 'ho', 'mostrato', 'queste', 'diapositive', '', 'per', 'dimostrare', 'che', 'la', 'calotta', 'glaciale', 'artica,', '', 'che', 'per', 'quasi', 'tre', 'milioni', 'di', 'anni', 'ha', 'avuto', '', 'le', 'dimensioni', 'dei', '48', 'Stati', 'Uniti', 'continentali,', '', 'si', 'è', 'ristretta', 'del', '40%.']
+2023-06-02 22:04:07,891 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Last', 'year', 'I', 'showed', 'these', 'two', 'slides', 'so', 'that', 'demonstrate', 'that', 'the', 'arctic', 'ice', 'cap,', 'which', 'for', 'most', 'of', 'the', 'last', 'three', 'million', 'years', 'has', 'been', 'the', 'size', 'of', 'the', 'lower', '48', 'states,', 'has', 'shrunk', 'by', '40', 'percent.']
+2023-06-02 22:04:07,891 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['<unk>', '<unk>', 'I', 'got', 'these', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', 'that', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '</s>']
+2023-06-02 22:04:07,892 - INFO - joeynmt.training - 	Source:     L'anno scorso ho mostrato queste diapositive  per dimostrare che la calotta glaciale artica,  che per quasi tre milioni di anni ha avuto  le dimensioni dei 48 Stati Uniti continentali,  si è ristretta del 40%.
+2023-06-02 22:04:07,892 - INFO - joeynmt.training - 	Reference:  Last year I showed these two slides so that demonstrate that the arctic ice cap, which for most of the last three million years has been the size of the lower 48 states, has shrunk by 40 percent.
+2023-06-02 22:04:07,892 - INFO - joeynmt.training - 	Hypothesis: <unk> <unk> I got these <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> that <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+2023-06-02 22:04:07,892 - INFO - joeynmt.training - Example #1
+2023-06-02 22:04:07,892 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tuttavia', 'questo', 'sottovaluta', 'la', 'gravità', 'del', 'problema', '', 'perché', 'non', 'mostra', 'lo', 'spessore', 'del', 'ghiaccio.']
+2023-06-02 22:04:07,892 - DEBUG - joeynmt.training - 	Tokenized reference:  ['But', 'this', 'understates', 'the', 'seriousness', 'of', 'this', 'particular', 'problem', 'because', 'it', "doesn't", 'show', 'the', 'thickness', 'of', 'the', 'ice.']
+2023-06-02 22:04:07,892 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['<unk>', 'this', '<unk>', 'the', '<unk>', 'of', 'the', '<unk>', '<unk>', 'because', 'it', "doesn't", '<unk>', 'the', '<unk>', '</s>']
+2023-06-02 22:04:07,893 - INFO - joeynmt.training - 	Source:     Tuttavia questo sottovaluta la gravità del problema  perché non mostra lo spessore del ghiaccio.
+2023-06-02 22:04:07,893 - INFO - joeynmt.training - 	Reference:  But this understates the seriousness of this particular problem because it doesn't show the thickness of the ice.
+2023-06-02 22:04:07,893 - INFO - joeynmt.training - 	Hypothesis: <unk> this <unk> the <unk> of the <unk> <unk> because it doesn't <unk> the <unk>
+2023-06-02 22:04:07,893 - INFO - joeynmt.training - Example #2
+2023-06-02 22:04:07,893 - DEBUG - joeynmt.training - 	Tokenized source:     ['La', 'calotta', 'glaciale', 'artica', 'è,', 'in', 'un', 'certo', 'senso,', '', 'il', 'cuore', 'pulsante', 'del', 'sistema', 'climatico', 'globale.']
+2023-06-02 22:04:07,893 - DEBUG - joeynmt.training - 	Tokenized reference:  ['The', 'arctic', 'ice', 'cap', 'is,', 'in', 'a', 'sense,', 'the', 'beating', 'heart', 'of', 'the', 'global', 'climate', 'system.']
+2023-06-02 22:04:07,893 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['The', '<unk>', '<unk>', '<unk>', 'is,', 'in', 'a', '<unk>', '<unk>', '<unk>', '</s>']
+2023-06-02 22:04:07,893 - INFO - joeynmt.training - 	Source:     La calotta glaciale artica è, in un certo senso,  il cuore pulsante del sistema climatico globale.
+2023-06-02 22:04:07,893 - INFO - joeynmt.training - 	Reference:  The arctic ice cap is, in a sense, the beating heart of the global climate system.
+2023-06-02 22:04:07,893 - INFO - joeynmt.training - 	Hypothesis: The <unk> <unk> <unk> is, in a <unk> <unk> <unk>
+2023-06-02 22:04:07,894 - INFO - joeynmt.training - Example #3
+2023-06-02 22:04:07,894 - DEBUG - joeynmt.training - 	Tokenized source:     ['Si', 'espande', "d'inverno", 'e', 'si', 'ritira', "d'estate."]
+2023-06-02 22:04:07,894 - DEBUG - joeynmt.training - 	Tokenized reference:  ['It', 'expands', 'in', 'winter', 'and', 'contracts', 'in', 'summer.']
+2023-06-02 22:04:07,894 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['You', 'can', '<unk>', 'and', '<unk>', '<unk>', '</s>']
+2023-06-02 22:04:07,894 - INFO - joeynmt.training - 	Source:     Si espande d'inverno e si ritira d'estate.
+2023-06-02 22:04:07,894 - INFO - joeynmt.training - 	Reference:  It expands in winter and contracts in summer.
+2023-06-02 22:04:07,894 - INFO - joeynmt.training - 	Hypothesis: You can <unk> and <unk> <unk>
+2023-06-02 22:04:07,894 - INFO - joeynmt.training - Example #4
+2023-06-02 22:04:07,894 - DEBUG - joeynmt.training - 	Tokenized source:     ['La', 'prossima', 'diapositiva', 'sarà', 'una', 'rapida', '', 'carrellata', 'sugli', 'avvenimenti', 'degli', 'ultimi', '25', 'anni.']
+2023-06-02 22:04:07,894 - DEBUG - joeynmt.training - 	Tokenized reference:  ['The', 'next', 'slide', 'I', 'show', 'you', 'will', 'be', 'a', 'rapid', 'fast-forward', 'of', "what's", 'happened', 'over', 'the', 'last', '25', 'years.']
+2023-06-02 22:04:07,894 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['The', 'next', '<unk>', 'will', 'be', 'a', '<unk>', '<unk>', '<unk>', '</s>']
+2023-06-02 22:04:07,895 - INFO - joeynmt.training - 	Source:     La prossima diapositiva sarà una rapida  carrellata sugli avvenimenti degli ultimi 25 anni.
+2023-06-02 22:04:07,895 - INFO - joeynmt.training - 	Reference:  The next slide I show you will be a rapid fast-forward of what's happened over the last 25 years.
+2023-06-02 22:04:07,895 - INFO - joeynmt.training - 	Hypothesis: The next <unk> will be a <unk> <unk> <unk>
+2023-06-02 22:04:42,055 - INFO - joeynmt.training - Epoch   2, Step:     3100, Batch Loss:     1.928567, Batch Acc: 0.446707, Tokens per Sec:     1913, Lr: 0.000300
+2023-06-02 22:05:16,139 - INFO - joeynmt.training - Epoch   2, Step:     3200, Batch Loss:     1.808095, Batch Acc: 0.449731, Tokens per Sec:     1917, Lr: 0.000300
+2023-06-02 22:05:50,279 - INFO - joeynmt.training - Epoch   2, Step:     3300, Batch Loss:     1.885299, Batch Acc: 0.448108, Tokens per Sec:     1960, Lr: 0.000300
+2023-06-02 22:06:25,121 - INFO - joeynmt.training - Epoch   2, Step:     3400, Batch Loss:     1.965934, Batch Acc: 0.452149, Tokens per Sec:     1877, Lr: 0.000300
+2023-06-02 22:07:01,100 - INFO - joeynmt.training - Epoch   2, Step:     3500, Batch Loss:     2.040475, Batch Acc: 0.451869, Tokens per Sec:     1795, Lr: 0.000300
+2023-06-02 22:07:01,100 - INFO - joeynmt.prediction - Predicting 929 example(s)... (Greedy decoding with min_output_length=1, max_output_length=-1, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2023-06-02 22:07:46,027 - INFO - joeynmt.prediction - Evaluation result (greedy) loss:   1.97, ppl:   7.14, acc:   0.43, generation: 44.9176[sec], evaluation: 0.0000[sec]
+2023-06-02 22:07:46,028 - INFO - joeynmt.training - Hooray! New best validation result [ppl]!
+2023-06-02 22:07:46,261 - INFO - joeynmt.helpers - delete word_level_transformer/1000.ckpt
+2023-06-02 22:07:46,264 - INFO - joeynmt.training - Example #0
+2023-06-02 22:07:46,264 - DEBUG - joeynmt.training - 	Tokenized source:     ["L'anno", 'scorso', 'ho', 'mostrato', 'queste', 'diapositive', '', 'per', 'dimostrare', 'che', 'la', 'calotta', 'glaciale', 'artica,', '', 'che', 'per', 'quasi', 'tre', 'milioni', 'di', 'anni', 'ha', 'avuto', '', 'le', 'dimensioni', 'dei', '48', 'Stati', 'Uniti', 'continentali,', '', 'si', 'è', 'ristretta', 'del', '40%.']
+2023-06-02 22:07:46,264 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Last', 'year', 'I', 'showed', 'these', 'two', 'slides', 'so', 'that', 'demonstrate', 'that', 'the', 'arctic', 'ice', 'cap,', 'which', 'for', 'most', 'of', 'the', 'last', 'three', 'million', 'years', 'has', 'been', 'the', 'size', 'of', 'the', 'lower', '48', 'states,', 'has', 'shrunk', 'by', '40', 'percent.']
+2023-06-02 22:07:46,264 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['<unk>', '<unk>', 'I', 'got', 'these', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '</s>']
+2023-06-02 22:07:46,264 - INFO - joeynmt.training - 	Source:     L'anno scorso ho mostrato queste diapositive  per dimostrare che la calotta glaciale artica,  che per quasi tre milioni di anni ha avuto  le dimensioni dei 48 Stati Uniti continentali,  si è ristretta del 40%.
+2023-06-02 22:07:46,264 - INFO - joeynmt.training - 	Reference:  Last year I showed these two slides so that demonstrate that the arctic ice cap, which for most of the last three million years has been the size of the lower 48 states, has shrunk by 40 percent.
+2023-06-02 22:07:46,265 - INFO - joeynmt.training - 	Hypothesis: <unk> <unk> I got these <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+2023-06-02 22:07:46,265 - INFO - joeynmt.training - Example #1
+2023-06-02 22:07:46,265 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tuttavia', 'questo', 'sottovaluta', 'la', 'gravità', 'del', 'problema', '', 'perché', 'non', 'mostra', 'lo', 'spessore', 'del', 'ghiaccio.']
+2023-06-02 22:07:46,265 - DEBUG - joeynmt.training - 	Tokenized reference:  ['But', 'this', 'understates', 'the', 'seriousness', 'of', 'this', 'particular', 'problem', 'because', 'it', "doesn't", 'show', 'the', 'thickness', 'of', 'the', 'ice.']
+2023-06-02 22:07:46,265 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['<unk>', 'this', '<unk>', 'the', '<unk>', '<unk>', '<unk>', 'because', 'it', 'shows', 'it', '<unk>', '<unk>', '</s>']
+2023-06-02 22:07:46,265 - INFO - joeynmt.training - 	Source:     Tuttavia questo sottovaluta la gravità del problema  perché non mostra lo spessore del ghiaccio.
+2023-06-02 22:07:46,265 - INFO - joeynmt.training - 	Reference:  But this understates the seriousness of this particular problem because it doesn't show the thickness of the ice.
+2023-06-02 22:07:46,265 - INFO - joeynmt.training - 	Hypothesis: <unk> this <unk> the <unk> <unk> <unk> because it shows it <unk> <unk>
+2023-06-02 22:07:46,265 - INFO - joeynmt.training - Example #2
+2023-06-02 22:07:46,265 - DEBUG - joeynmt.training - 	Tokenized source:     ['La', 'calotta', 'glaciale', 'artica', 'è,', 'in', 'un', 'certo', 'senso,', '', 'il', 'cuore', 'pulsante', 'del', 'sistema', 'climatico', 'globale.']
+2023-06-02 22:07:46,266 - DEBUG - joeynmt.training - 	Tokenized reference:  ['The', 'arctic', 'ice', 'cap', 'is,', 'in', 'a', 'sense,', 'the', 'beating', 'heart', 'of', 'the', 'global', 'climate', 'system.']
+2023-06-02 22:07:46,266 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '</s>']
+2023-06-02 22:07:46,266 - INFO - joeynmt.training - 	Source:     La calotta glaciale artica è, in un certo senso,  il cuore pulsante del sistema climatico globale.
+2023-06-02 22:07:46,266 - INFO - joeynmt.training - 	Reference:  The arctic ice cap is, in a sense, the beating heart of the global climate system.
+2023-06-02 22:07:46,266 - INFO - joeynmt.training - 	Hypothesis: <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+2023-06-02 22:07:46,266 - INFO - joeynmt.training - Example #3
+2023-06-02 22:07:46,266 - DEBUG - joeynmt.training - 	Tokenized source:     ['Si', 'espande', "d'inverno", 'e', 'si', 'ritira', "d'estate."]
+2023-06-02 22:07:46,266 - DEBUG - joeynmt.training - 	Tokenized reference:  ['It', 'expands', 'in', 'winter', 'and', 'contracts', 'in', 'summer.']
+2023-06-02 22:07:46,266 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['They', '<unk>', '<unk>', 'and', '<unk>', '<unk>', '</s>']
+2023-06-02 22:07:46,267 - INFO - joeynmt.training - 	Source:     Si espande d'inverno e si ritira d'estate.
+2023-06-02 22:07:46,267 - INFO - joeynmt.training - 	Reference:  It expands in winter and contracts in summer.
+2023-06-02 22:07:46,267 - INFO - joeynmt.training - 	Hypothesis: They <unk> <unk> and <unk> <unk>
+2023-06-02 22:07:46,267 - INFO - joeynmt.training - Example #4
+2023-06-02 22:07:46,267 - DEBUG - joeynmt.training - 	Tokenized source:     ['La', 'prossima', 'diapositiva', 'sarà', 'una', 'rapida', '', 'carrellata', 'sugli', 'avvenimenti', 'degli', 'ultimi', '25', 'anni.']
+2023-06-02 22:07:46,267 - DEBUG - joeynmt.training - 	Tokenized reference:  ['The', 'next', 'slide', 'I', 'show', 'you', 'will', 'be', 'a', 'rapid', 'fast-forward', 'of', "what's", 'happened', 'over', 'the', 'last', '25', 'years.']
+2023-06-02 22:07:46,267 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['The', 'next', 'next', '<unk>', 'is', 'going', 'to', 'be', 'a', '<unk>', '<unk>', '<unk>', 'in', 'the', 'last', '25', 'years.', '</s>']
+2023-06-02 22:07:46,267 - INFO - joeynmt.training - 	Source:     La prossima diapositiva sarà una rapida  carrellata sugli avvenimenti degli ultimi 25 anni.
+2023-06-02 22:07:46,268 - INFO - joeynmt.training - 	Reference:  The next slide I show you will be a rapid fast-forward of what's happened over the last 25 years.
+2023-06-02 22:07:46,268 - INFO - joeynmt.training - 	Hypothesis: The next next <unk> is going to be a <unk> <unk> <unk> in the last 25 years.
+2023-06-02 22:08:21,484 - INFO - joeynmt.training - Epoch   2, Step:     3600, Batch Loss:     1.906851, Batch Acc: 0.451707, Tokens per Sec:     1864, Lr: 0.000300
+2023-06-02 22:08:57,742 - INFO - joeynmt.training - Epoch   2, Step:     3700, Batch Loss:     1.933786, Batch Acc: 0.455371, Tokens per Sec:     1796, Lr: 0.000300
+2023-06-02 22:09:32,521 - INFO - joeynmt.training - Epoch   2, Step:     3800, Batch Loss:     1.820435, Batch Acc: 0.456978, Tokens per Sec:     1850, Lr: 0.000300
+2023-06-02 22:10:06,770 - INFO - joeynmt.training - Epoch   2, Step:     3900, Batch Loss:     1.852758, Batch Acc: 0.459826, Tokens per Sec:     1950, Lr: 0.000300
+2023-06-02 22:10:42,524 - INFO - joeynmt.training - Epoch   2, Step:     4000, Batch Loss:     1.843206, Batch Acc: 0.461708, Tokens per Sec:     1838, Lr: 0.000300
+2023-06-02 22:10:42,524 - INFO - joeynmt.prediction - Predicting 929 example(s)... (Greedy decoding with min_output_length=1, max_output_length=-1, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2023-06-02 22:11:25,903 - INFO - joeynmt.prediction - Evaluation result (greedy) loss:   1.97, ppl:   7.20, acc:   0.42, generation: 43.3690[sec], evaluation: 0.0000[sec]
+2023-06-02 22:11:26,148 - INFO - joeynmt.helpers - delete word_level_transformer/1500.ckpt
+2023-06-02 22:11:26,151 - INFO - joeynmt.training - Example #0
+2023-06-02 22:11:26,151 - DEBUG - joeynmt.training - 	Tokenized source:     ["L'anno", 'scorso', 'ho', 'mostrato', 'queste', 'diapositive', '', 'per', 'dimostrare', 'che', 'la', 'calotta', 'glaciale', 'artica,', '', 'che', 'per', 'quasi', 'tre', 'milioni', 'di', 'anni', 'ha', 'avuto', '', 'le', 'dimensioni', 'dei', '48', 'Stati', 'Uniti', 'continentali,', '', 'si', 'è', 'ristretta', 'del', '40%.']
+2023-06-02 22:11:26,151 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Last', 'year', 'I', 'showed', 'these', 'two', 'slides', 'so', 'that', 'demonstrate', 'that', 'the', 'arctic', 'ice', 'cap,', 'which', 'for', 'most', 'of', 'the', 'last', 'three', 'million', 'years', 'has', 'been', 'the', 'size', 'of', 'the', 'lower', '48', 'states,', 'has', 'shrunk', 'by', '40', 'percent.']
+2023-06-02 22:11:26,151 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['<unk>', '<unk>', 'I', 'showed', 'these', '<unk>', '', 'for', '<unk>', 'that', '<unk>', '<unk>', '<unk>', '<unk>', '', 'which', 'is', '<unk>', '<unk>', '', 'that', 'for', 'three', 'million', 'years', 'has', 'the', '<unk>', '<unk>', '', '', '<unk>', 'is', '<unk>', 'of', 'the', '<unk>', '<unk>', '</s>']
+2023-06-02 22:11:26,152 - INFO - joeynmt.training - 	Source:     L'anno scorso ho mostrato queste diapositive  per dimostrare che la calotta glaciale artica,  che per quasi tre milioni di anni ha avuto  le dimensioni dei 48 Stati Uniti continentali,  si è ristretta del 40%.
+2023-06-02 22:11:26,152 - INFO - joeynmt.training - 	Reference:  Last year I showed these two slides so that demonstrate that the arctic ice cap, which for most of the last three million years has been the size of the lower 48 states, has shrunk by 40 percent.
+2023-06-02 22:11:26,152 - INFO - joeynmt.training - 	Hypothesis: <unk> <unk> I showed these <unk>  for <unk> that <unk> <unk> <unk> <unk>  which is <unk> <unk>  that for three million years has the <unk> <unk>   <unk> is <unk> of the <unk> <unk>
+2023-06-02 22:11:26,152 - INFO - joeynmt.training - Example #1
+2023-06-02 22:11:26,152 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tuttavia', 'questo', 'sottovaluta', 'la', 'gravità', 'del', 'problema', '', 'perché', 'non', 'mostra', 'lo', 'spessore', 'del', 'ghiaccio.']
+2023-06-02 22:11:26,152 - DEBUG - joeynmt.training - 	Tokenized reference:  ['But', 'this', 'understates', 'the', 'seriousness', 'of', 'this', 'particular', 'problem', 'because', 'it', "doesn't", 'show', 'the', 'thickness', 'of', 'the', 'ice.']
+2023-06-02 22:11:26,152 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['<unk>', 'this', '<unk>', 'the', '<unk>', 'of', 'the', 'problem', '--', '', 'because', 'it', "doesn't", '<unk>', 'the', '<unk>', 'of', 'the', '<unk>', '</s>']
+2023-06-02 22:11:26,152 - INFO - joeynmt.training - 	Source:     Tuttavia questo sottovaluta la gravità del problema  perché non mostra lo spessore del ghiaccio.
+2023-06-02 22:11:26,152 - INFO - joeynmt.training - 	Reference:  But this understates the seriousness of this particular problem because it doesn't show the thickness of the ice.
+2023-06-02 22:11:26,152 - INFO - joeynmt.training - 	Hypothesis: <unk> this <unk> the <unk> of the problem --  because it doesn't <unk> the <unk> of the <unk>
+2023-06-02 22:11:26,153 - INFO - joeynmt.training - Example #2
+2023-06-02 22:11:26,153 - DEBUG - joeynmt.training - 	Tokenized source:     ['La', 'calotta', 'glaciale', 'artica', 'è,', 'in', 'un', 'certo', 'senso,', '', 'il', 'cuore', 'pulsante', 'del', 'sistema', 'climatico', 'globale.']
+2023-06-02 22:11:26,153 - DEBUG - joeynmt.training - 	Tokenized reference:  ['The', 'arctic', 'ice', 'cap', 'is,', 'in', 'a', 'sense,', 'the', 'beating', 'heart', 'of', 'the', 'global', 'climate', 'system.']
+2023-06-02 22:11:26,153 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['The', '<unk>', '<unk>', 'is,', 'in', 'a', '<unk>', '', 'the', 'heart', '<unk>', '<unk>', 'system.', '</s>']
+2023-06-02 22:11:26,153 - INFO - joeynmt.training - 	Source:     La calotta glaciale artica è, in un certo senso,  il cuore pulsante del sistema climatico globale.
+2023-06-02 22:11:26,153 - INFO - joeynmt.training - 	Reference:  The arctic ice cap is, in a sense, the beating heart of the global climate system.
+2023-06-02 22:11:26,153 - INFO - joeynmt.training - 	Hypothesis: The <unk> <unk> is, in a <unk>  the heart <unk> <unk> system.
+2023-06-02 22:11:26,153 - INFO - joeynmt.training - Example #3
+2023-06-02 22:11:26,153 - DEBUG - joeynmt.training - 	Tokenized source:     ['Si', 'espande', "d'inverno", 'e', 'si', 'ritira', "d'estate."]
+2023-06-02 22:11:26,153 - DEBUG - joeynmt.training - 	Tokenized reference:  ['It', 'expands', 'in', 'winter', 'and', 'contracts', 'in', 'summer.']
+2023-06-02 22:11:26,154 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['They', '<unk>', '<unk>', 'and', '<unk>', '</s>']
+2023-06-02 22:11:26,154 - INFO - joeynmt.training - 	Source:     Si espande d'inverno e si ritira d'estate.
+2023-06-02 22:11:26,154 - INFO - joeynmt.training - 	Reference:  It expands in winter and contracts in summer.
+2023-06-02 22:11:26,154 - INFO - joeynmt.training - 	Hypothesis: They <unk> <unk> and <unk>
+2023-06-02 22:11:26,154 - INFO - joeynmt.training - Example #4
+2023-06-02 22:11:26,154 - DEBUG - joeynmt.training - 	Tokenized source:     ['La', 'prossima', 'diapositiva', 'sarà', 'una', 'rapida', '', 'carrellata', 'sugli', 'avvenimenti', 'degli', 'ultimi', '25', 'anni.']
+2023-06-02 22:11:26,154 - DEBUG - joeynmt.training - 	Tokenized reference:  ['The', 'next', 'slide', 'I', 'show', 'you', 'will', 'be', 'a', 'rapid', 'fast-forward', 'of', "what's", 'happened', 'over', 'the', 'last', '25', 'years.']
+2023-06-02 22:11:26,154 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['The', 'next', '<unk>', 'is', 'going', 'to', 'be', 'a', '<unk>', '', '<unk>', '<unk>', '</s>']
+2023-06-02 22:11:26,155 - INFO - joeynmt.training - 	Source:     La prossima diapositiva sarà una rapida  carrellata sugli avvenimenti degli ultimi 25 anni.
+2023-06-02 22:11:26,155 - INFO - joeynmt.training - 	Reference:  The next slide I show you will be a rapid fast-forward of what's happened over the last 25 years.
+2023-06-02 22:11:26,155 - INFO - joeynmt.training - 	Hypothesis: The next <unk> is going to be a <unk>  <unk> <unk>
+2023-06-02 22:12:00,303 - INFO - joeynmt.training - Epoch   2, Step:     4100, Batch Loss:     1.776782, Batch Acc: 0.457145, Tokens per Sec:     1871, Lr: 0.000300
+2023-06-02 22:12:34,639 - INFO - joeynmt.training - Epoch   2, Step:     4200, Batch Loss:     1.814832, Batch Acc: 0.464418, Tokens per Sec:     1933, Lr: 0.000300
+2023-06-02 22:13:09,178 - INFO - joeynmt.training - Epoch   2, Step:     4300, Batch Loss:     1.712972, Batch Acc: 0.466341, Tokens per Sec:     1910, Lr: 0.000300
+2023-06-02 22:13:43,664 - INFO - joeynmt.training - Epoch   2, Step:     4400, Batch Loss:     1.866241, Batch Acc: 0.469586, Tokens per Sec:     1917, Lr: 0.000300
+2023-06-02 22:14:17,771 - INFO - joeynmt.training - Epoch   2, Step:     4500, Batch Loss:     1.766693, Batch Acc: 0.471404, Tokens per Sec:     1943, Lr: 0.000300
+2023-06-02 22:14:17,772 - INFO - joeynmt.prediction - Predicting 929 example(s)... (Greedy decoding with min_output_length=1, max_output_length=-1, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2023-06-02 22:14:59,756 - INFO - joeynmt.prediction - Evaluation result (greedy) loss:   1.93, ppl:   6.92, acc:   0.43, generation: 41.9713[sec], evaluation: 0.0000[sec]
+2023-06-02 22:14:59,761 - INFO - joeynmt.training - Hooray! New best validation result [ppl]!
+2023-06-02 22:14:59,998 - INFO - joeynmt.helpers - delete word_level_transformer/2000.ckpt
+2023-06-02 22:15:00,000 - INFO - joeynmt.training - Example #0
+2023-06-02 22:15:00,000 - DEBUG - joeynmt.training - 	Tokenized source:     ["L'anno", 'scorso', 'ho', 'mostrato', 'queste', 'diapositive', '', 'per', 'dimostrare', 'che', 'la', 'calotta', 'glaciale', 'artica,', '', 'che', 'per', 'quasi', 'tre', 'milioni', 'di', 'anni', 'ha', 'avuto', '', 'le', 'dimensioni', 'dei', '48', 'Stati', 'Uniti', 'continentali,', '', 'si', 'è', 'ristretta', 'del', '40%.']
+2023-06-02 22:15:00,000 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Last', 'year', 'I', 'showed', 'these', 'two', 'slides', 'so', 'that', 'demonstrate', 'that', 'the', 'arctic', 'ice', 'cap,', 'which', 'for', 'most', 'of', 'the', 'last', 'three', 'million', 'years', 'has', 'been', 'the', 'size', 'of', 'the', 'lower', '48', 'states,', 'has', 'shrunk', 'by', '40', 'percent.']
+2023-06-02 22:15:00,000 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['<unk>', 'I', 'showed', 'these', '<unk>', '', 'for', '<unk>', 'that', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', 'that', 'for', 'almost', 'three', 'million', 'years', 'had', 'had', '<unk>', '', '<unk>', '</s>']
+2023-06-02 22:15:00,001 - INFO - joeynmt.training - 	Source:     L'anno scorso ho mostrato queste diapositive  per dimostrare che la calotta glaciale artica,  che per quasi tre milioni di anni ha avuto  le dimensioni dei 48 Stati Uniti continentali,  si è ristretta del 40%.
+2023-06-02 22:15:00,001 - INFO - joeynmt.training - 	Reference:  Last year I showed these two slides so that demonstrate that the arctic ice cap, which for most of the last three million years has been the size of the lower 48 states, has shrunk by 40 percent.
+2023-06-02 22:15:00,001 - INFO - joeynmt.training - 	Hypothesis: <unk> I showed these <unk>  for <unk> that <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> that for almost three million years had had <unk>  <unk>
+2023-06-02 22:15:00,001 - INFO - joeynmt.training - Example #1
+2023-06-02 22:15:00,001 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tuttavia', 'questo', 'sottovaluta', 'la', 'gravità', 'del', 'problema', '', 'perché', 'non', 'mostra', 'lo', 'spessore', 'del', 'ghiaccio.']
+2023-06-02 22:15:00,001 - DEBUG - joeynmt.training - 	Tokenized reference:  ['But', 'this', 'understates', 'the', 'seriousness', 'of', 'this', 'particular', 'problem', 'because', 'it', "doesn't", 'show', 'the', 'thickness', 'of', 'the', 'ice.']
+2023-06-02 22:15:00,001 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['<unk>', 'this', '<unk>', 'the', '<unk>', 'of', 'the', '<unk>', '', 'because', 'it', 'shows', 'the', '<unk>', '</s>']
+2023-06-02 22:15:00,001 - INFO - joeynmt.training - 	Source:     Tuttavia questo sottovaluta la gravità del problema  perché non mostra lo spessore del ghiaccio.
+2023-06-02 22:15:00,001 - INFO - joeynmt.training - 	Reference:  But this understates the seriousness of this particular problem because it doesn't show the thickness of the ice.
+2023-06-02 22:15:00,001 - INFO - joeynmt.training - 	Hypothesis: <unk> this <unk> the <unk> of the <unk>  because it shows the <unk>
+2023-06-02 22:15:00,002 - INFO - joeynmt.training - Example #2
+2023-06-02 22:15:00,002 - DEBUG - joeynmt.training - 	Tokenized source:     ['La', 'calotta', 'glaciale', 'artica', 'è,', 'in', 'un', 'certo', 'senso,', '', 'il', 'cuore', 'pulsante', 'del', 'sistema', 'climatico', 'globale.']
+2023-06-02 22:15:00,002 - DEBUG - joeynmt.training - 	Tokenized reference:  ['The', 'arctic', 'ice', 'cap', 'is,', 'in', 'a', 'sense,', 'the', 'beating', 'heart', 'of', 'the', 'global', 'climate', 'system.']
+2023-06-02 22:15:00,002 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['The', '<unk>', '<unk>', '<unk>', 'is,', 'in', 'a', 'sense,', '', 'the', 'heart', 'of', 'the', '<unk>', 'system', '</s>']
+2023-06-02 22:15:00,002 - INFO - joeynmt.training - 	Source:     La calotta glaciale artica è, in un certo senso,  il cuore pulsante del sistema climatico globale.
+2023-06-02 22:15:00,003 - INFO - joeynmt.training - 	Reference:  The arctic ice cap is, in a sense, the beating heart of the global climate system.
+2023-06-02 22:15:00,003 - INFO - joeynmt.training - 	Hypothesis: The <unk> <unk> <unk> is, in a sense,  the heart of the <unk> system
+2023-06-02 22:15:00,003 - INFO - joeynmt.training - Example #3
+2023-06-02 22:15:00,003 - DEBUG - joeynmt.training - 	Tokenized source:     ['Si', 'espande', "d'inverno", 'e', 'si', 'ritira', "d'estate."]
+2023-06-02 22:15:00,003 - DEBUG - joeynmt.training - 	Tokenized reference:  ['It', 'expands', 'in', 'winter', 'and', 'contracts', 'in', 'summer.']
+2023-06-02 22:15:00,003 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['They', '<unk>', '<unk>', 'and', '<unk>', '</s>']
+2023-06-02 22:15:00,003 - INFO - joeynmt.training - 	Source:     Si espande d'inverno e si ritira d'estate.
+2023-06-02 22:15:00,004 - INFO - joeynmt.training - 	Reference:  It expands in winter and contracts in summer.
+2023-06-02 22:15:00,004 - INFO - joeynmt.training - 	Hypothesis: They <unk> <unk> and <unk>
+2023-06-02 22:15:00,004 - INFO - joeynmt.training - Example #4
+2023-06-02 22:15:00,004 - DEBUG - joeynmt.training - 	Tokenized source:     ['La', 'prossima', 'diapositiva', 'sarà', 'una', 'rapida', '', 'carrellata', 'sugli', 'avvenimenti', 'degli', 'ultimi', '25', 'anni.']
+2023-06-02 22:15:00,004 - DEBUG - joeynmt.training - 	Tokenized reference:  ['The', 'next', 'slide', 'I', 'show', 'you', 'will', 'be', 'a', 'rapid', 'fast-forward', 'of', "what's", 'happened', 'over', 'the', 'last', '25', 'years.']
+2023-06-02 22:15:00,004 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['The', 'next', '<unk>', 'will', 'be', 'a', '<unk>', '', '<unk>', 'on', 'the', 'last', '25', 'years.', '</s>']
+2023-06-02 22:15:00,004 - INFO - joeynmt.training - 	Source:     La prossima diapositiva sarà una rapida  carrellata sugli avvenimenti degli ultimi 25 anni.
+2023-06-02 22:15:00,004 - INFO - joeynmt.training - 	Reference:  The next slide I show you will be a rapid fast-forward of what's happened over the last 25 years.
+2023-06-02 22:15:00,005 - INFO - joeynmt.training - 	Hypothesis: The next <unk> will be a <unk>  <unk> on the last 25 years.
+2023-06-02 22:15:34,608 - INFO - joeynmt.training - Epoch   2, Step:     4600, Batch Loss:     1.885247, Batch Acc: 0.471714, Tokens per Sec:     1920, Lr: 0.000300
+2023-06-02 22:16:07,608 - INFO - joeynmt.training - Epoch   2, Step:     4700, Batch Loss:     1.812253, Batch Acc: 0.471453, Tokens per Sec:     2027, Lr: 0.000300
+2023-06-02 22:16:41,621 - INFO - joeynmt.training - Epoch   2, Step:     4800, Batch Loss:     1.760980, Batch Acc: 0.466303, Tokens per Sec:     1893, Lr: 0.000300
+2023-06-02 22:17:15,724 - INFO - joeynmt.training - Epoch   2, Step:     4900, Batch Loss:     1.848679, Batch Acc: 0.475778, Tokens per Sec:     1975, Lr: 0.000300
+2023-06-02 22:17:49,857 - INFO - joeynmt.training - Epoch   2, Step:     5000, Batch Loss:     1.678720, Batch Acc: 0.471932, Tokens per Sec:     1948, Lr: 0.000300
+2023-06-02 22:17:49,858 - INFO - joeynmt.prediction - Predicting 929 example(s)... (Greedy decoding with min_output_length=1, max_output_length=-1, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2023-06-02 22:18:30,523 - INFO - joeynmt.prediction - Evaluation result (greedy) loss:   1.90, ppl:   6.69, acc:   0.44, generation: 40.6559[sec], evaluation: 0.0000[sec]
+2023-06-02 22:18:30,524 - INFO - joeynmt.training - Hooray! New best validation result [ppl]!
+2023-06-02 22:18:30,768 - INFO - joeynmt.helpers - delete word_level_transformer/2500.ckpt
+2023-06-02 22:18:30,771 - INFO - joeynmt.training - Example #0
+2023-06-02 22:18:30,771 - DEBUG - joeynmt.training - 	Tokenized source:     ["L'anno", 'scorso', 'ho', 'mostrato', 'queste', 'diapositive', '', 'per', 'dimostrare', 'che', 'la', 'calotta', 'glaciale', 'artica,', '', 'che', 'per', 'quasi', 'tre', 'milioni', 'di', 'anni', 'ha', 'avuto', '', 'le', 'dimensioni', 'dei', '48', 'Stati', 'Uniti', 'continentali,', '', 'si', 'è', 'ristretta', 'del', '40%.']
+2023-06-02 22:18:30,771 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Last', 'year', 'I', 'showed', 'these', 'two', 'slides', 'so', 'that', 'demonstrate', 'that', 'the', 'arctic', 'ice', 'cap,', 'which', 'for', 'most', 'of', 'the', 'last', 'three', 'million', 'years', 'has', 'been', 'the', 'size', 'of', 'the', 'lower', '48', 'states,', 'has', 'shrunk', 'by', '40', 'percent.']
+2023-06-02 22:18:30,771 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '', 'that', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '</s>']
+2023-06-02 22:18:30,771 - INFO - joeynmt.training - 	Source:     L'anno scorso ho mostrato queste diapositive  per dimostrare che la calotta glaciale artica,  che per quasi tre milioni di anni ha avuto  le dimensioni dei 48 Stati Uniti continentali,  si è ristretta del 40%.
+2023-06-02 22:18:30,771 - INFO - joeynmt.training - 	Reference:  Last year I showed these two slides so that demonstrate that the arctic ice cap, which for most of the last three million years has been the size of the lower 48 states, has shrunk by 40 percent.
+2023-06-02 22:18:30,771 - INFO - joeynmt.training - 	Hypothesis: <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>  that <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+2023-06-02 22:18:30,771 - INFO - joeynmt.training - Example #1
+2023-06-02 22:18:30,771 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tuttavia', 'questo', 'sottovaluta', 'la', 'gravità', 'del', 'problema', '', 'perché', 'non', 'mostra', 'lo', 'spessore', 'del', 'ghiaccio.']
+2023-06-02 22:18:30,772 - DEBUG - joeynmt.training - 	Tokenized reference:  ['But', 'this', 'understates', 'the', 'seriousness', 'of', 'this', 'particular', 'problem', 'because', 'it', "doesn't", 'show', 'the', 'thickness', 'of', 'the', 'ice.']
+2023-06-02 22:18:30,772 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['<unk>', 'this', '<unk>', 'the', '<unk>', 'of', 'the', 'problem', 'of', 'the', '<unk>', '</s>']
+2023-06-02 22:18:30,772 - INFO - joeynmt.training - 	Source:     Tuttavia questo sottovaluta la gravità del problema  perché non mostra lo spessore del ghiaccio.
+2023-06-02 22:18:30,772 - INFO - joeynmt.training - 	Reference:  But this understates the seriousness of this particular problem because it doesn't show the thickness of the ice.
+2023-06-02 22:18:30,772 - INFO - joeynmt.training - 	Hypothesis: <unk> this <unk> the <unk> of the problem of the <unk>
+2023-06-02 22:18:30,772 - INFO - joeynmt.training - Example #2
+2023-06-02 22:18:30,772 - DEBUG - joeynmt.training - 	Tokenized source:     ['La', 'calotta', 'glaciale', 'artica', 'è,', 'in', 'un', 'certo', 'senso,', '', 'il', 'cuore', 'pulsante', 'del', 'sistema', 'climatico', 'globale.']
+2023-06-02 22:18:30,772 - DEBUG - joeynmt.training - 	Tokenized reference:  ['The', 'arctic', 'ice', 'cap', 'is,', 'in', 'a', 'sense,', 'the', 'beating', 'heart', 'of', 'the', 'global', 'climate', 'system.']
+2023-06-02 22:18:30,772 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '</s>']
+2023-06-02 22:18:30,773 - INFO - joeynmt.training - 	Source:     La calotta glaciale artica è, in un certo senso,  il cuore pulsante del sistema climatico globale.
+2023-06-02 22:18:30,773 - INFO - joeynmt.training - 	Reference:  The arctic ice cap is, in a sense, the beating heart of the global climate system.
+2023-06-02 22:18:30,773 - INFO - joeynmt.training - 	Hypothesis: <unk> <unk> <unk> <unk> <unk> <unk>
+2023-06-02 22:18:30,773 - INFO - joeynmt.training - Example #3
+2023-06-02 22:18:30,773 - DEBUG - joeynmt.training - 	Tokenized source:     ['Si', 'espande', "d'inverno", 'e', 'si', 'ritira', "d'estate."]
+2023-06-02 22:18:30,773 - DEBUG - joeynmt.training - 	Tokenized reference:  ['It', 'expands', 'in', 'winter', 'and', 'contracts', 'in', 'summer.']
+2023-06-02 22:18:30,773 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['You', '<unk>', '<unk>', 'and', '<unk>', '<unk>', '</s>']
+2023-06-02 22:18:30,774 - INFO - joeynmt.training - 	Source:     Si espande d'inverno e si ritira d'estate.
+2023-06-02 22:18:30,774 - INFO - joeynmt.training - 	Reference:  It expands in winter and contracts in summer.
+2023-06-02 22:18:30,774 - INFO - joeynmt.training - 	Hypothesis: You <unk> <unk> and <unk> <unk>
+2023-06-02 22:18:30,774 - INFO - joeynmt.training - Example #4
+2023-06-02 22:18:30,774 - DEBUG - joeynmt.training - 	Tokenized source:     ['La', 'prossima', 'diapositiva', 'sarà', 'una', 'rapida', '', 'carrellata', 'sugli', 'avvenimenti', 'degli', 'ultimi', '25', 'anni.']
+2023-06-02 22:18:30,774 - DEBUG - joeynmt.training - 	Tokenized reference:  ['The', 'next', 'slide', 'I', 'show', 'you', 'will', 'be', 'a', 'rapid', 'fast-forward', 'of', "what's", 'happened', 'over', 'the', 'last', '25', 'years.']
+2023-06-02 22:18:30,774 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['The', 'next', '<unk>', 'is', 'going', 'to', 'be', 'a', '<unk>', '', '<unk>', '<unk>', '</s>']
+2023-06-02 22:18:30,774 - INFO - joeynmt.training - 	Source:     La prossima diapositiva sarà una rapida  carrellata sugli avvenimenti degli ultimi 25 anni.
+2023-06-02 22:18:30,774 - INFO - joeynmt.training - 	Reference:  The next slide I show you will be a rapid fast-forward of what's happened over the last 25 years.
+2023-06-02 22:18:30,774 - INFO - joeynmt.training - 	Hypothesis: The next <unk> is going to be a <unk>  <unk> <unk>
+2023-06-02 22:19:05,253 - INFO - joeynmt.training - Epoch   2, Step:     5100, Batch Loss:     1.771435, Batch Acc: 0.472491, Tokens per Sec:     1844, Lr: 0.000300
+2023-06-02 22:19:38,809 - INFO - joeynmt.training - Epoch   2, Step:     5200, Batch Loss:     1.672521, Batch Acc: 0.475512, Tokens per Sec:     1964, Lr: 0.000300
+2023-06-02 22:20:12,910 - INFO - joeynmt.training - Epoch   2, Step:     5300, Batch Loss:     1.715767, Batch Acc: 0.477868, Tokens per Sec:     1916, Lr: 0.000300
+2023-06-02 22:20:46,164 - INFO - joeynmt.training - Epoch   2, Step:     5400, Batch Loss:     1.841955, Batch Acc: 0.471046, Tokens per Sec:     1904, Lr: 0.000300
+2023-06-02 22:21:19,097 - INFO - joeynmt.training - Epoch   2, Step:     5500, Batch Loss:     1.733704, Batch Acc: 0.475052, Tokens per Sec:     2016, Lr: 0.000300
+2023-06-02 22:21:19,097 - INFO - joeynmt.prediction - Predicting 929 example(s)... (Greedy decoding with min_output_length=1, max_output_length=-1, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2023-06-02 22:22:01,590 - INFO - joeynmt.prediction - Evaluation result (greedy) loss:   1.91, ppl:   6.76, acc:   0.44, generation: 42.4835[sec], evaluation: 0.0000[sec]
+2023-06-02 22:22:01,820 - INFO - joeynmt.helpers - delete word_level_transformer/3000.ckpt
+2023-06-02 22:22:01,822 - INFO - joeynmt.training - Example #0
+2023-06-02 22:22:01,823 - DEBUG - joeynmt.training - 	Tokenized source:     ["L'anno", 'scorso', 'ho', 'mostrato', 'queste', 'diapositive', '', 'per', 'dimostrare', 'che', 'la', 'calotta', 'glaciale', 'artica,', '', 'che', 'per', 'quasi', 'tre', 'milioni', 'di', 'anni', 'ha', 'avuto', '', 'le', 'dimensioni', 'dei', '48', 'Stati', 'Uniti', 'continentali,', '', 'si', 'è', 'ristretta', 'del', '40%.']
+2023-06-02 22:22:01,823 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Last', 'year', 'I', 'showed', 'these', 'two', 'slides', 'so', 'that', 'demonstrate', 'that', 'the', 'arctic', 'ice', 'cap,', 'which', 'for', 'most', 'of', 'the', 'last', 'three', 'million', 'years', 'has', 'been', 'the', 'size', 'of', 'the', 'lower', '48', 'states,', 'has', 'shrunk', 'by', '40', 'percent.']
+2023-06-02 22:22:01,823 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['<unk>', '<unk>', 'I', 'showed', 'these', '<unk>', '', 'for', '<unk>', 'that', '<unk>', '<unk>', '<unk>', '', 'that', 'for', 'almost', 'three', 'million', 'years', 'had', '', 'that', 'for', 'almost', 'three', 'million', 'years', 'had', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '<unk>', '<unk>', '<unk>', '</s>']
+2023-06-02 22:22:01,823 - INFO - joeynmt.training - 	Source:     L'anno scorso ho mostrato queste diapositive  per dimostrare che la calotta glaciale artica,  che per quasi tre milioni di anni ha avuto  le dimensioni dei 48 Stati Uniti continentali,  si è ristretta del 40%.
+2023-06-02 22:22:01,823 - INFO - joeynmt.training - 	Reference:  Last year I showed these two slides so that demonstrate that the arctic ice cap, which for most of the last three million years has been the size of the lower 48 states, has shrunk by 40 percent.
+2023-06-02 22:22:01,823 - INFO - joeynmt.training - 	Hypothesis: <unk> <unk> I showed these <unk>  for <unk> that <unk> <unk> <unk>  that for almost three million years had  that for almost three million years had               <unk> <unk> <unk>
+2023-06-02 22:22:01,823 - INFO - joeynmt.training - Example #1
+2023-06-02 22:22:01,823 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tuttavia', 'questo', 'sottovaluta', 'la', 'gravità', 'del', 'problema', '', 'perché', 'non', 'mostra', 'lo', 'spessore', 'del', 'ghiaccio.']
+2023-06-02 22:22:01,823 - DEBUG - joeynmt.training - 	Tokenized reference:  ['But', 'this', 'understates', 'the', 'seriousness', 'of', 'this', 'particular', 'problem', 'because', 'it', "doesn't", 'show', 'the', 'thickness', 'of', 'the', 'ice.']
+2023-06-02 22:22:01,824 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['<unk>', 'this', '<unk>', 'the', '<unk>', 'of', 'the', 'problem', '--', '', 'because', 'it', "doesn't", 'show', 'the', '<unk>', '</s>']
+2023-06-02 22:22:01,824 - INFO - joeynmt.training - 	Source:     Tuttavia questo sottovaluta la gravità del problema  perché non mostra lo spessore del ghiaccio.
+2023-06-02 22:22:01,824 - INFO - joeynmt.training - 	Reference:  But this understates the seriousness of this particular problem because it doesn't show the thickness of the ice.
+2023-06-02 22:22:01,824 - INFO - joeynmt.training - 	Hypothesis: <unk> this <unk> the <unk> of the problem --  because it doesn't show the <unk>
+2023-06-02 22:22:01,824 - INFO - joeynmt.training - Example #2
+2023-06-02 22:22:01,824 - DEBUG - joeynmt.training - 	Tokenized source:     ['La', 'calotta', 'glaciale', 'artica', 'è,', 'in', 'un', 'certo', 'senso,', '', 'il', 'cuore', 'pulsante', 'del', 'sistema', 'climatico', 'globale.']
+2023-06-02 22:22:01,824 - DEBUG - joeynmt.training - 	Tokenized reference:  ['The', 'arctic', 'ice', 'cap', 'is,', 'in', 'a', 'sense,', 'the', 'beating', 'heart', 'of', 'the', 'global', 'climate', 'system.']
+2023-06-02 22:22:01,824 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['The', '<unk>', '<unk>', 'is,', 'in', 'a', 'certain', 'sense,', '', '', 'the', 'heart', 'of', 'the', '<unk>', '<unk>', '<unk>', '</s>']
+2023-06-02 22:22:01,825 - INFO - joeynmt.training - 	Source:     La calotta glaciale artica è, in un certo senso,  il cuore pulsante del sistema climatico globale.
+2023-06-02 22:22:01,825 - INFO - joeynmt.training - 	Reference:  The arctic ice cap is, in a sense, the beating heart of the global climate system.
+2023-06-02 22:22:01,825 - INFO - joeynmt.training - 	Hypothesis: The <unk> <unk> is, in a certain sense,   the heart of the <unk> <unk> <unk>
+2023-06-02 22:22:01,825 - INFO - joeynmt.training - Example #3
+2023-06-02 22:22:01,825 - DEBUG - joeynmt.training - 	Tokenized source:     ['Si', 'espande', "d'inverno", 'e', 'si', 'ritira', "d'estate."]
+2023-06-02 22:22:01,825 - DEBUG - joeynmt.training - 	Tokenized reference:  ['It', 'expands', 'in', 'winter', 'and', 'contracts', 'in', 'summer.']
+2023-06-02 22:22:01,825 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['You', '<unk>', '<unk>', 'and', '<unk>', '</s>']
+2023-06-02 22:22:01,825 - INFO - joeynmt.training - 	Source:     Si espande d'inverno e si ritira d'estate.
+2023-06-02 22:22:01,826 - INFO - joeynmt.training - 	Reference:  It expands in winter and contracts in summer.
+2023-06-02 22:22:01,826 - INFO - joeynmt.training - 	Hypothesis: You <unk> <unk> and <unk>
+2023-06-02 22:22:01,826 - INFO - joeynmt.training - Example #4
+2023-06-02 22:22:01,826 - DEBUG - joeynmt.training - 	Tokenized source:     ['La', 'prossima', 'diapositiva', 'sarà', 'una', 'rapida', '', 'carrellata', 'sugli', 'avvenimenti', 'degli', 'ultimi', '25', 'anni.']
+2023-06-02 22:22:01,826 - DEBUG - joeynmt.training - 	Tokenized reference:  ['The', 'next', 'slide', 'I', 'show', 'you', 'will', 'be', 'a', 'rapid', 'fast-forward', 'of', "what's", 'happened', 'over', 'the', 'last', '25', 'years.']
+2023-06-02 22:22:01,826 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['The', 'next', '<unk>', 'will', 'be', 'a', '<unk>', '', '<unk>', 'on', 'the', 'last', '25', 'years.', '</s>']
+2023-06-02 22:22:01,826 - INFO - joeynmt.training - 	Source:     La prossima diapositiva sarà una rapida  carrellata sugli avvenimenti degli ultimi 25 anni.
+2023-06-02 22:22:01,826 - INFO - joeynmt.training - 	Reference:  The next slide I show you will be a rapid fast-forward of what's happened over the last 25 years.
+2023-06-02 22:22:01,826 - INFO - joeynmt.training - 	Hypothesis: The next <unk> will be a <unk>  <unk> on the last 25 years.
+2023-06-02 22:22:15,018 - INFO - joeynmt.training - Epoch   2: total training loss 5061.91
+2023-06-02 22:22:15,018 - INFO - joeynmt.training - EPOCH 3
+2023-06-02 22:22:37,165 - INFO - joeynmt.training - Epoch   3, Step:     5600, Batch Loss:     1.608590, Batch Acc: 0.493482, Tokens per Sec:     1794, Lr: 0.000300
+2023-06-02 22:23:11,173 - INFO - joeynmt.training - Epoch   3, Step:     5700, Batch Loss:     1.878402, Batch Acc: 0.495218, Tokens per Sec:     1946, Lr: 0.000300
+2023-06-02 22:23:44,742 - INFO - joeynmt.training - Epoch   3, Step:     5800, Batch Loss:     1.613591, Batch Acc: 0.488047, Tokens per Sec:     1954, Lr: 0.000300
+2023-06-02 22:24:18,066 - INFO - joeynmt.training - Epoch   3, Step:     5900, Batch Loss:     1.728747, Batch Acc: 0.486227, Tokens per Sec:     1953, Lr: 0.000300
+2023-06-02 22:24:49,947 - INFO - joeynmt.training - Epoch   3, Step:     6000, Batch Loss:     1.723897, Batch Acc: 0.493636, Tokens per Sec:     2041, Lr: 0.000300
+2023-06-02 22:24:49,948 - INFO - joeynmt.prediction - Predicting 929 example(s)... (Greedy decoding with min_output_length=1, max_output_length=-1, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2023-06-02 22:25:29,385 - INFO - joeynmt.prediction - Evaluation result (greedy) loss:   1.89, ppl:   6.65, acc:   0.44, generation: 39.4275[sec], evaluation: 0.0000[sec]
+2023-06-02 22:25:29,386 - INFO - joeynmt.training - Hooray! New best validation result [ppl]!
+2023-06-02 22:25:29,628 - INFO - joeynmt.helpers - delete word_level_transformer/4000.ckpt
+2023-06-02 22:25:29,630 - INFO - joeynmt.training - Example #0
+2023-06-02 22:25:29,630 - DEBUG - joeynmt.training - 	Tokenized source:     ["L'anno", 'scorso', 'ho', 'mostrato', 'queste', 'diapositive', '', 'per', 'dimostrare', 'che', 'la', 'calotta', 'glaciale', 'artica,', '', 'che', 'per', 'quasi', 'tre', 'milioni', 'di', 'anni', 'ha', 'avuto', '', 'le', 'dimensioni', 'dei', '48', 'Stati', 'Uniti', 'continentali,', '', 'si', 'è', 'ristretta', 'del', '40%.']
+2023-06-02 22:25:29,630 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Last', 'year', 'I', 'showed', 'these', 'two', 'slides', 'so', 'that', 'demonstrate', 'that', 'the', 'arctic', 'ice', 'cap,', 'which', 'for', 'most', 'of', 'the', 'last', 'three', 'million', 'years', 'has', 'been', 'the', 'size', 'of', 'the', 'lower', '48', 'states,', 'has', 'shrunk', 'by', '40', 'percent.']
+2023-06-02 22:25:29,630 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['<unk>', 'last', 'last', 'year', 'I', 'showed', 'these', '<unk>', '', 'for', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '', 'that', 'for', 'almost', 'three', 'million', 'years', 'had', 'the', 'size', 'of', 'the', 'United', 'States', 'of', 'the', 'United', 'States', 'of', 'the', '<unk>', '</s>']
+2023-06-02 22:25:29,631 - INFO - joeynmt.training - 	Source:     L'anno scorso ho mostrato queste diapositive  per dimostrare che la calotta glaciale artica,  che per quasi tre milioni di anni ha avuto  le dimensioni dei 48 Stati Uniti continentali,  si è ristretta del 40%.
+2023-06-02 22:25:29,631 - INFO - joeynmt.training - 	Reference:  Last year I showed these two slides so that demonstrate that the arctic ice cap, which for most of the last three million years has been the size of the lower 48 states, has shrunk by 40 percent.
+2023-06-02 22:25:29,631 - INFO - joeynmt.training - 	Hypothesis: <unk> last last year I showed these <unk>  for <unk> <unk> <unk> <unk> <unk> <unk>  that for almost three million years had the size of the United States of the United States of the <unk>
+2023-06-02 22:25:29,631 - INFO - joeynmt.training - Example #1
+2023-06-02 22:25:29,631 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tuttavia', 'questo', 'sottovaluta', 'la', 'gravità', 'del', 'problema', '', 'perché', 'non', 'mostra', 'lo', 'spessore', 'del', 'ghiaccio.']
+2023-06-02 22:25:29,631 - DEBUG - joeynmt.training - 	Tokenized reference:  ['But', 'this', 'understates', 'the', 'seriousness', 'of', 'this', 'particular', 'problem', 'because', 'it', "doesn't", 'show', 'the', 'thickness', 'of', 'the', 'ice.']
+2023-06-02 22:25:29,631 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['<unk>', 'this', '<unk>', 'the', '<unk>', 'of', 'the', '<unk>', '', 'because', 'it', "doesn't", '<unk>', 'the', '<unk>', 'of', 'the', '<unk>', '</s>']
+2023-06-02 22:25:29,631 - INFO - joeynmt.training - 	Source:     Tuttavia questo sottovaluta la gravità del problema  perché non mostra lo spessore del ghiaccio.
+2023-06-02 22:25:29,631 - INFO - joeynmt.training - 	Reference:  But this understates the seriousness of this particular problem because it doesn't show the thickness of the ice.
+2023-06-02 22:25:29,632 - INFO - joeynmt.training - 	Hypothesis: <unk> this <unk> the <unk> of the <unk>  because it doesn't <unk> the <unk> of the <unk>
+2023-06-02 22:25:29,632 - INFO - joeynmt.training - Example #2
+2023-06-02 22:25:29,632 - DEBUG - joeynmt.training - 	Tokenized source:     ['La', 'calotta', 'glaciale', 'artica', 'è,', 'in', 'un', 'certo', 'senso,', '', 'il', 'cuore', 'pulsante', 'del', 'sistema', 'climatico', 'globale.']
+2023-06-02 22:25:29,632 - DEBUG - joeynmt.training - 	Tokenized reference:  ['The', 'arctic', 'ice', 'cap', 'is,', 'in', 'a', 'sense,', 'the', 'beating', 'heart', 'of', 'the', 'global', 'climate', 'system.']
+2023-06-02 22:25:29,632 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '</s>']
+2023-06-02 22:25:29,632 - INFO - joeynmt.training - 	Source:     La calotta glaciale artica è, in un certo senso,  il cuore pulsante del sistema climatico globale.
+2023-06-02 22:25:29,632 - INFO - joeynmt.training - 	Reference:  The arctic ice cap is, in a sense, the beating heart of the global climate system.
+2023-06-02 22:25:29,632 - INFO - joeynmt.training - 	Hypothesis: <unk> <unk> <unk> <unk> <unk> <unk>
+2023-06-02 22:25:29,632 - INFO - joeynmt.training - Example #3
+2023-06-02 22:25:29,633 - DEBUG - joeynmt.training - 	Tokenized source:     ['Si', 'espande', "d'inverno", 'e', 'si', 'ritira', "d'estate."]
+2023-06-02 22:25:29,633 - DEBUG - joeynmt.training - 	Tokenized reference:  ['It', 'expands', 'in', 'winter', 'and', 'contracts', 'in', 'summer.']
+2023-06-02 22:25:29,633 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['<unk>', '<unk>', 'and', '<unk>', '<unk>', '</s>']
+2023-06-02 22:25:29,633 - INFO - joeynmt.training - 	Source:     Si espande d'inverno e si ritira d'estate.
+2023-06-02 22:25:29,633 - INFO - joeynmt.training - 	Reference:  It expands in winter and contracts in summer.
+2023-06-02 22:25:29,633 - INFO - joeynmt.training - 	Hypothesis: <unk> <unk> and <unk> <unk>
+2023-06-02 22:25:29,633 - INFO - joeynmt.training - Example #4
+2023-06-02 22:25:29,633 - DEBUG - joeynmt.training - 	Tokenized source:     ['La', 'prossima', 'diapositiva', 'sarà', 'una', 'rapida', '', 'carrellata', 'sugli', 'avvenimenti', 'degli', 'ultimi', '25', 'anni.']
+2023-06-02 22:25:29,633 - DEBUG - joeynmt.training - 	Tokenized reference:  ['The', 'next', 'slide', 'I', 'show', 'you', 'will', 'be', 'a', 'rapid', 'fast-forward', 'of', "what's", 'happened', 'over', 'the', 'last', '25', 'years.']
+2023-06-02 22:25:29,633 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['<unk>', 'will', 'be', 'a', '<unk>', '', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '</s>']
+2023-06-02 22:25:29,634 - INFO - joeynmt.training - 	Source:     La prossima diapositiva sarà una rapida  carrellata sugli avvenimenti degli ultimi 25 anni.
+2023-06-02 22:25:29,634 - INFO - joeynmt.training - 	Reference:  The next slide I show you will be a rapid fast-forward of what's happened over the last 25 years.
+2023-06-02 22:25:29,634 - INFO - joeynmt.training - 	Hypothesis: <unk> will be a <unk>  <unk> <unk> <unk> <unk> <unk>
+2023-06-02 22:26:03,489 - INFO - joeynmt.training - Epoch   3, Step:     6100, Batch Loss:     1.823446, Batch Acc: 0.494301, Tokens per Sec:     1958, Lr: 0.000300
+2023-06-02 22:26:37,090 - INFO - joeynmt.training - Epoch   3, Step:     6200, Batch Loss:     1.738169, Batch Acc: 0.490629, Tokens per Sec:     1944, Lr: 0.000300
+2023-06-02 22:27:12,380 - INFO - joeynmt.training - Epoch   3, Step:     6300, Batch Loss:     1.713459, Batch Acc: 0.492683, Tokens per Sec:     1863, Lr: 0.000300
+2023-06-02 22:27:46,890 - INFO - joeynmt.training - Epoch   3, Step:     6400, Batch Loss:     1.773676, Batch Acc: 0.489149, Tokens per Sec:     1855, Lr: 0.000300
+2023-06-02 22:28:32,862 - INFO - joeynmt.training - Epoch   3, Step:     6500, Batch Loss:     1.817409, Batch Acc: 0.491769, Tokens per Sec:     1479, Lr: 0.000300
+2023-06-02 22:28:32,862 - INFO - joeynmt.prediction - Predicting 929 example(s)... (Greedy decoding with min_output_length=1, max_output_length=-1, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2023-06-02 22:29:22,131 - INFO - joeynmt.prediction - Evaluation result (greedy) loss:   1.85, ppl:   6.38, acc:   0.45, generation: 49.2591[sec], evaluation: 0.0000[sec]
+2023-06-02 22:29:22,132 - INFO - joeynmt.training - Hooray! New best validation result [ppl]!
+2023-06-02 22:29:22,369 - INFO - joeynmt.helpers - delete word_level_transformer/3500.ckpt
+2023-06-02 22:29:22,371 - INFO - joeynmt.training - Example #0
+2023-06-02 22:29:22,372 - DEBUG - joeynmt.training - 	Tokenized source:     ["L'anno", 'scorso', 'ho', 'mostrato', 'queste', 'diapositive', '', 'per', 'dimostrare', 'che', 'la', 'calotta', 'glaciale', 'artica,', '', 'che', 'per', 'quasi', 'tre', 'milioni', 'di', 'anni', 'ha', 'avuto', '', 'le', 'dimensioni', 'dei', '48', 'Stati', 'Uniti', 'continentali,', '', 'si', 'è', 'ristretta', 'del', '40%.']
+2023-06-02 22:29:22,372 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Last', 'year', 'I', 'showed', 'these', 'two', 'slides', 'so', 'that', 'demonstrate', 'that', 'the', 'arctic', 'ice', 'cap,', 'which', 'for', 'most', 'of', 'the', 'last', 'three', 'million', 'years', 'has', 'been', 'the', 'size', 'of', 'the', 'lower', '48', 'states,', 'has', 'shrunk', 'by', '40', 'percent.']
+2023-06-02 22:29:22,372 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['<unk>', '<unk>', 'I', 'showed', 'these', '<unk>', '', 'for', '<unk>', 'that', '<unk>', '<unk>', '<unk>', '<unk>', 'that', 'for', 'almost', 'three', 'million', 'years', 'had', 'the', 'size', 'of', 'the', 'United', 'States', '<unk>', '<unk>', '', 'which', 'is', '<unk>', '<unk>', '<unk>', '</s>']
+2023-06-02 22:29:22,372 - INFO - joeynmt.training - 	Source:     L'anno scorso ho mostrato queste diapositive  per dimostrare che la calotta glaciale artica,  che per quasi tre milioni di anni ha avuto  le dimensioni dei 48 Stati Uniti continentali,  si è ristretta del 40%.
+2023-06-02 22:29:22,372 - INFO - joeynmt.training - 	Reference:  Last year I showed these two slides so that demonstrate that the arctic ice cap, which for most of the last three million years has been the size of the lower 48 states, has shrunk by 40 percent.
+2023-06-02 22:29:22,372 - INFO - joeynmt.training - 	Hypothesis: <unk> <unk> I showed these <unk>  for <unk> that <unk> <unk> <unk> <unk> that for almost three million years had the size of the United States <unk> <unk>  which is <unk> <unk> <unk>
+2023-06-02 22:29:22,372 - INFO - joeynmt.training - Example #1
+2023-06-02 22:29:22,373 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tuttavia', 'questo', 'sottovaluta', 'la', 'gravità', 'del', 'problema', '', 'perché', 'non', 'mostra', 'lo', 'spessore', 'del', 'ghiaccio.']
+2023-06-02 22:29:22,373 - DEBUG - joeynmt.training - 	Tokenized reference:  ['But', 'this', 'understates', 'the', 'seriousness', 'of', 'this', 'particular', 'problem', 'because', 'it', "doesn't", 'show', 'the', 'thickness', 'of', 'the', 'ice.']
+2023-06-02 22:29:22,373 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['<unk>', 'this', '<unk>', 'the', '<unk>', 'of', 'the', 'problem', '', 'because', 'it', "doesn't", 'show', 'the', '<unk>', 'of', 'the', '<unk>', '</s>']
+2023-06-02 22:29:22,373 - INFO - joeynmt.training - 	Source:     Tuttavia questo sottovaluta la gravità del problema  perché non mostra lo spessore del ghiaccio.
+2023-06-02 22:29:22,373 - INFO - joeynmt.training - 	Reference:  But this understates the seriousness of this particular problem because it doesn't show the thickness of the ice.
+2023-06-02 22:29:22,373 - INFO - joeynmt.training - 	Hypothesis: <unk> this <unk> the <unk> of the problem  because it doesn't show the <unk> of the <unk>
+2023-06-02 22:29:22,373 - INFO - joeynmt.training - Example #2
+2023-06-02 22:29:22,373 - DEBUG - joeynmt.training - 	Tokenized source:     ['La', 'calotta', 'glaciale', 'artica', 'è,', 'in', 'un', 'certo', 'senso,', '', 'il', 'cuore', 'pulsante', 'del', 'sistema', 'climatico', 'globale.']
+2023-06-02 22:29:22,373 - DEBUG - joeynmt.training - 	Tokenized reference:  ['The', 'arctic', 'ice', 'cap', 'is,', 'in', 'a', 'sense,', 'the', 'beating', 'heart', 'of', 'the', 'global', 'climate', 'system.']
+2023-06-02 22:29:22,373 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['<unk>', '<unk>', '<unk>', 'is,', 'in', 'a', 'sense,', '', 'the', 'heart', '<unk>', 'of', 'the', '<unk>', 'of', 'the', '<unk>', '<unk>', '<unk>', '</s>']
+2023-06-02 22:29:22,374 - INFO - joeynmt.training - 	Source:     La calotta glaciale artica è, in un certo senso,  il cuore pulsante del sistema climatico globale.
+2023-06-02 22:29:22,374 - INFO - joeynmt.training - 	Reference:  The arctic ice cap is, in a sense, the beating heart of the global climate system.
+2023-06-02 22:29:22,374 - INFO - joeynmt.training - 	Hypothesis: <unk> <unk> <unk> is, in a sense,  the heart <unk> of the <unk> of the <unk> <unk> <unk>
+2023-06-02 22:29:22,374 - INFO - joeynmt.training - Example #3
+2023-06-02 22:29:22,374 - DEBUG - joeynmt.training - 	Tokenized source:     ['Si', 'espande', "d'inverno", 'e', 'si', 'ritira', "d'estate."]
+2023-06-02 22:29:22,374 - DEBUG - joeynmt.training - 	Tokenized reference:  ['It', 'expands', 'in', 'winter', 'and', 'contracts', 'in', 'summer.']
+2023-06-02 22:29:22,374 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['It', '<unk>', '<unk>', 'and', '<unk>', '<unk>', '</s>']
+2023-06-02 22:29:22,375 - INFO - joeynmt.training - 	Source:     Si espande d'inverno e si ritira d'estate.
+2023-06-02 22:29:22,375 - INFO - joeynmt.training - 	Reference:  It expands in winter and contracts in summer.
+2023-06-02 22:29:22,375 - INFO - joeynmt.training - 	Hypothesis: It <unk> <unk> and <unk> <unk>
+2023-06-02 22:29:22,375 - INFO - joeynmt.training - Example #4
+2023-06-02 22:29:22,375 - DEBUG - joeynmt.training - 	Tokenized source:     ['La', 'prossima', 'diapositiva', 'sarà', 'una', 'rapida', '', 'carrellata', 'sugli', 'avvenimenti', 'degli', 'ultimi', '25', 'anni.']
+2023-06-02 22:29:22,375 - DEBUG - joeynmt.training - 	Tokenized reference:  ['The', 'next', 'slide', 'I', 'show', 'you', 'will', 'be', 'a', 'rapid', 'fast-forward', 'of', "what's", 'happened', 'over', 'the', 'last', '25', 'years.']
+2023-06-02 22:29:22,375 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['The', 'next', '<unk>', 'will', 'be', 'a', '<unk>', '', '<unk>', 'on', 'the', 'last', '<unk>', '</s>']
+2023-06-02 22:29:22,375 - INFO - joeynmt.training - 	Source:     La prossima diapositiva sarà una rapida  carrellata sugli avvenimenti degli ultimi 25 anni.
+2023-06-02 22:29:22,376 - INFO - joeynmt.training - 	Reference:  The next slide I show you will be a rapid fast-forward of what's happened over the last 25 years.
+2023-06-02 22:29:22,376 - INFO - joeynmt.training - 	Hypothesis: The next <unk> will be a <unk>  <unk> on the last <unk>
+2023-06-02 22:30:01,191 - INFO - joeynmt.training - Epoch   3, Step:     6600, Batch Loss:     1.746278, Batch Acc: 0.493273, Tokens per Sec:     1675, Lr: 0.000300
+2023-06-02 22:30:38,870 - INFO - joeynmt.training - Epoch   3, Step:     6700, Batch Loss:     1.628233, Batch Acc: 0.487837, Tokens per Sec:     1702, Lr: 0.000300
+2023-06-02 22:31:14,644 - INFO - joeynmt.training - Epoch   3, Step:     6800, Batch Loss:     1.829865, Batch Acc: 0.495988, Tokens per Sec:     1916, Lr: 0.000300
+2023-06-02 22:31:56,764 - INFO - joeynmt.training - Epoch   3, Step:     6900, Batch Loss:     1.685760, Batch Acc: 0.493977, Tokens per Sec:     1575, Lr: 0.000300
+2023-06-02 22:32:38,295 - INFO - joeynmt.training - Epoch   3, Step:     7000, Batch Loss:     1.713234, Batch Acc: 0.497375, Tokens per Sec:     1623, Lr: 0.000300
+2023-06-02 22:32:38,296 - INFO - joeynmt.prediction - Predicting 929 example(s)... (Greedy decoding with min_output_length=1, max_output_length=-1, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2023-06-02 22:33:23,641 - INFO - joeynmt.prediction - Evaluation result (greedy) loss:   1.87, ppl:   6.46, acc:   0.45, generation: 45.3348[sec], evaluation: 0.0000[sec]
+2023-06-02 22:33:23,901 - INFO - joeynmt.helpers - delete word_level_transformer/4500.ckpt
+2023-06-02 22:33:23,903 - INFO - joeynmt.training - Example #0
+2023-06-02 22:33:23,903 - DEBUG - joeynmt.training - 	Tokenized source:     ["L'anno", 'scorso', 'ho', 'mostrato', 'queste', 'diapositive', '', 'per', 'dimostrare', 'che', 'la', 'calotta', 'glaciale', 'artica,', '', 'che', 'per', 'quasi', 'tre', 'milioni', 'di', 'anni', 'ha', 'avuto', '', 'le', 'dimensioni', 'dei', '48', 'Stati', 'Uniti', 'continentali,', '', 'si', 'è', 'ristretta', 'del', '40%.']
+2023-06-02 22:33:23,904 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Last', 'year', 'I', 'showed', 'these', 'two', 'slides', 'so', 'that', 'demonstrate', 'that', 'the', 'arctic', 'ice', 'cap,', 'which', 'for', 'most', 'of', 'the', 'last', 'three', 'million', 'years', 'has', 'been', 'the', 'size', 'of', 'the', 'lower', '48', 'states,', 'has', 'shrunk', 'by', '40', 'percent.']
+2023-06-02 22:33:23,904 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['<unk>', '<unk>', '<unk>', '', 'to', 'showed', 'these', '<unk>', '', 'to', '<unk>', 'that', '<unk>', '<unk>', '<unk>', '', 'that', 'for', 'almost', 'three', 'million', 'years', 'had', 'the', 'size', 'of', 'the', 'United', 'States', 'States', '<unk>', '', '<unk>', 'is', '<unk>', '<unk>', '</s>']
+2023-06-02 22:33:23,904 - INFO - joeynmt.training - 	Source:     L'anno scorso ho mostrato queste diapositive  per dimostrare che la calotta glaciale artica,  che per quasi tre milioni di anni ha avuto  le dimensioni dei 48 Stati Uniti continentali,  si è ristretta del 40%.
+2023-06-02 22:33:23,904 - INFO - joeynmt.training - 	Reference:  Last year I showed these two slides so that demonstrate that the arctic ice cap, which for most of the last three million years has been the size of the lower 48 states, has shrunk by 40 percent.
+2023-06-02 22:33:23,904 - INFO - joeynmt.training - 	Hypothesis: <unk> <unk> <unk>  to showed these <unk>  to <unk> that <unk> <unk> <unk>  that for almost three million years had the size of the United States States <unk>  <unk> is <unk> <unk>
+2023-06-02 22:33:23,904 - INFO - joeynmt.training - Example #1
+2023-06-02 22:33:23,904 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tuttavia', 'questo', 'sottovaluta', 'la', 'gravità', 'del', 'problema', '', 'perché', 'non', 'mostra', 'lo', 'spessore', 'del', 'ghiaccio.']
+2023-06-02 22:33:23,904 - DEBUG - joeynmt.training - 	Tokenized reference:  ['But', 'this', 'understates', 'the', 'seriousness', 'of', 'this', 'particular', 'problem', 'because', 'it', "doesn't", 'show', 'the', 'thickness', 'of', 'the', 'ice.']
+2023-06-02 22:33:23,904 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['<unk>', 'this', '<unk>', 'the', '<unk>', 'of', 'the', 'problem', '', 'because', 'it', "doesn't", 'show', 'the', '<unk>', 'of', 'the', '<unk>', '</s>']
+2023-06-02 22:33:23,905 - INFO - joeynmt.training - 	Source:     Tuttavia questo sottovaluta la gravità del problema  perché non mostra lo spessore del ghiaccio.
+2023-06-02 22:33:23,905 - INFO - joeynmt.training - 	Reference:  But this understates the seriousness of this particular problem because it doesn't show the thickness of the ice.
+2023-06-02 22:33:23,905 - INFO - joeynmt.training - 	Hypothesis: <unk> this <unk> the <unk> of the problem  because it doesn't show the <unk> of the <unk>
+2023-06-02 22:33:23,905 - INFO - joeynmt.training - Example #2
+2023-06-02 22:33:23,905 - DEBUG - joeynmt.training - 	Tokenized source:     ['La', 'calotta', 'glaciale', 'artica', 'è,', 'in', 'un', 'certo', 'senso,', '', 'il', 'cuore', 'pulsante', 'del', 'sistema', 'climatico', 'globale.']
+2023-06-02 22:33:23,905 - DEBUG - joeynmt.training - 	Tokenized reference:  ['The', 'arctic', 'ice', 'cap', 'is,', 'in', 'a', 'sense,', 'the', 'beating', 'heart', 'of', 'the', 'global', 'climate', 'system.']
+2023-06-02 22:33:23,905 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['The', '<unk>', '<unk>', 'is', 'in', 'a', 'sense,', '', 'the', 'heart', 'of', 'the', '<unk>', 'of', 'the', '<unk>', 'system', 'system', '<unk>', '</s>']
+2023-06-02 22:33:23,906 - INFO - joeynmt.training - 	Source:     La calotta glaciale artica è, in un certo senso,  il cuore pulsante del sistema climatico globale.
+2023-06-02 22:33:23,906 - INFO - joeynmt.training - 	Reference:  The arctic ice cap is, in a sense, the beating heart of the global climate system.
+2023-06-02 22:33:23,906 - INFO - joeynmt.training - 	Hypothesis: The <unk> <unk> is in a sense,  the heart of the <unk> of the <unk> system system <unk>
+2023-06-02 22:33:23,906 - INFO - joeynmt.training - Example #3
+2023-06-02 22:33:23,906 - DEBUG - joeynmt.training - 	Tokenized source:     ['Si', 'espande', "d'inverno", 'e', 'si', 'ritira', "d'estate."]
+2023-06-02 22:33:23,906 - DEBUG - joeynmt.training - 	Tokenized reference:  ['It', 'expands', 'in', 'winter', 'and', 'contracts', 'in', 'summer.']
+2023-06-02 22:33:23,906 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['<unk>', '<unk>', 'and', '<unk>', '<unk>', '</s>']
+2023-06-02 22:33:23,907 - INFO - joeynmt.training - 	Source:     Si espande d'inverno e si ritira d'estate.
+2023-06-02 22:33:23,907 - INFO - joeynmt.training - 	Reference:  It expands in winter and contracts in summer.
+2023-06-02 22:33:23,907 - INFO - joeynmt.training - 	Hypothesis: <unk> <unk> and <unk> <unk>
+2023-06-02 22:33:23,907 - INFO - joeynmt.training - Example #4
+2023-06-02 22:33:23,907 - DEBUG - joeynmt.training - 	Tokenized source:     ['La', 'prossima', 'diapositiva', 'sarà', 'una', 'rapida', '', 'carrellata', 'sugli', 'avvenimenti', 'degli', 'ultimi', '25', 'anni.']
+2023-06-02 22:33:23,907 - DEBUG - joeynmt.training - 	Tokenized reference:  ['The', 'next', 'slide', 'I', 'show', 'you', 'will', 'be', 'a', 'rapid', 'fast-forward', 'of', "what's", 'happened', 'over', 'the', 'last', '25', 'years.']
+2023-06-02 22:33:23,907 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['The', 'next', '<unk>', 'is', 'going', 'to', 'be', 'a', '<unk>', '', '<unk>', 'on', 'the', 'last', '25', 'years.', '</s>']
+2023-06-02 22:33:23,907 - INFO - joeynmt.training - 	Source:     La prossima diapositiva sarà una rapida  carrellata sugli avvenimenti degli ultimi 25 anni.
+2023-06-02 22:33:23,907 - INFO - joeynmt.training - 	Reference:  The next slide I show you will be a rapid fast-forward of what's happened over the last 25 years.
+2023-06-02 22:33:23,908 - INFO - joeynmt.training - 	Hypothesis: The next <unk> is going to be a <unk>  <unk> on the last 25 years.
+2023-06-02 22:33:58,479 - INFO - joeynmt.training - Epoch   3, Step:     7100, Batch Loss:     1.745834, Batch Acc: 0.490981, Tokens per Sec:     1887, Lr: 0.000300
+2023-06-02 22:34:32,765 - INFO - joeynmt.training - Epoch   3, Step:     7200, Batch Loss:     1.588272, Batch Acc: 0.493965, Tokens per Sec:     1921, Lr: 0.000300
+2023-06-02 22:35:12,186 - INFO - joeynmt.training - Epoch   3, Step:     7300, Batch Loss:     1.771153, Batch Acc: 0.494469, Tokens per Sec:     1637, Lr: 0.000300
+2023-06-02 22:35:49,467 - INFO - joeynmt.training - Epoch   3, Step:     7400, Batch Loss:     1.688862, Batch Acc: 0.495914, Tokens per Sec:     1750, Lr: 0.000300
+2023-06-02 22:36:36,250 - INFO - joeynmt.training - Epoch   3, Step:     7500, Batch Loss:     1.785834, Batch Acc: 0.493365, Tokens per Sec:     1405, Lr: 0.000300
+2023-06-02 22:36:36,251 - INFO - joeynmt.prediction - Predicting 929 example(s)... (Greedy decoding with min_output_length=1, max_output_length=-1, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2023-06-02 22:37:21,946 - INFO - joeynmt.prediction - Evaluation result (greedy) loss:   1.82, ppl:   6.17, acc:   0.46, generation: 45.6857[sec], evaluation: 0.0000[sec]
+2023-06-02 22:37:21,947 - INFO - joeynmt.training - Hooray! New best validation result [ppl]!
+2023-06-02 22:37:22,194 - INFO - joeynmt.helpers - delete word_level_transformer/5500.ckpt
+2023-06-02 22:37:22,196 - INFO - joeynmt.training - Example #0
+2023-06-02 22:37:22,197 - DEBUG - joeynmt.training - 	Tokenized source:     ["L'anno", 'scorso', 'ho', 'mostrato', 'queste', 'diapositive', '', 'per', 'dimostrare', 'che', 'la', 'calotta', 'glaciale', 'artica,', '', 'che', 'per', 'quasi', 'tre', 'milioni', 'di', 'anni', 'ha', 'avuto', '', 'le', 'dimensioni', 'dei', '48', 'Stati', 'Uniti', 'continentali,', '', 'si', 'è', 'ristretta', 'del', '40%.']
+2023-06-02 22:37:22,197 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Last', 'year', 'I', 'showed', 'these', 'two', 'slides', 'so', 'that', 'demonstrate', 'that', 'the', 'arctic', 'ice', 'cap,', 'which', 'for', 'most', 'of', 'the', 'last', 'three', 'million', 'years', 'has', 'been', 'the', 'size', 'of', 'the', 'lower', '48', 'states,', 'has', 'shrunk', 'by', '40', 'percent.']
+2023-06-02 22:37:22,197 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['<unk>', 'last', '<unk>', 'I', 'showed', 'these', '<unk>', '', 'to', '<unk>', 'that', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', 'that', 'for', 'almost', 'three', 'million', 'years', 'has', 'had', 'the', 'size', 'of', 'the', '<unk>', '<unk>', '', '', '<unk>', 'is', '<unk>', '<unk>', '<unk>', '</s>']
+2023-06-02 22:37:22,197 - INFO - joeynmt.training - 	Source:     L'anno scorso ho mostrato queste diapositive  per dimostrare che la calotta glaciale artica,  che per quasi tre milioni di anni ha avuto  le dimensioni dei 48 Stati Uniti continentali,  si è ristretta del 40%.
+2023-06-02 22:37:22,197 - INFO - joeynmt.training - 	Reference:  Last year I showed these two slides so that demonstrate that the arctic ice cap, which for most of the last three million years has been the size of the lower 48 states, has shrunk by 40 percent.
+2023-06-02 22:37:22,197 - INFO - joeynmt.training - 	Hypothesis: <unk> last <unk> I showed these <unk>  to <unk> that <unk> <unk> <unk> <unk> <unk> <unk> that for almost three million years has had the size of the <unk> <unk>   <unk> is <unk> <unk> <unk>
+2023-06-02 22:37:22,197 - INFO - joeynmt.training - Example #1
+2023-06-02 22:37:22,197 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tuttavia', 'questo', 'sottovaluta', 'la', 'gravità', 'del', 'problema', '', 'perché', 'non', 'mostra', 'lo', 'spessore', 'del', 'ghiaccio.']
+2023-06-02 22:37:22,198 - DEBUG - joeynmt.training - 	Tokenized reference:  ['But', 'this', 'understates', 'the', 'seriousness', 'of', 'this', 'particular', 'problem', 'because', 'it', "doesn't", 'show', 'the', 'thickness', 'of', 'the', 'ice.']
+2023-06-02 22:37:22,198 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['<unk>', 'this', '<unk>', 'the', '<unk>', 'of', 'the', 'problem', '--', '', 'because', 'it', "doesn't", 'show', 'the', '<unk>', 'of', 'the', '<unk>', '</s>']
+2023-06-02 22:37:22,198 - INFO - joeynmt.training - 	Source:     Tuttavia questo sottovaluta la gravità del problema  perché non mostra lo spessore del ghiaccio.
+2023-06-02 22:37:22,198 - INFO - joeynmt.training - 	Reference:  But this understates the seriousness of this particular problem because it doesn't show the thickness of the ice.
+2023-06-02 22:37:22,198 - INFO - joeynmt.training - 	Hypothesis: <unk> this <unk> the <unk> of the problem --  because it doesn't show the <unk> of the <unk>
+2023-06-02 22:37:22,198 - INFO - joeynmt.training - Example #2
+2023-06-02 22:37:22,198 - DEBUG - joeynmt.training - 	Tokenized source:     ['La', 'calotta', 'glaciale', 'artica', 'è,', 'in', 'un', 'certo', 'senso,', '', 'il', 'cuore', 'pulsante', 'del', 'sistema', 'climatico', 'globale.']
+2023-06-02 22:37:22,198 - DEBUG - joeynmt.training - 	Tokenized reference:  ['The', 'arctic', 'ice', 'cap', 'is,', 'in', 'a', 'sense,', 'the', 'beating', 'heart', 'of', 'the', 'global', 'climate', 'system.']
+2023-06-02 22:37:22,198 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['<unk>', '<unk>', '<unk>', 'is,', 'in', 'a', 'sense,', '<unk>', '', 'the', 'heart', 'of', 'the', '<unk>', 'global', '<unk>', '</s>']
+2023-06-02 22:37:22,199 - INFO - joeynmt.training - 	Source:     La calotta glaciale artica è, in un certo senso,  il cuore pulsante del sistema climatico globale.
+2023-06-02 22:37:22,199 - INFO - joeynmt.training - 	Reference:  The arctic ice cap is, in a sense, the beating heart of the global climate system.
+2023-06-02 22:37:22,199 - INFO - joeynmt.training - 	Hypothesis: <unk> <unk> <unk> is, in a sense, <unk>  the heart of the <unk> global <unk>
+2023-06-02 22:37:22,199 - INFO - joeynmt.training - Example #3
+2023-06-02 22:37:22,199 - DEBUG - joeynmt.training - 	Tokenized source:     ['Si', 'espande', "d'inverno", 'e', 'si', 'ritira', "d'estate."]
+2023-06-02 22:37:22,199 - DEBUG - joeynmt.training - 	Tokenized reference:  ['It', 'expands', 'in', 'winter', 'and', 'contracts', 'in', 'summer.']
+2023-06-02 22:37:22,199 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['They', '<unk>', '<unk>', 'and', '<unk>', '<unk>', '</s>']
+2023-06-02 22:37:22,200 - INFO - joeynmt.training - 	Source:     Si espande d'inverno e si ritira d'estate.
+2023-06-02 22:37:22,200 - INFO - joeynmt.training - 	Reference:  It expands in winter and contracts in summer.
+2023-06-02 22:37:22,200 - INFO - joeynmt.training - 	Hypothesis: They <unk> <unk> and <unk> <unk>
+2023-06-02 22:37:22,200 - INFO - joeynmt.training - Example #4
+2023-06-02 22:37:22,200 - DEBUG - joeynmt.training - 	Tokenized source:     ['La', 'prossima', 'diapositiva', 'sarà', 'una', 'rapida', '', 'carrellata', 'sugli', 'avvenimenti', 'degli', 'ultimi', '25', 'anni.']
+2023-06-02 22:37:22,200 - DEBUG - joeynmt.training - 	Tokenized reference:  ['The', 'next', 'slide', 'I', 'show', 'you', 'will', 'be', 'a', 'rapid', 'fast-forward', 'of', "what's", 'happened', 'over', 'the', 'last', '25', 'years.']
+2023-06-02 22:37:22,200 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['The', 'next', 'next', '<unk>', 'is', 'going', 'to', 'be', 'a', '<unk>', '', '<unk>', 'about', 'the', 'last', '25', 'years.', '</s>']
+2023-06-02 22:37:22,200 - INFO - joeynmt.training - 	Source:     La prossima diapositiva sarà una rapida  carrellata sugli avvenimenti degli ultimi 25 anni.
+2023-06-02 22:37:22,200 - INFO - joeynmt.training - 	Reference:  The next slide I show you will be a rapid fast-forward of what's happened over the last 25 years.
+2023-06-02 22:37:22,200 - INFO - joeynmt.training - 	Hypothesis: The next next <unk> is going to be a <unk>  <unk> about the last 25 years.
+2023-06-02 22:38:08,249 - INFO - joeynmt.training - Epoch   3, Step:     7600, Batch Loss:     1.754036, Batch Acc: 0.494374, Tokens per Sec:     1405, Lr: 0.000300
+2023-06-02 22:38:48,211 - INFO - joeynmt.training - Epoch   3, Step:     7700, Batch Loss:     1.693057, Batch Acc: 0.495481, Tokens per Sec:     1647, Lr: 0.000300
+2023-06-02 22:39:24,659 - INFO - joeynmt.training - Epoch   3, Step:     7800, Batch Loss:     1.561446, Batch Acc: 0.503089, Tokens per Sec:     1790, Lr: 0.000300
+2023-06-02 22:40:00,441 - INFO - joeynmt.training - Epoch   3, Step:     7900, Batch Loss:     1.642072, Batch Acc: 0.497641, Tokens per Sec:     1825, Lr: 0.000300
+2023-06-02 22:40:38,920 - INFO - joeynmt.training - Epoch   3, Step:     8000, Batch Loss:     1.745887, Batch Acc: 0.497913, Tokens per Sec:     1712, Lr: 0.000300
+2023-06-02 22:40:38,921 - INFO - joeynmt.prediction - Predicting 929 example(s)... (Greedy decoding with min_output_length=1, max_output_length=-1, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2023-06-02 22:41:34,117 - INFO - joeynmt.prediction - Evaluation result (greedy) loss:   1.87, ppl:   6.50, acc:   0.44, generation: 55.1849[sec], evaluation: 0.0000[sec]
+2023-06-02 22:41:34,350 - INFO - joeynmt.helpers - delete word_level_transformer/5000.ckpt
+2023-06-02 22:41:34,352 - INFO - joeynmt.training - Example #0
+2023-06-02 22:41:34,353 - DEBUG - joeynmt.training - 	Tokenized source:     ["L'anno", 'scorso', 'ho', 'mostrato', 'queste', 'diapositive', '', 'per', 'dimostrare', 'che', 'la', 'calotta', 'glaciale', 'artica,', '', 'che', 'per', 'quasi', 'tre', 'milioni', 'di', 'anni', 'ha', 'avuto', '', 'le', 'dimensioni', 'dei', '48', 'Stati', 'Uniti', 'continentali,', '', 'si', 'è', 'ristretta', 'del', '40%.']
+2023-06-02 22:41:34,353 - DEBUG - joeynmt.training - 	Tokenized reference:  ['Last', 'year', 'I', 'showed', 'these', 'two', 'slides', 'so', 'that', 'demonstrate', 'that', 'the', 'arctic', 'ice', 'cap,', 'which', 'for', 'most', 'of', 'the', 'last', 'three', 'million', 'years', 'has', 'been', 'the', 'size', 'of', 'the', 'lower', '48', 'states,', 'has', 'shrunk', 'by', '40', 'percent.']
+2023-06-02 22:41:34,353 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['<unk>', 'I', 'showed', 'these', '<unk>', '', 'for', '<unk>', '<unk>', '<unk>', '', 'that', 'for', 'almost', 'three', 'million', 'years', 'has', 'had', '', 'that', 'for', 'almost', 'three', 'million', 'years', 'has', 'been', '<unk>', '', '', '', '', '', '', '', '', '', '', '', '', '', 'for', '<unk>', '<unk>', '<unk>', '<unk>', '</s>']
+2023-06-02 22:41:34,353 - INFO - joeynmt.training - 	Source:     L'anno scorso ho mostrato queste diapositive  per dimostrare che la calotta glaciale artica,  che per quasi tre milioni di anni ha avuto  le dimensioni dei 48 Stati Uniti continentali,  si è ristretta del 40%.
+2023-06-02 22:41:34,353 - INFO - joeynmt.training - 	Reference:  Last year I showed these two slides so that demonstrate that the arctic ice cap, which for most of the last three million years has been the size of the lower 48 states, has shrunk by 40 percent.
+2023-06-02 22:41:34,353 - INFO - joeynmt.training - 	Hypothesis: <unk> I showed these <unk>  for <unk> <unk> <unk>  that for almost three million years has had  that for almost three million years has been <unk>              for <unk> <unk> <unk> <unk>
+2023-06-02 22:41:34,353 - INFO - joeynmt.training - Example #1
+2023-06-02 22:41:34,353 - DEBUG - joeynmt.training - 	Tokenized source:     ['Tuttavia', 'questo', 'sottovaluta', 'la', 'gravità', 'del', 'problema', '', 'perché', 'non', 'mostra', 'lo', 'spessore', 'del', 'ghiaccio.']
+2023-06-02 22:41:34,354 - DEBUG - joeynmt.training - 	Tokenized reference:  ['But', 'this', 'understates', 'the', 'seriousness', 'of', 'this', 'particular', 'problem', 'because', 'it', "doesn't", 'show', 'the', 'thickness', 'of', 'the', 'ice.']
+2023-06-02 22:41:34,354 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['<unk>', 'this', '<unk>', 'the', '<unk>', 'of', 'the', 'problem', '', 'because', 'it', 'shows', 'the', '<unk>', '</s>']
+2023-06-02 22:41:34,354 - INFO - joeynmt.training - 	Source:     Tuttavia questo sottovaluta la gravità del problema  perché non mostra lo spessore del ghiaccio.
+2023-06-02 22:41:34,354 - INFO - joeynmt.training - 	Reference:  But this understates the seriousness of this particular problem because it doesn't show the thickness of the ice.
+2023-06-02 22:41:34,354 - INFO - joeynmt.training - 	Hypothesis: <unk> this <unk> the <unk> of the problem  because it shows the <unk>
+2023-06-02 22:41:34,354 - INFO - joeynmt.training - Example #2
+2023-06-02 22:41:34,354 - DEBUG - joeynmt.training - 	Tokenized source:     ['La', 'calotta', 'glaciale', 'artica', 'è,', 'in', 'un', 'certo', 'senso,', '', 'il', 'cuore', 'pulsante', 'del', 'sistema', 'climatico', 'globale.']
+2023-06-02 22:41:34,354 - DEBUG - joeynmt.training - 	Tokenized reference:  ['The', 'arctic', 'ice', 'cap', 'is,', 'in', 'a', 'sense,', 'the', 'beating', 'heart', 'of', 'the', 'global', 'climate', 'system.']
+2023-06-02 22:41:34,354 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['The', '<unk>', '<unk>', 'is,', 'in', 'a', 'sense,', '', 'the', 'heart', 'of', 'the', '<unk>', '<unk>', '<unk>', '</s>']
+2023-06-02 22:41:34,355 - INFO - joeynmt.training - 	Source:     La calotta glaciale artica è, in un certo senso,  il cuore pulsante del sistema climatico globale.
+2023-06-02 22:41:34,355 - INFO - joeynmt.training - 	Reference:  The arctic ice cap is, in a sense, the beating heart of the global climate system.
+2023-06-02 22:41:34,355 - INFO - joeynmt.training - 	Hypothesis: The <unk> <unk> is, in a sense,  the heart of the <unk> <unk> <unk>
+2023-06-02 22:41:34,355 - INFO - joeynmt.training - Example #3
+2023-06-02 22:41:34,355 - DEBUG - joeynmt.training - 	Tokenized source:     ['Si', 'espande', "d'inverno", 'e', 'si', 'ritira', "d'estate."]
+2023-06-02 22:41:34,355 - DEBUG - joeynmt.training - 	Tokenized reference:  ['It', 'expands', 'in', 'winter', 'and', 'contracts', 'in', 'summer.']
+2023-06-02 22:41:34,355 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['They', '<unk>', '<unk>', 'and', '<unk>', '</s>']
+2023-06-02 22:41:34,356 - INFO - joeynmt.training - 	Source:     Si espande d'inverno e si ritira d'estate.
+2023-06-02 22:41:34,356 - INFO - joeynmt.training - 	Reference:  It expands in winter and contracts in summer.
+2023-06-02 22:41:34,356 - INFO - joeynmt.training - 	Hypothesis: They <unk> <unk> and <unk>
+2023-06-02 22:41:34,356 - INFO - joeynmt.training - Example #4
+2023-06-02 22:41:34,356 - DEBUG - joeynmt.training - 	Tokenized source:     ['La', 'prossima', 'diapositiva', 'sarà', 'una', 'rapida', '', 'carrellata', 'sugli', 'avvenimenti', 'degli', 'ultimi', '25', 'anni.']
+2023-06-02 22:41:34,356 - DEBUG - joeynmt.training - 	Tokenized reference:  ['The', 'next', 'slide', 'I', 'show', 'you', 'will', 'be', 'a', 'rapid', 'fast-forward', 'of', "what's", 'happened', 'over', 'the', 'last', '25', 'years.']
+2023-06-02 22:41:34,356 - DEBUG - joeynmt.training - 	Tokenized hypothesis: ['The', 'next', '<unk>', 'is', 'a', '<unk>', '', '<unk>', 'on', 'the', 'last', '25', 'years.', '</s>']
+2023-06-02 22:41:34,356 - INFO - joeynmt.training - 	Source:     La prossima diapositiva sarà una rapida  carrellata sugli avvenimenti degli ultimi 25 anni.
+2023-06-02 22:41:34,356 - INFO - joeynmt.training - 	Reference:  The next slide I show you will be a rapid fast-forward of what's happened over the last 25 years.
+2023-06-02 22:41:34,356 - INFO - joeynmt.training - 	Hypothesis: The next <unk> is a <unk>  <unk> on the last 25 years.
+2023-06-02 22:42:10,315 - INFO - joeynmt.training - Epoch   3, Step:     8100, Batch Loss:     1.761020, Batch Acc: 0.500171, Tokens per Sec:     1780, Lr: 0.000300
+2023-06-02 22:42:48,540 - INFO - joeynmt.training - Epoch   3, Step:     8200, Batch Loss:     1.740691, Batch Acc: 0.499217, Tokens per Sec:     1754, Lr: 0.000300
+2023-06-02 22:43:25,177 - INFO - joeynmt.training - Epoch   3, Step:     8300, Batch Loss:     1.665006, Batch Acc: 0.497786, Tokens per Sec:     1775, Lr: 0.000300
+2023-06-02 22:43:27,646 - INFO - joeynmt.training - Epoch   3: total training loss 4681.16
+2023-06-02 22:43:27,646 - INFO - joeynmt.training - EPOCH 4
+2023-06-02 22:43:47,914 - INFO - joeynmt.model - Building an encoder-decoder model...
+2023-06-02 22:43:47,988 - INFO - joeynmt.model - Enc-dec model built.
+2023-06-02 22:43:48,016 - INFO - joeynmt.helpers - Load model from /Users/songyafeng/6/Machine_Translation/Ex5/mt-exercise-5/word_level_transformer/7500.ckpt.
+2023-06-02 22:43:48,022 - INFO - joeynmt.prediction - Model(
+	encoder=TransformerEncoder(num_layers=4, num_heads=2, alpha=1.0, layer_norm="pre", activation=ReLU()),
+	decoder=TransformerDecoder(num_layers=1, num_heads=2, alpha=1.0, layer_norm="post", activation=ReLU()),
+	src_embed=Embeddings(embedding_dim=256, vocab_size=2004),
+	trg_embed=Embeddings(embedding_dim=256, vocab_size=2004),
+	loss_function=None)
+2023-06-02 22:43:48,023 - INFO - joeynmt.prediction - Decoding on dev set...
+2023-06-02 22:43:48,023 - INFO - joeynmt.prediction - Predicting 929 example(s)... (Beam search with beam_size=5, beam_alpha=1.0, n_best=1, min_output_length=1, max_output_length=-1, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)

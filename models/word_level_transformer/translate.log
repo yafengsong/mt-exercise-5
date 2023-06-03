@@ -1,0 +1,96 @@
+2023-06-03 01:14:28,551 - INFO - root - Hello! This is Joey-NMT (version 2.2.0).
+2023-06-03 01:14:28,610 - INFO - joeynmt.model - Building an encoder-decoder model...
+2023-06-03 01:14:28,673 - INFO - joeynmt.model - Enc-dec model built.
+2023-06-03 01:14:28,707 - INFO - joeynmt.helpers - Load model from /Users/songyafeng/6/Machine_Translation/Ex5/mt-exercise-5/models/word_level_transformer/7500.ckpt.
+2023-06-03 01:14:28,711 - INFO - joeynmt.tokenizers - it tokenizer: BasicTokenizer(level=word, lowercase=False, normalize=False, filter_by_length=(-1, 100), pretokenizer=none)
+2023-06-03 01:14:28,711 - INFO - joeynmt.tokenizers - en tokenizer: BasicTokenizer(level=word, lowercase=False, normalize=False, filter_by_length=(-1, 100), pretokenizer=none)
+2023-06-03 01:14:28,716 - INFO - joeynmt.prediction - Predicting 1566 example(s)... (Beam search with beam_size=5, beam_alpha=1.0, n_best=1, min_output_length=1, max_output_length=-1, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2023-06-03 01:15:33,347 - INFO - joeynmt.prediction - Generation took 64.6173[sec]. (No references given)
+2023-06-03 09:58:27,979 - INFO - root - Hello! This is Joey-NMT (version 2.2.0).
+2023-06-03 09:58:28,040 - INFO - joeynmt.model - Building an encoder-decoder model...
+2023-06-03 09:58:28,104 - INFO - joeynmt.model - Enc-dec model built.
+2023-06-03 09:58:28,140 - INFO - joeynmt.helpers - Load model from /Users/songyafeng/6/Machine_Translation/Ex5/mt-exercise-5/models/word_level_transformer/7500.ckpt.
+2023-06-03 09:58:28,145 - INFO - joeynmt.tokenizers - it tokenizer: BasicTokenizer(level=word, lowercase=False, normalize=False, filter_by_length=(-1, 100), pretokenizer=none)
+2023-06-03 09:58:28,145 - INFO - joeynmt.tokenizers - en tokenizer: BasicTokenizer(level=word, lowercase=False, normalize=False, filter_by_length=(-1, 100), pretokenizer=none)
+2023-06-03 09:58:28,148 - INFO - joeynmt.prediction - Predicting 1566 example(s)... (Beam search with beam_size=5, beam_alpha=1.0, n_best=1, min_output_length=1, max_output_length=-1, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2023-06-03 09:59:31,365 - INFO - joeynmt.prediction - Generation took 63.2021[sec]. (No references given)
+2023-06-03 11:05:50,704 - INFO - root - Hello! This is Joey-NMT (version 2.2.0).
+2023-06-03 11:05:50,765 - INFO - joeynmt.model - Building an encoder-decoder model...
+2023-06-03 11:05:50,822 - INFO - joeynmt.model - Enc-dec model built.
+2023-06-03 11:05:50,891 - INFO - joeynmt.helpers - Load model from /Users/songyafeng/6/Machine_Translation/Ex5/mt-exercise-5/models/word_level_transformer/7500.ckpt.
+2023-06-03 11:05:50,895 - INFO - joeynmt.tokenizers - it tokenizer: BasicTokenizer(level=word, lowercase=False, normalize=False, filter_by_length=(-1, 100), pretokenizer=none)
+2023-06-03 11:05:50,896 - INFO - joeynmt.tokenizers - en tokenizer: BasicTokenizer(level=word, lowercase=False, normalize=False, filter_by_length=(-1, 100), pretokenizer=none)
+2023-06-03 11:05:50,900 - INFO - joeynmt.prediction - Predicting 1566 example(s)... (Greedy decoding with min_output_length=1, max_output_length=-1, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2023-06-03 11:06:49,425 - INFO - joeynmt.prediction - Generation took 58.5120[sec]. (No references given)
+2023-06-03 11:07:33,154 - INFO - root - Hello! This is Joey-NMT (version 2.2.0).
+2023-06-03 11:07:33,209 - INFO - joeynmt.model - Building an encoder-decoder model...
+2023-06-03 11:07:33,269 - INFO - joeynmt.model - Enc-dec model built.
+2023-06-03 11:07:33,305 - INFO - joeynmt.helpers - Load model from /Users/songyafeng/6/Machine_Translation/Ex5/mt-exercise-5/models/word_level_transformer/7500.ckpt.
+2023-06-03 11:07:33,310 - INFO - joeynmt.tokenizers - it tokenizer: BasicTokenizer(level=word, lowercase=False, normalize=False, filter_by_length=(-1, 100), pretokenizer=none)
+2023-06-03 11:07:33,311 - INFO - joeynmt.tokenizers - en tokenizer: BasicTokenizer(level=word, lowercase=False, normalize=False, filter_by_length=(-1, 100), pretokenizer=none)
+2023-06-03 11:07:33,313 - INFO - joeynmt.prediction - Predicting 1566 example(s)... (Beam search with beam_size=2, beam_alpha=1.0, n_best=1, min_output_length=1, max_output_length=-1, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2023-06-03 11:07:55,799 - INFO - joeynmt.prediction - Generation took 22.4734[sec]. (No references given)
+2023-06-03 11:08:21,836 - INFO - root - Hello! This is Joey-NMT (version 2.2.0).
+2023-06-03 11:08:21,895 - INFO - joeynmt.model - Building an encoder-decoder model...
+2023-06-03 11:08:21,960 - INFO - joeynmt.model - Enc-dec model built.
+2023-06-03 11:08:21,993 - INFO - joeynmt.helpers - Load model from /Users/songyafeng/6/Machine_Translation/Ex5/mt-exercise-5/models/word_level_transformer/7500.ckpt.
+2023-06-03 11:08:21,998 - INFO - joeynmt.tokenizers - it tokenizer: BasicTokenizer(level=word, lowercase=False, normalize=False, filter_by_length=(-1, 100), pretokenizer=none)
+2023-06-03 11:08:21,998 - INFO - joeynmt.tokenizers - en tokenizer: BasicTokenizer(level=word, lowercase=False, normalize=False, filter_by_length=(-1, 100), pretokenizer=none)
+2023-06-03 11:08:22,001 - INFO - joeynmt.prediction - Predicting 1566 example(s)... (Beam search with beam_size=3, beam_alpha=1.0, n_best=1, min_output_length=1, max_output_length=-1, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2023-06-03 11:08:55,341 - INFO - joeynmt.prediction - Generation took 33.3292[sec]. (No references given)
+2023-06-03 11:09:29,454 - INFO - root - Hello! This is Joey-NMT (version 2.2.0).
+2023-06-03 11:09:29,507 - INFO - joeynmt.model - Building an encoder-decoder model...
+2023-06-03 11:09:29,568 - INFO - joeynmt.model - Enc-dec model built.
+2023-06-03 11:09:29,602 - INFO - joeynmt.helpers - Load model from /Users/songyafeng/6/Machine_Translation/Ex5/mt-exercise-5/models/word_level_transformer/7500.ckpt.
+2023-06-03 11:09:29,607 - INFO - joeynmt.tokenizers - it tokenizer: BasicTokenizer(level=word, lowercase=False, normalize=False, filter_by_length=(-1, 100), pretokenizer=none)
+2023-06-03 11:09:29,607 - INFO - joeynmt.tokenizers - en tokenizer: BasicTokenizer(level=word, lowercase=False, normalize=False, filter_by_length=(-1, 100), pretokenizer=none)
+2023-06-03 11:09:29,610 - INFO - joeynmt.prediction - Predicting 1566 example(s)... (Beam search with beam_size=4, beam_alpha=1.0, n_best=1, min_output_length=1, max_output_length=-1, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2023-06-03 11:10:17,818 - INFO - joeynmt.prediction - Generation took 48.1960[sec]. (No references given)
+2023-06-03 11:10:52,627 - INFO - root - Hello! This is Joey-NMT (version 2.2.0).
+2023-06-03 11:10:52,693 - INFO - joeynmt.model - Building an encoder-decoder model...
+2023-06-03 11:10:52,759 - INFO - joeynmt.model - Enc-dec model built.
+2023-06-03 11:10:52,797 - INFO - joeynmt.helpers - Load model from /Users/songyafeng/6/Machine_Translation/Ex5/mt-exercise-5/models/word_level_transformer/7500.ckpt.
+2023-06-03 11:10:52,802 - INFO - joeynmt.tokenizers - it tokenizer: BasicTokenizer(level=word, lowercase=False, normalize=False, filter_by_length=(-1, 100), pretokenizer=none)
+2023-06-03 11:10:52,802 - INFO - joeynmt.tokenizers - en tokenizer: BasicTokenizer(level=word, lowercase=False, normalize=False, filter_by_length=(-1, 100), pretokenizer=none)
+2023-06-03 11:10:52,805 - INFO - joeynmt.prediction - Predicting 1566 example(s)... (Beam search with beam_size=5, beam_alpha=1.0, n_best=1, min_output_length=1, max_output_length=-1, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2023-06-03 11:11:51,624 - INFO - joeynmt.prediction - Generation took 58.8029[sec]. (No references given)
+2023-06-03 11:12:06,126 - INFO - root - Hello! This is Joey-NMT (version 2.2.0).
+2023-06-03 11:12:06,186 - INFO - joeynmt.model - Building an encoder-decoder model...
+2023-06-03 11:12:06,249 - INFO - joeynmt.model - Enc-dec model built.
+2023-06-03 11:12:06,283 - INFO - joeynmt.helpers - Load model from /Users/songyafeng/6/Machine_Translation/Ex5/mt-exercise-5/models/word_level_transformer/7500.ckpt.
+2023-06-03 11:12:06,288 - INFO - joeynmt.tokenizers - it tokenizer: BasicTokenizer(level=word, lowercase=False, normalize=False, filter_by_length=(-1, 100), pretokenizer=none)
+2023-06-03 11:12:06,288 - INFO - joeynmt.tokenizers - en tokenizer: BasicTokenizer(level=word, lowercase=False, normalize=False, filter_by_length=(-1, 100), pretokenizer=none)
+2023-06-03 11:12:06,291 - INFO - joeynmt.prediction - Predicting 1566 example(s)... (Beam search with beam_size=6, beam_alpha=1.0, n_best=1, min_output_length=1, max_output_length=-1, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2023-06-03 11:13:24,829 - INFO - joeynmt.prediction - Generation took 78.5240[sec]. (No references given)
+2023-06-03 11:13:35,348 - INFO - root - Hello! This is Joey-NMT (version 2.2.0).
+2023-06-03 11:13:35,401 - INFO - joeynmt.model - Building an encoder-decoder model...
+2023-06-03 11:13:35,464 - INFO - joeynmt.model - Enc-dec model built.
+2023-06-03 11:13:35,504 - INFO - joeynmt.helpers - Load model from /Users/songyafeng/6/Machine_Translation/Ex5/mt-exercise-5/models/word_level_transformer/7500.ckpt.
+2023-06-03 11:13:35,510 - INFO - joeynmt.tokenizers - it tokenizer: BasicTokenizer(level=word, lowercase=False, normalize=False, filter_by_length=(-1, 100), pretokenizer=none)
+2023-06-03 11:13:35,511 - INFO - joeynmt.tokenizers - en tokenizer: BasicTokenizer(level=word, lowercase=False, normalize=False, filter_by_length=(-1, 100), pretokenizer=none)
+2023-06-03 11:13:35,515 - INFO - joeynmt.prediction - Predicting 1566 example(s)... (Beam search with beam_size=7, beam_alpha=1.0, n_best=1, min_output_length=1, max_output_length=-1, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2023-06-03 11:15:08,814 - INFO - joeynmt.prediction - Generation took 93.2854[sec]. (No references given)
+2023-06-03 11:15:16,322 - INFO - root - Hello! This is Joey-NMT (version 2.2.0).
+2023-06-03 11:15:16,381 - INFO - joeynmt.model - Building an encoder-decoder model...
+2023-06-03 11:15:16,451 - INFO - joeynmt.model - Enc-dec model built.
+2023-06-03 11:15:16,491 - INFO - joeynmt.helpers - Load model from /Users/songyafeng/6/Machine_Translation/Ex5/mt-exercise-5/models/word_level_transformer/7500.ckpt.
+2023-06-03 11:15:16,496 - INFO - joeynmt.tokenizers - it tokenizer: BasicTokenizer(level=word, lowercase=False, normalize=False, filter_by_length=(-1, 100), pretokenizer=none)
+2023-06-03 11:15:16,496 - INFO - joeynmt.tokenizers - en tokenizer: BasicTokenizer(level=word, lowercase=False, normalize=False, filter_by_length=(-1, 100), pretokenizer=none)
+2023-06-03 11:15:16,500 - INFO - joeynmt.prediction - Predicting 1566 example(s)... (Beam search with beam_size=8, beam_alpha=1.0, n_best=1, min_output_length=1, max_output_length=-1, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2023-06-03 11:17:03,847 - INFO - joeynmt.prediction - Generation took 107.3333[sec]. (No references given)
+2023-06-03 11:17:19,740 - INFO - root - Hello! This is Joey-NMT (version 2.2.0).
+2023-06-03 11:17:19,799 - INFO - joeynmt.model - Building an encoder-decoder model...
+2023-06-03 11:17:19,859 - INFO - joeynmt.model - Enc-dec model built.
+2023-06-03 11:17:19,893 - INFO - joeynmt.helpers - Load model from /Users/songyafeng/6/Machine_Translation/Ex5/mt-exercise-5/models/word_level_transformer/7500.ckpt.
+2023-06-03 11:17:19,898 - INFO - joeynmt.tokenizers - it tokenizer: BasicTokenizer(level=word, lowercase=False, normalize=False, filter_by_length=(-1, 100), pretokenizer=none)
+2023-06-03 11:17:19,898 - INFO - joeynmt.tokenizers - en tokenizer: BasicTokenizer(level=word, lowercase=False, normalize=False, filter_by_length=(-1, 100), pretokenizer=none)
+2023-06-03 11:17:19,901 - INFO - joeynmt.prediction - Predicting 1566 example(s)... (Beam search with beam_size=9, beam_alpha=1.0, n_best=1, min_output_length=1, max_output_length=-1, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2023-06-03 11:19:31,589 - INFO - joeynmt.prediction - Generation took 131.6743[sec]. (No references given)
+2023-06-03 11:20:32,806 - INFO - root - Hello! This is Joey-NMT (version 2.2.0).
+2023-06-03 11:20:32,863 - INFO - joeynmt.model - Building an encoder-decoder model...
+2023-06-03 11:20:32,921 - INFO - joeynmt.model - Enc-dec model built.
+2023-06-03 11:20:32,954 - INFO - joeynmt.helpers - Load model from /Users/songyafeng/6/Machine_Translation/Ex5/mt-exercise-5/models/word_level_transformer/7500.ckpt.
+2023-06-03 11:20:32,959 - INFO - joeynmt.tokenizers - it tokenizer: BasicTokenizer(level=word, lowercase=False, normalize=False, filter_by_length=(-1, 100), pretokenizer=none)
+2023-06-03 11:20:32,959 - INFO - joeynmt.tokenizers - en tokenizer: BasicTokenizer(level=word, lowercase=False, normalize=False, filter_by_length=(-1, 100), pretokenizer=none)
+2023-06-03 11:20:32,962 - INFO - joeynmt.prediction - Predicting 1566 example(s)... (Beam search with beam_size=10, beam_alpha=1.0, n_best=1, min_output_length=1, max_output_length=-1, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2023-06-03 11:22:48,268 - INFO - joeynmt.prediction - Generation took 135.2923[sec]. (No references given)
